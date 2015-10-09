@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Untitled Document</title>
 <style>
 * {
@@ -24,20 +24,26 @@
 	border:1px solid #000;
 	margin:1%;
 	padding:1%;
-	width:29%;
+	width:35%;
+	overflow:hidden;
 	height:23em;
-		
 	}
 .questionnav{
 	position:relative;
-	left:5%;
+	text-align:center;
 	bottom:1%;
-	font-size:3em;
+	font-size:300%;
 	margin:1%;
 	padding:1%;
 	border:1px solid #000;
+	
     }
-/*#question{
+/*#submit{
+	position:relative;
+	top:24em;
+	left:75em;
+	}
+#question{
 	position:absolute;
 	top:3%;
 	height:45%;
@@ -78,14 +84,17 @@ $result_questions = mysql_query($query_questions) or die(mysql_error());
 
 ?>
 <div id="phpcode"></div>
+<form>
 <div id="displayarea">
 <!--div id="question"></div>
 <div id="ans"></div-->
 </div>
+<!--div id="submit"><input type='submit' /></div--> 
+</form>
 <div id="questionarea">
 <?php 
 $question_count = mysql_num_rows($result_questions);
-
+$ques_columns = ceil($question_count/5);
 for($i=1;$i <= $question_count;$i++){
 	if($i<10){
 		$zero = '0';
@@ -93,13 +102,14 @@ for($i=1;$i <= $question_count;$i++){
 	else{
 		$zero = '';
 		}
-	echo ("<span class='questionnav' onclick='quesSelector($i)'>$zero".$i."</span>");
+	echo ("<span class='questionnav' onclick='quesSelector($i)' style='margin:'>$zero".$i."</span>");
 	
-	if(($i) % 5 == 0){
+	if(($i) % $ques_columns == 0){
 		echo "<br><br>";
 		}
 	}
 ?>
+</div>
 <script>
 function quesSelector(selection){
 	jstophp('question-show.php?q=' + selection,myFunction);
@@ -120,6 +130,6 @@ function myFunction(xhttp){
 	}
 	
 </script>
-</div>
+
 </body>
 </html>

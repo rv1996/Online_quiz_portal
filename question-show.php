@@ -32,7 +32,7 @@ echo "<div id='question'>".$q.") ".htmlentities($question[$q])."</div>";
 	position:absolute;
 	text-align:center;
 	top:5%;
-	height:40%;
+	height:35%;
 	width:95%;
 	margin:auto;
 	padding:1%;
@@ -42,18 +42,27 @@ echo "<div id='question'>".$q.") ".htmlentities($question[$q])."</div>";
 	#ans{
 	position:absolute;
 	bottom:5%;
-	height:40%;
+	height:45%;
 	width:95%;
 	margin:auto;
 	padding:1%;
 	font-size:1.2em;
 	font-family:"Comic Sans MS", cursive;
 	}
+#submit{
+	position:absolute;
+	bottom:.06em;
+	right:5%;
+	height:16%;
+	text-align:center;
+	font-size:1.1em;
+	font-family:"Courier New", Courier, monospace;
+	}
 </style>
 </head>
 <body>
+
 <div id="ans">
-<form>
 <ol type="A">
 	<?php
 	for($j=1;$j<=$nofoptions[$q];$j++){
@@ -61,7 +70,8 @@ echo "<div id='question'>".$q.") ".htmlentities($question[$q])."</div>";
 	}
 	?>
 </ol>
-</form>
+<input id="submit" type="submit">
 </div>
+
 
 </body>
