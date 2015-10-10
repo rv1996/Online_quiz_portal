@@ -22,9 +22,9 @@
 	position:relative;
 	left:0;
 	border:1px solid #000;
-	margin:1%;
+	margin:auto;
 	padding:1%;
-	width:35%;
+	width:auto;
 	overflow:hidden;
 	height:23em;
 	}
@@ -84,16 +84,15 @@ $result_questions = mysql_query($query_questions) or die(mysql_error());
 
 ?>
 <div id="phpcode"></div>
-<form>
 <div id="displayarea">
 <!--div id="question"></div>
-<div id="ans"></div-->
-</div>
-<!--div id="submit"><input type='submit' /></div--> 
-</form>
+<div id="ans"></div>
+<div id="submit"><input type='submit' /></div-->
+</div> 
 <div id="questionarea">
 <?php 
 $question_count = mysql_num_rows($result_questions);
+//$question_count = 19;
 $ques_columns = ceil($question_count/5);
 for($i=1;$i <= $question_count;$i++){
 	if($i<10){
@@ -102,7 +101,7 @@ for($i=1;$i <= $question_count;$i++){
 	else{
 		$zero = '';
 		}
-	echo ("<span class='questionnav' onclick='quesSelector($i)' style='margin:'>$zero".$i."</span>");
+	echo ("<button class='questionnav' onclick='quesSelector($i)'>$zero".$i."</button>");
 	
 	if(($i) % $ques_columns == 0){
 		echo "<br><br>";

@@ -11,10 +11,11 @@ $result_questions = mysql_query($query_questions) or die(mysql_error());
 for($i=1;$row = mysql_fetch_array($result_questions);$i++){
 	$question[$i] = $row['question'];
 	$questionid[$i] = $row['questionid'];
-	$query_ans = "SELECT options FROM answers_practice WHERE questionid=$questionid[$i]";
+	$query_ans = "SELECT options,checkans FROM answers_practice WHERE questionid=$questionid[$i]";
 	$result_ans = mysql_query($query_ans) or die(mysql_error());
 	for($j=1;$row2 = mysql_fetch_array($result_ans);$j++){
 		$ans[$i][$j] = $row2['options'];
+		$checkans[$i][$j] = $row2['checkans'];
 		}
 	$nofoptions[$i]=$j - 1;
 	}
@@ -24,7 +25,7 @@ for($i=1;$row = mysql_fetch_array($result_questions);$i++){
 <?php
 $q = $_REQUEST['q'];
 
-echo "<div id='question'>".$q.") ".htmlentities($question[$q])."</div>";
+//echo "<div id='question'>".$q.") ".htmlentities($question[$q])."</div>";
 ?>
 <head>
 <style>
@@ -61,7 +62,12 @@ echo "<div id='question'>".$q.") ".htmlentities($question[$q])."</div>";
 </style>
 </head>
 <body>
-
+<form method="post" action="">
+<div id="question">
+<?php 
+echo $q.") ".htmlentities($question[$q]);
+?>
+</div>
 <div id="ans">
 <ol type="A">
 	<?php
@@ -72,6 +78,6 @@ echo "<div id='question'>".$q.") ".htmlentities($question[$q])."</div>";
 </ol>
 <input id="submit" type="submit">
 </div>
-
+</form>
 
 </body>
