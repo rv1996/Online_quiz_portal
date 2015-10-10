@@ -25,13 +25,13 @@
 				 $combination_error =  "invalid entry combination of username and password";
 			 }
 			
-				if($mysql_row ==1){
-					$query_result = mysql_fetch_array($query_run);
-					$_SESSION['user_name'] = $query_result['user_name'];
-					//echo 'hello'.$_SESSION['user_name'];
-					header("Location: page1.php");
-					//print_r($query_result); check that we are getting the or not
-				}
+			  if($mysql_row ==1){
+				  $query_result = mysql_fetch_array($query_run);
+				  $_SESSION['user_name'] = $query_result['user_name'];
+				  //echo 'hello'.$_SESSION['user_name'];
+				  header("Location: page1.php");
+				  //print_r($query_result); check that we are getting the or not
+			  }
 			
 			
 			
@@ -50,9 +50,9 @@
 <hr>
 <div id="nav">
 		<ul>
-			<li onclick="return home();">Home</li>
-			<li onclick="return about();">About</li>
-			<li onclick="return developer();">Developer's</li>
+			<li onClick="return home();">Home</li>
+			<li onClick="return about();">About</li>
+			<li onClick="return developer();">Developer's</li>
 		</ul>
 	</div>
 <div id="main_box">
@@ -60,8 +60,8 @@
 	<fieldset id="login_student">
 		<legend style="text-align:left;font-size:30px;"> Login Form </legend>
 		<?= $entry_error.'<br>';?>
-		<span>Username :<span><input type="text" name="user_name"><br>
-		<br><span>Password :<span> <input type="password" name="password"> <br> 
+		<span>Username :</span><input type="text" name="user_name"><br>
+		<br><span>Password :</span> <input type="password" name="password"> <br> 
 		<?php echo $combination_error;?><br>
 
 		<input type="submit" value="Submit" name="submit"><br><br>
