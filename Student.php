@@ -1,7 +1,7 @@
 <?php
 include 'page-heading.php';
 include 'bottom-label.php';
-	include 'configuration_file.php';
+	include 'connect.php';
 	// header('Location: E:\xampp\htdocs\project\page1.php');
 
 
@@ -11,7 +11,8 @@ include 'bottom-label.php';
 	$student_number = $student_name = $student_year = $student_email = $student_mobile_no =$student_password = ' ';
 	$number_error = $name_error = $year_error = $email_error =$mobile_error= $password_error = '';
 	//variable which decide to run the query..
-	$query_boolean = true;
+	$field_count = 0;
+	$record_added ='';
 
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
 		
@@ -24,40 +25,58 @@ include 'bottom-label.php';
 		 
 		if(empty($student_number)){
 			 $number_error = "Enter your number";
-			 $query_boolean = true;
+			 $field_count++;
 			
+		}else{
+			if(preg_match("/\D/",$student_number)){
+			$number_error = "Only number's";
+			$field_count++;
+			}
 		}
 		if(empty($student_name)){
 			 $name_error = "Enter Your name";
-			 $query_boolean = true;
+			 $field_count++;
+		}
+		else{
+			
 		}
 		if(empty($student_year)){
 			$year_error = 'Enter Your Year';
-			$query_boolean = true;
+			 $field_count++;
 		}
 		if(empty($student_email)){
 			$email_error = "Enter Your Email";
-			$query_boolean = true;
-		}
-		if(empty($student_mobile_no)){
-			$mobile_error = "Enter Your mobile no..";
-			$query_boolean = true;
+			 $field_count++;
 		}
 		if(empty($student_password)){
 			$password_error = "enter Your password..";
-			$query_boolean = true;
+			 $field_count++;
+		}else{
+			if(!preg_match("/\d/",$student_password)){
+			$password_error ='No digits in Password';
+			 $field_count++;
+			}
+			else 
+				if(!preg_match("/\W/",$student_password)){
+				$password_error ='No Special Chars in Password';
+				 $field_count++;
+			}else{
+				$student_password = proper_input($student_password);
+			}
 		}
-	}
-		 
-	
-	// inserting the data in the datat base'
-		if(!$query_boolean){
-			$id = '';
-			$sql_query = "INSERT INTO student_info VALUES('',$student_number,'$student_name','$student_year','$student_email',$student_mobile_no,'$student_city','$student_DOB','$student_gender','$student_skills','$student_password')";
-			mysql_query("USE OQP");
-			
+		
+		
+		 //echo "processing";
+		//echo $field_count;                                 all for testing perpose...
+	    // inserting the data in the data bas
+		if(!$field_count){
+
+			$student_password = md5($student_password);
+			//mysql_query("USE OQP");
+			$sql_query = "INSERT INTO student_info(StudentNumber,Name,Btech_year,Email,Password) VALUES($student_number,'$student_name','$student_year','$student_email','$student_password')";
+			//echo "processing";
 			if(mysql_query($sql_query)){
-				echo "records added to the data";
+				$record_added =  "records added to the data";
 			}
 			else{
 				echo 'could insert the data in the data <br> Error :'.mysql_error();
@@ -65,7 +84,17 @@ include 'bottom-label.php';
 			
 			mysql_close();
 			//function made to check the data entered by the user
+		}else{
+			//echo "123".mysql_error();
 		}
+	}
+		 
+		function proper_input($data){
+			$data = trim($data);
+			$data = stripslashes($data);
+			$data = htmlspecialchars($data);
+			return($data);
+	}
 	
 	?>
 <html>
@@ -78,17 +107,24 @@ include 'bottom-label.php';
 	</head>
 	<body>
 	<hr>
+	<div id="nav">
+		<ul>
+			<li onclick="return home();">Home</li>
+			<li onclick="return about();">About</li>
+			<li onclick="return developer();">Developer's</li>
+		</ul>
+	</div>
+
 	<div id="student_main_box">
 		<form action = <?php echo $_SERVER['PHP_SELF'];?> method="POST" id="student_registration">
 		<ul>
 			<fieldset>
-				<legend style="font-size:35px;text-align:left;"><b>Student Regitration Form</b></legend><br><br>
-				
+				<legend style="font-size:2.5vw;text-align:left;"><b>Student Regitration Form</b></legend>
+				<?= $record_added;?>
 				<li><span>Student Number : </span><input type="text" name="student_number" ></li><label><?php echo $number_error.'<br>';?></label><br>
 				<li><span>Student Name :</span> <input type="text" name="student_name"></li><label><?php echo $name_error.'<br>';?></label><br>
 				<li><span>B-Tech Year :</span> <input type="text"  name="student_year"></li><label><?php echo $year_error.'<br>';?></label><br>
 				<li><span>Email Id : </span><input type="text" name="student_email"></li><label><?php echo $email_error.'<br>';?></label><br>
-				<li><span>Mobile No : </span><input type="text" name="student_mobile_no"></li><label><?php echo $mobile_error.'<br>';?></label><br>
 				<li><span>Pasword : </span><input type="password" name="student_password"></li><label><?php echo $password_error.'<br>';?></label><br>
 					
 				<input style="clear:both;margin-top:10px;" type="submit" value="Submit">

@@ -1,1 +1,1 @@
-<div style="background:grey;width:100%;height:auto;border:2px solid black;font-size:25px;padding:1%;left:0px;bottom:2px;position:fixed;opacity:0.7;"><center>&copy srs 2015 .</center></div>
+<div style="background:grey;width:100%;height:auto;border:2px solid black;font-size:2vw;padding:1%;left:0px;bottom:2px;position:fixed;opacity:0.7;"><center>&copy srs 2015 .</center></div>
