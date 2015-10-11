@@ -72,12 +72,18 @@ echo $q.") ".htmlentities($question[$q]);
 <ol type="A">
 	<?php
 	for($j=1;$j<=$nofoptions[$q];$j++){
-		echo "<li><input type='checkbox' value=$j name=$i>".htmlentities($ans[$q][$j])."</li>";
+		echo "<li><input type='checkbox' value=$j name=$j>".htmlentities($ans[$q][$j])."</li>";
 	}
 	?>
 </ol>
 <input id="submit" type="submit">
 </div>
 </form>
+<script>
+function ansCheck(){
+	
+	}
+
+</script>
 
 </body>

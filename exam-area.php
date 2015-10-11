@@ -9,35 +9,50 @@
 	}
 #displayarea {
 	position:relative;
-	border:1px solid #000;
-	margin:1%;
 	padding:1%;
 	width:60%;
-	height:23em;
+	height:30vw;
 	float:right;
 	right:0;	
-	top:-1em;
+	
+	border:1px solid black;
 	}
 #questionarea{
 	position:relative;
 	left:0;
-	border:1px solid #000;
 	margin:auto;
 	padding:1%;
 	width:auto;
-	overflow:hidden;
-	height:23em;
+	overflow:scroll;
+	height:30vw;
+	border:1px solid black;
 	}
-.questionnav{
-	position:relative;
-	text-align:center;
-	bottom:1%;
-	font-size:300%;
-	margin:1%;
-	padding:1%;
-	border:1px solid #000;
-	
-    }
+.questionnav {
+  background: #704d4d;
+  background-image: -webkit-linear-gradient(top, #704d4d, #bd1818);
+  background-image: -moz-linear-gradient(top, #704d4d, #bd1818);
+  background-image: -ms-linear-gradient(top, #704d4d, #bd1818);
+  background-image: -o-linear-gradient(top, #704d4d, #bd1818);
+  background-image: linear-gradient(to bottom, #704d4d, #bd1818);
+  -webkit-border-radius: 2vw;
+  -moz-border-radius: 2vw;
+  border-radius: 2vw;
+  font-family: Courier New;
+  color: #ffffff;
+  font-size: 2vw;
+  padding: 2%;
+  text-decoration: none;
+}
+
+.questionnav:hover {
+  background: #fa3c3c;
+  background-image: -webkit-linear-gradient(top, #fa3c3c, #d93434);
+  background-image: -moz-linear-gradient(top, #fa3c3c, #d93434);
+  background-image: -ms-linear-gradient(top, #fa3c3c, #d93434);
+  background-image: -o-linear-gradient(top, #fa3c3c, #d93434);
+  background-image: linear-gradient(to bottom, #fa3c3c, #d93434);
+  text-decoration: none;
+}
 /*#submit{
 	position:relative;
 	top:24em;
@@ -111,6 +126,7 @@ for($i=1;$i <= $question_count;$i++){
 </div>
 <script>
 function quesSelector(selection){
+	var a = document.getElementById('selection');
 	jstophp('question-show.php?q=' + selection,myFunction);
 	}
 	
