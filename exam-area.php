@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -84,8 +85,7 @@
 <body>
 <?php include 'Page-heading.php';?>
 <?php 
-mysql_connect('localhost','root','') or die('ConnectionError');;
-mysql_select_db('oqp') or die(mysql_error());
+include 'connect-to-db.php';
 
 $query_questions = "SELECT question FROM questionbank_practice WHERE QuestionType='Javascript'";
 $result_questions = mysql_query($query_questions) or die(mysql_error());
@@ -96,7 +96,13 @@ $result_questions = mysql_query($query_questions) or die(mysql_error());
 	$questionid[$i]=$row['questionid'];
 	$i++;
 	}*/
-
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	for($j=1;$j<5;$j++){
+		if(!empty($_POST[$j])){
+			
+			}
+	    }
+	}
 ?>
 <div id="phpcode"></div>
 <div id="displayarea">

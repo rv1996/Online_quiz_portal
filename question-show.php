@@ -1,7 +1,5 @@
 <?php 
-mysql_connect('localhost','root','') or die('ConnectionError');
-mysql_select_db('oqp') or die(mysql_error());
-
+include 'connect-to-db.php';
 $query_questions = "SELECT question, questionid FROM questionbank_practice WHERE QuestionType='Javascript'";
 
 
@@ -19,8 +17,6 @@ for($i=1;$row = mysql_fetch_array($result_questions);$i++){
 		}
 	$nofoptions[$i]=$j - 1;
 	}
-	
-
 ?>
 <?php
 $q = $_REQUEST['q'];
@@ -37,37 +33,38 @@ $q = $_REQUEST['q'];
 	width:95%;
 	margin:auto;
 	padding:1%;
-	font-size:1.5em;
+	font-size:1.8vw;
 	font-family:"Comic Sans MS", cursive;
 	}
-	#ans{
+#ans{
 	position:absolute;
 	bottom:5%;
 	height:45%;
 	width:95%;
 	margin:auto;
 	padding:1%;
-	font-size:1.2em;
+	font-size:1.5vw;
 	font-family:"Comic Sans MS", cursive;
 	}
 #submit{
 	position:absolute;
-	bottom:.06em;
+	bottom:.06vw;
 	right:5%;
 	height:16%;
 	text-align:center;
-	font-size:1.1em;
+	font-size:1.3vw;
 	font-family:"Courier New", Courier, monospace;
 	}
 </style>
 </head>
 <body>
-<form method="post" action="">
+
 <div id="question">
 <?php 
 echo $q.") ".htmlentities($question[$q]);
 ?>
 </div>
+<form method="post" action="exam-area.php" onSubmit="">
 <div id="ans">
 <ol type="A">
 	<?php
@@ -79,11 +76,5 @@ echo $q.") ".htmlentities($question[$q]);
 <input id="submit" type="submit">
 </div>
 </form>
-<script>
-function ansCheck(){
-	
-	}
-
-</script>
 
 </body>
