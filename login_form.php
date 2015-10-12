@@ -13,8 +13,10 @@
 		
 		if(!empty($user_name) && !empty($password)){
 				
-			 $query = "SELECT `user_name`, `password` FROM `login_page` WHERE user_name = '$user_name' AND password = '$password' ";
-			
+				
+			$password = md5($password);
+			// $query = "SELECT `user_name`, `password` FROM `student_info` WHERE StudentNumber = '$user_name' AND password = '$password' ";
+			 $query = "SELECT * FROM `student_info` WHERE StudentNumber = '$user_name' AND password = '$password' ";
 			 // echo mysql_query("use oqp");
 			 // echo mysql_query($query); for testing of the query
 			 $query_run = mysql_query($query);
@@ -25,13 +27,14 @@
 				 $combination_error =  "invalid entry combination of username and password";
 			 }
 			
-			  if($mysql_row ==1){
-				  $query_result = mysql_fetch_array($query_run);
-				  $_SESSION['user_name'] = $query_result['user_name'];
-				  //echo 'hello'.$_SESSION['user_name'];
-				  header("Location: page1.php");
-				  //print_r($query_result); check that we are getting the or not
-			  }
+
+				if($mysql_row ==1){
+					$query_result = mysql_fetch_array($query_run);
+					$_SESSION['user_name'] = $query_result['Name'];
+					//echo 'hello'.$_SESSION['user_name'];
+					header("Location: page1.php");
+					//print_r($query_result); check that we are getting the or not
+				}
 			
 			
 			
@@ -55,16 +58,16 @@
 			<li onClick="return developer();">Developer's</li>
 		</ul>
 	</div>
-<div id="main_box">
+<div id="login_main_box">
 	<form action="<?php echo $current_file?>" method="POST" id="student_login">
 	<fieldset id="login_student">
-		<legend style="text-align:left;font-size:30px;"> Login Form </legend>
+		<legend style="text-align:left;font-size:3vw;"> Login Form </legend>
 		<?= $entry_error.'<br>';?>
 		<span>Username :</span><input type="text" name="user_name"><br>
 		<br><span>Password :</span> <input type="password" name="password"> <br> 
 		<?php echo $combination_error;?><br>
 
-		<input type="submit" value="Submit" name="submit"><br><br>
+		<button  type="submit" name="submit">Submit</button><br><br>
 		
 		<span>new user : <strong><a href="Student.php">Registration form</a></strong></span>
 	</fieldset>
@@ -72,3 +75,4 @@
 </div>
 </body>
 </html>
+_

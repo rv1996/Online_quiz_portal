@@ -7,7 +7,8 @@
 
 	body{
 		
-		background:url("minion.jpg");
+		/*background:#00CCFF;*/
+		background:url('bgimage.jpg');
 		-webkit-background-size:cover;
 		background-repeat: no-repeat;
 	}
@@ -18,18 +19,22 @@
 		border-radius:25px;
 		border-width:5px;
 		border-style:outset;
-		background:#ff6347;
+		background:#000066;
+		color:white;
 		font-size:4vw;
 		width:30%;
 		-webkit-transition: -webkit-transform 1s,background 1s;
-		transition:-webkit-transform 1s,background 1s;
+		transition:-webkit-transform 1s,background 1s,box-shadow 1s;
 		display:inline;	
 		top:3.6em;
 	}
-	#student:hover ,#company:hover ,#nav li:hover{
+	#student:hover ,#company:hover ,#nav li:hover,#student_exam:hover,#student_practice:hover,#student_details:hover
+	{
 		-webkit-transform: scale(1.2);
 		transform: scale(1.2,1.2);
-		background:#ff0000;
+		background:black;
+		box-shadow: 6px 6px 6px black;
+		cursor:pointer;
 	}
 	#student{
 		left:15%;
@@ -43,9 +48,10 @@
 	#nav li {
 		list-style:none;
 		margin:5px;
+		color:white;
 		display:inline;
 		border:solid 2px black;
-		background:tomato;
+		background:#000066;
 		opacity:0.7;
 		font-size:2vw;
 		-webkit-transition: -webkit-transform 1s,background 1s;
@@ -58,11 +64,11 @@
 	
 /* styling of home page*/
 
-	#home-box ,#about-box{
+	#home-box ,#about-box,#developer-box{
 		left:4em;
 		padding:3%;
 		top:4em;
-		background:grey;
+		background:#F5F1DE;
 		border-radius:20%;
 		border:solid 3px black;
 		position:relative;
@@ -76,14 +82,14 @@
 	/*styling for login form*/
 	
 	
-	#main_box{
+	#login_main_box{
 		
 		position:relative;
 		margin:auto;
 		padding:5px;
-		width:60%;
+		width:60vw;
 		height:auto;
-		background:grey;
+		background:#F5F1DE	;
 		border:solid 2px black;
 		opacity:0.8;
 		top:4em;
@@ -97,21 +103,31 @@
 		left:4.6em;
 		right:5em;
 		margin:auto;
-		width:40%;
+		width:26vw;
 		height:auto;
-		background:tomato;
+		background:#FFFFE0;
 	}
-	
+	#student_login input{
+		height:2vw;
+		width:15vw;
+	}
+	button{
+		font-size:1.3em;
+		text-align:center;
+		height:2.5vw;
+		width:9vw;
+
+	}
 	
 /* styling of student page...*/
 #student_main_box{
-		
+		top:3.5em;
 		position:relative;
-		margin:auto;
-		padding:5px;
-		width:80%;
+		left:3.4em;
+		
+		width:75vw;
 		height:auto;
-		background:grey;
+		background:#F5F1DE;
 		border:solid 2px black;
 		opacity:0.8;
 		
@@ -130,14 +146,17 @@
 		text-align:center;
 		border:solid 2px black;
 		margin:auto;
-		width:70%;
-		height:70%;
-		background:tomato;
+		width:60vw;
+		height:auto;
+		background:#FFFFE0;
 	
 }
 #student_registration input{
+	
 	float:left;
 	margin-bottom:10px;
+	height:2vw;
+	width:15vw;
 }
 #student_registration span{
 	float: left;  
@@ -146,8 +165,50 @@
 	text-align: right;  
 	margin-right: 10px;  
 	font-family:Verdana, Arial, Helvetica, sans-serif;  
-	font-size:14px;  
+	font-size:1.3vw;  
 }
 
+/*styling for student_dasdboard page*/
 
+#student_exam, #student_practice{
+		color:white;
+		position:relative;
+		opacity:0.9;
+		border-radius:25px;
+		border-width:5px;
+		border-style:outset;
+		background:#71C42B;
+		font-size:4vw;
+		width:30%;
+		-webkit-transition: -webkit-transform 1s,background 1s;
+		transition:-webkit-transform 1s,background 1s,box-shadow 1s;
+		display:inline;	
+		top:2.5em;
+		padding:1.6%;
+}
 
+#student_exam{
+	left:6em;
+}
+#student_practice{
+	left:12em;
+}
+#student_details{
+		color:white;
+		left:4.4em;
+		position:relative;
+		opacity:0.9;
+		border-radius:25px;
+		border-width:5px;
+		border-style:outset;
+		background:#71C42B;
+		font-size:3vw;
+		width:30%;
+		-webkit-transition: -webkit-transform 1s,background 1s;
+		transition:-webkit-transform 1s,background 1s,box-shadow 1s;
+		display:inline;	
+		top:6em;
+		padding:1%;
+}
+
+	
