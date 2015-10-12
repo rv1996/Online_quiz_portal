@@ -7,7 +7,8 @@
 
 	body{
 		
-		background:#00CCFF;
+		/*background:#00CCFF;*/
+		background:url('bgimage.jpg');
 		-webkit-background-size:cover;
 		background-repeat: no-repeat;
 	}
