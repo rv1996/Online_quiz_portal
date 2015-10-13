@@ -8,60 +8,60 @@ include 'bottom-label.php';
 	
 	// variable to be be taken from the dom....
 	//data variable
-	$student_number = $student_name = $student_year = $student_email = $student_mobile_no =$student_password = ' ';
-	$number_error = $name_error = $year_error = $email_error =$mobile_error= $password_error = '';
+	$company_number = $company_name = $company_email =$company_password = ' ';
+	$number_error = $name_error = $email_error = $password_error = '';
 	//variable which decide to run the query..
 	$field_count = 0;
 	$record_added ='';
 
 	if($_SERVER['REQUEST_METHOD'] == "POST"){
 		
-		 @$student_number = $_POST['student_number']; //1
-		 @$student_name = $_POST['student_name']; //2
-		 @$student_year = $_POST['student_year']; //3
-		 @$student_email = $_POST['student_email']; //4
-		 @$student_mobile_no = $_POST['student_mobile_no']; //5
-		 @$student_password =$_POST['student_password']; //10
+		 @$company_number = $_POST['company_number']; //1
+		 @$company_name = $_POST['company_name']; //2
+		 @$company_year = $_POST['company_year']; //3
+		 @$company_email = $_POST['company_email']; //4
+		 @$company_mobile_no = $_POST['company_mobile_no']; //5
+		 @$company_password =$_POST['company_password']; //10
 		 
-		if(empty($student_number)){
+		if(empty($company_number)){
 			 $number_error = "Enter your number";
 			 $field_count++;
 			
 		}else{
-			if(preg_match("/\D/",$student_number)){
+			if(preg_match("/\D/",$company_number)){
 			$number_error = "Only number's";
 			$field_count++;
 			}
 		}
-		if(empty($student_name)){
+		if(empty($company_name)){
 			 $name_error = "Enter Your name";
 			 $field_count++;
 		}
 		else{
 			
 		}
-		if(empty($student_year)){
+		if(empty($company_year)){
 			$year_error = 'Enter Your Year';
 			 $field_count++;
 		}
-		if(empty($student_email)){
+		if(empty($company_email)){
 			$email_error = "Enter Your Email";
 			 $field_count++;
 		}
-		if(empty($student_password)){
+		if(empty($company_password)){
 			$password_error = "enter Your password..";
 			 $field_count++;
 		}else{
-			if(!preg_match("/\d/",$student_password)){
+			if(!preg_match("/\d/",$company_password)){
 			$password_error ='No digits in Password';
 			 $field_count++;
 			}
 			else 
-				if(!preg_match("/\W/",$student_password)){
+				if(!preg_match("/\W/",$company_password)){
 				$password_error ='No Special Chars in Password';
 				 $field_count++;
 			}else{
-				$student_password = proper_input($student_password);
+				$company_password = proper_input($company_password);
 			}
 		}
 		
@@ -71,9 +71,10 @@ include 'bottom-label.php';
 	    // inserting the data in the data bas
 		if(!$field_count){
 
-			$student_password = md5($student_password);
+			$company_password = md5($company_password);
 			//mysql_query("USE OQP");
-			$sql_query = "INSERT INTO student_info(StudentNumber,Name,Btech_year,Email,Password) VALUES($student_number,'$student_name','$student_year','$student_email','$student_password')";
+			echo "hello";
+			$sql_query = "INSERT INTO company_info(Name,username,Email,Password) VALUES($company_number,'$company_name','$company_email','$company_password')";
 			//echo "processing";
 			if(mysql_query($sql_query)){
 				$record_added =  "records added to the data";
@@ -115,17 +116,16 @@ include 'bottom-label.php';
 		</ul>
 	</div>
 
-	<div id="student_main_box">
-		<form action = <?php echo $_SERVER['PHP_SELF'];?> method="POST" id="student_registration">
+	<div id="company_main_box">
+		<form action = <?php echo $_SERVER['PHP_SELF'];?> method="POST" id="company_registration">
 		<ul>
 			<fieldset>
-				<legend style="font-size:2.5vw;text-align:left;"><b id="form_header">Student Regitration Form</b></legend>
+				<legend style="font-size:2.5vw;text-align:left;"><b id="form_header">Company Regitration Form</b></legend>
 				<?= $record_added;?>
-				<li><span>Student Number : </span><input type="text" name="student_number" ></li><label><?php echo $number_error.'<br>';?></label><br>
-				<li><span>Student Name :</span> <input type="text" name="student_name"></li><label><?php echo $name_error.'<br>';?></label><br>
-				<li><span>B-Tech Year :</span> <input type="text"  name="student_year"></li><label><?php echo $year_error.'<br>';?></label><br>
-				<li><span>Email Id : </span><input type="text" name="student_email"></li><label><?php echo $email_error.'<br>';?></label><br>
-				<li><span>Pasword : </span><input type="password" name="student_password"></li><label><?php echo $password_error.'<br>';?></label><br>
+				<li><span>company Number : </span><input type="text" name="company_number" ></li><label><?php echo $number_error.'<br>';?></label><br>
+				<li><span>company Name :</span> <input type="text" name="company_name"></li><label><?php echo $name_error.'<br>';?></label><br>
+				<li><span>Email Id : </span><input type="text" name="company_email"></li><label><?php echo $email_error.'<br>';?></label><br>
+				<li><span>Pasword : </span><input type="password" name="company_password"></li><label><?php echo $password_error.'<br>';?></label><br>
 					
 				<input style="clear:both;margin-top:10px;" type="submit" value="Submit">
 					

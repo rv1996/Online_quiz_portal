@@ -7,8 +7,8 @@ require 'core.php';
 if(is_user_loggedin()){
 	//echo "Your are logged in....";
 	echo $user_name =  '
-						<div style="font-size:3vw;text-align:center;margin:auto;background:#ff5050;
-						border-radius:20px;border- width:40%;">Hello <strong>'.$_SESSION['user_name'].'</strong><div style="float:right;background:red;"><a style ="font-size:2vw;border-radius:15px;padding:2%;" href="logout_page.php" >Logout</a></div></div>
+						<div style="font-size:3vw;text-align:left;padding-left:8px;margin:auto;background:#DCEDC8;color:#6D5252;
+						">Hello <strong>'.$_SESSION['user_name'].'</strong><div style="float:right;background:#BBDEFB;"><a style ="padding:2%;margin:auto;color:#6D5252;" href="logout_page.php" >Logout</a></div></div>
 						';
 	//echo "Your are logged in....";
 	include 'student_dashboard.php';

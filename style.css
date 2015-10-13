@@ -3,28 +3,31 @@
 		box-sizing:border-box;
 	}
 
+#form_header{
+	border-bottom:solid 3px #4DC700;
+}
 /* styling of cover page */
 
 	body{
-		
+		width:80%;
+		margin:auto;
+		margin-top:1%;
 		/*background:#00CCFF;*/
-		background:url('bgimage.jpg');
+		background:off-white;
 		-webkit-background-size:cover;
 		background-repeat: no-repeat;
 	}
 	
 	#student, #company {
 		position:relative;
-		opacity:0.9;
-		border-radius:25px;
-		border-width:5px;
-		border-style:outset;
-		background:#000066;
-		color:white;
+		background:#FBFBFB;
+		border-bottom:solid 8px #4DC700;
+		color:#5A5A5A;
 		font-size:4vw;
 		width:30%;
 		-webkit-transition: -webkit-transform 1s,background 1s;
-		transition:-webkit-transform 1s,background 1s,box-shadow 1s;
+		transition:-webkit-transform 1s,background 1s,box-shadow 1s,,border-radius 1;
+		transition-timing-function:linear;
 		display:inline;	
 		top:3.6em;
 	}
@@ -32,9 +35,11 @@
 	{
 		-webkit-transform: scale(1.2);
 		transform: scale(1.2,1.2);
-		background:black;
+		background:#F5E6E1;
 		box-shadow: 6px 6px 6px black;
 		cursor:pointer;
+	
+		border-radius:5px;
 	}
 	#student{
 		left:15%;
@@ -45,21 +50,31 @@
 		padding:2%;
 		left:45%;
 	}
+	ul{
+		margin-top:0px;
+	}
 	#nav li {
+		float:right;
 		list-style:none;
-		margin:5px;
-		color:white;
+		margin-top:0px;
+		margin-right:5px;
+		margin-left:5px;
+		color:#5A5A5A;
 		display:inline;
-		border:solid 2px black;
-		background:#000066;
-		opacity:0.7;
+		
+		background:#BBDEFB;
 		font-size:2vw;
 		-webkit-transition: -webkit-transform 1s,background 1s;
 		padding:5px;
+		
 		}
 	#nav{
+		background:#BBDEFB;
+		width:100%;
 		float:right;
 		margin-right:20px;
+		margin:auto;
+		border-bottom:solid 4px #B6B6B6;
 	}
 	
 /* styling of home page*/
@@ -69,12 +84,12 @@
 		padding:3%;
 		top:4em;
 		background:#F5F1DE;
-		border-radius:20%;
-		border:solid 3px black;
+		border-bottom:solid 8px #4DC700;
+		
 		position:relative;
 		min-width:40%;
 		min-height:40%;
-		opacity:0.9;
+		
 		max-width:50%;
 		font-size:2vw;
 	}
@@ -90,16 +105,18 @@
 		width:60vw;
 		height:auto;
 		background:#F5F1DE	;
-		border:solid 2px black;
+		border-bottom:solid 8px #4DC700;
+		border-top:solid 8px #4DC700;
 		opacity:0.8;
 		top:4em;
 		
 	}
 	#student_login  fieldset{
 		
-		position:relative;
+		
 		font-size:1.3vw;
-		border:solid 2px black;
+		border-bottom:solid 8px #4DC700;
+		
 		left:4.6em;
 		right:5em;
 		margin:auto;
@@ -120,19 +137,19 @@
 	}
 	
 /* styling of student page...*/
-#student_main_box{
-		top:3.5em;
+#student_main_box,#company_main_box{
+		top:4em;
 		position:relative;
-		left:3.4em;
-		
-		width:75vw;
+		width:80%;
 		height:auto;
+		margin:auto;
 		background:#F5F1DE;
-		border:solid 2px black;
+        border-bottom:solid 8px #4DC700;
+		border-top:solid 8px #4DC700;
 		opacity:0.8;
 		
 	}
-#student_registration li{
+#student_registration li,#company_registration li{
 	list-style:none;
 	list-style:inline;
 	
@@ -141,27 +158,28 @@
 	font-size:1.4vw;
 }
 
-#student_registration fieldset{
-		position:relative;
+#student_registration fieldset,#company_registration fieldset{
 		text-align:center;
-		border:solid 2px black;
+		border-bottom:solid 8px #4DC700;
 		margin:auto;
-		width:60vw;
+		margin-right:7.5%;
+		margin-bottom:5%;
+		width:90%;
 		height:auto;
 		background:#FFFFE0;
 	
 }
-#student_registration input{
+#student_registration input,#company_registration input{
 	
 	float:left;
 	margin-bottom:10px;
 	height:2vw;
 	width:15vw;
 }
-#student_registration span{
+#student_registration span,#company_registration span{
 	float: left;  
 	clear: left;  
-	width: 200px;  
+	width: 30%;  
 	text-align: right;  
 	margin-right: 10px;  
 	font-family:Verdana, Arial, Helvetica, sans-serif;  
@@ -171,14 +189,13 @@
 /*styling for student_dasdboard page*/
 
 #student_exam, #student_practice{
-		color:white;
+		
 		position:relative;
-		opacity:0.9;
-		border-radius:25px;
-		border-width:5px;
-		border-style:outset;
-		background:#71C42B;
+        background:#FBFBFB;
+		border-bottom:solid 8px #4DC700;
+		color:#5A5A5A;
 		font-size:4vw;
+		
 		width:30%;
 		-webkit-transition: -webkit-transform 1s,background 1s;
 		transition:-webkit-transform 1s,background 1s,box-shadow 1s;
@@ -188,20 +205,18 @@
 }
 
 #student_exam{
-	left:6em;
+	left:4em;
 }
 #student_practice{
-	left:12em;
+	left:9em;
 }
 #student_details{
-		color:white;
-		left:4.4em;
+		
+		left:1.6em;
 		position:relative;
-		opacity:0.9;
-		border-radius:25px;
-		border-width:5px;
-		border-style:outset;
-		background:#71C42B;
+		background:#FBFBFB;
+		border-bottom:solid 8px #4DC700;
+		color:#5A5A5A;
 		font-size:3vw;
 		width:30%;
 		-webkit-transition: -webkit-transform 1s,background 1s;

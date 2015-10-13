@@ -13,3 +13,6 @@ function  student(){
 	function developer(){
 		window.location = "developer.php";
 	}
+function company(){
+	window.location = "page2.php";
+}
