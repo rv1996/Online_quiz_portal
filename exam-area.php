@@ -4,10 +4,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="style.css">
 <style>
-* {
-	box-sizing:border-box;
-	}
+
 #displayarea {
 	position:relative;
 	padding:1%;
@@ -83,25 +82,69 @@
 </head>
 
 <body>
-<?php include 'Page-heading.php';?>
 <?php 
+include 'Page-heading.php';
 include 'connect-to-db.php';
+include 'bottom-label.php';
+?>
 
-$query_questions = "SELECT question FROM questionbank_practice WHERE QuestionType='Javascript'";
+<?php 
+
+$i = 1;
+$query_questions = "SELECT question,questionid FROM questionbank_practice WHERE QuestionType='Javascript' ORDER BY questionid";
 $result_questions = mysql_query($query_questions) or die(mysql_error());
 
 
-/*while($row = mysql_fetch_array($result_questions)){
+while($row = mysql_fetch_array($result_questions)){
 	$question[$i]=$row['question'];
 	$questionid[$i]=$row['questionid'];
+	$_SESSION['m'][$i]=0;
 	$i++;
-	}*/
+	}
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	for($j=1;$j<5;$j++){
+	$q = $_REQUEST['qid'];
+	$query = "SELECT CheckAns FROM answers_practice WHERE questionid=$questionid[$q] ORDER BY optionid";
+	$r = mysql_query($query) or die(mysql_error());
+	$i=1;
+	while($row2 = mysql_fetch_array($r)){
+		$qcheckans[$i] = $row2['CheckAns'];
+		$i++;
+		}
+	$nofoptions=$i;
+	for($j=1;$j<$nofoptions;$j++){
 		if(!empty($_POST[$j])){
-			
+			$options[$j]=1;
+		}
+		else{
+			$options[$j]=0;
+		}
+		if($qcheckans[$j] == $options[$j]){
+			$check=1;
 			}
-	    }
+		else{
+			$check=0;
+			break;
+			}
+	}
+	
+	if($check == 1){
+		if($_SESSION['m'][$q]==0){
+			$_SESSION['marks']+=3;
+			echo $_SESSION['marks'];
+			$_SESSION['m'][$q]=1;
+			}
+		}
+	else{
+		echo $_SESSION['marks'];
+		}
+		/*for($i=1;$i<=$nofoptions;$i++){
+			if(!empty($_POST[$i])){
+			if($qcans[$_POST[$i]]==1){
+				echo 'correct';
+				
+				}}
+			}*/
 	}
 ?>
 <div id="phpcode"></div>
@@ -132,7 +175,7 @@ for($i=1;$i <= $question_count;$i++){
 </div>
 <script>
 function quesSelector(selection){
-	var a = document.getElementById('selection');
+	
 	jstophp('question-show.php?q=' + selection,myFunction);
 	}
 	

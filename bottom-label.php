@@ -1,0 +1,1 @@
+<div id="bottom-label"><center>&copy srs 2015 .</center></div>

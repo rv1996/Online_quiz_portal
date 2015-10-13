@@ -1,6 +1,9 @@
 <?php 
+session_start();
+
+$_SESSION['marks']=0;
 include 'connect-to-db.php';
-$query_questions = "SELECT question, questionid FROM questionbank_practice WHERE QuestionType='Javascript'";
+$query_questions = "SELECT question, questionid FROM questionbank_practice WHERE QuestionType='Javascript' ORDER BY questionid";
 
 
 $result_questions = mysql_query($query_questions) or die(mysql_error());
@@ -9,11 +12,10 @@ $result_questions = mysql_query($query_questions) or die(mysql_error());
 for($i=1;$row = mysql_fetch_array($result_questions);$i++){
 	$question[$i] = $row['question'];
 	$questionid[$i] = $row['questionid'];
-	$query_ans = "SELECT options,checkans FROM answers_practice WHERE questionid=$questionid[$i]";
+	$query_ans = "SELECT options FROM answers_practice WHERE questionid=$questionid[$i] ORDER BY optionid";
 	$result_ans = mysql_query($query_ans) or die(mysql_error());
 	for($j=1;$row2 = mysql_fetch_array($result_ans);$j++){
 		$ans[$i][$j] = $row2['options'];
-		$checkans[$i][$j] = $row2['checkans'];
 		}
 	$nofoptions[$i]=$j - 1;
 	}
@@ -64,12 +66,12 @@ $q = $_REQUEST['q'];
 echo $q.") ".htmlentities($question[$q]);
 ?>
 </div>
-<form method="post" action="exam-area.php" onSubmit="">
+<form method="post" action="<?php echo 'exam-area.php?qid='.$q; ?>" onSubmit="">
 <div id="ans">
 <ol type="A">
 	<?php
 	for($j=1;$j<=$nofoptions[$q];$j++){
-		echo "<li><input type='checkbox' value=$j name=$j>".htmlentities($ans[$q][$j])."</li>";
+		echo "<li><input type='checkbox' value=1 name=$j>".htmlentities($ans[$q][$j])."</li>";
 	}
 	?>
 </ol>
