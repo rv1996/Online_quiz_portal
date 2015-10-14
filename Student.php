@@ -1,7 +1,7 @@
 <?php
 include 'page-heading.php';
 include 'bottom-label.php';
-	include 'connect.php';
+	require 'connect.php';
 	// header('Location: E:\xampp\htdocs\project\page1.php');
 
 
@@ -109,7 +109,7 @@ include 'bottom-label.php';
 
 	</head>
 	<body>
-	<hr>
+	
 	<div id="nav">
 		<ul>
 			<li onClick="return home();">Home</li>
@@ -122,7 +122,7 @@ include 'bottom-label.php';
 		<form action = <?php echo $_SERVER['PHP_SELF'];?> method="POST" id="student_registration">
 		<ul>
 			<fieldset>
-				<legend style="font-size:2.5vw;text-align:left;"><b>Student Regitration Form</b></legend>
+				<legend style="font-size:2.5vw;text-align:left;"><b id="form_header">Student Regitration Form</b></legend>
 				<?= $record_added;?>
 				<li><span>Student Number : </span><input type="text" name="student_number" ></li><label><?php echo $number_error.'<br>';?></label><br>
 				<li><span>Student Name :</span> <input type="text" name="student_name"></li><label><?php echo $name_error.'<br>';?></label><br>

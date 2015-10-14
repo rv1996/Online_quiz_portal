@@ -8,7 +8,7 @@
 		<script src="javascript.js"></script>
 
 	<body>
-	<hr>
+	
 	<div id="nav">
 		<ul>
 			<li onclick="return home();">Home</li>

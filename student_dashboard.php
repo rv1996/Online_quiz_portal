@@ -9,7 +9,7 @@ include 'connect.php';
 	<script src = "javascript.js"></script>
 	</head>
 	<body>
-		<hr>
+		
 	<div id="nav">
 		<ul>
 			<li onclick="return home();">Home</li>
