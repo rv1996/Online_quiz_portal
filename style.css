@@ -2,40 +2,228 @@
 *{
 		box-sizing:border-box;
 	}
-/*page heading styling*/
-#page-heading{
-	background:black;
-	color:white;
-	width:100%;
-	height:auto;
-	border-radius:20px;
-	border:3px solid white;
-	font-size:35px;
-	padding:1%;
-	position:relative;
-	opacity:0.8;
-	}
-/*bottom label styling*/
-#bottom-label{
-	background:black;
-	width:100%;
-	height:auto;
-	border:2px solid white;
-	font-size:2vw;
-	padding:1%;
-	opacity:0.8;
-	left:0px;
-	bottom:2px;
-	position:fixed;
-	color:white;
-	}
+
+#form_header{
+	border-bottom:solid 3px #4DC700;
+}
 /* styling of cover page */
+
 	body{
-		
+		width:80%;
+		margin:auto;
+		margin-top:1%;
 		/*background:#00CCFF;*/
-		background:url('bgimage.jpg');
+		background:off-white;
 		-webkit-background-size:cover;
 		background-repeat: no-repeat;
 	}
 	
+	#student, #company {
+		position:relative;
+		background:#FBFBFB;
+		border-bottom:solid 8px #4DC700;
+		color:#5A5A5A;
+		font-size:4vw;
+		width:30%;
+		-webkit-transition: -webkit-transform 1s,background 1s;
+		transition:-webkit-transform 1s,background 1s,box-shadow 1s,,border-radius 1;
+		transition-timing-function:linear;
+		display:inline;	
+		top:3.6em;
+	}
+	#student:hover ,#company:hover ,#nav li:hover,#student_exam:hover,#student_practice:hover,#student_details:hover
+	{
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2,1.2);
+		background:#F5E6E1;
+		box-shadow: 6px 6px 6px black;
+		cursor:pointer;
+	
+		border-radius:5px;
+	}
+	#student{
+		left:15%;
+		padding:2%;
+	}
+	#company{
+		
+		padding:2%;
+		left:45%;
+	}
+	ul{
+		margin-top:0px;
+	}
+	#nav li {
+		float:right;
+		list-style:none;
+		margin-top:0px;
+		margin-right:5px;
+		margin-left:5px;
+		color:#5A5A5A;
+		display:inline;
+		
+		background:#BBDEFB;
+		font-size:2vw;
+		-webkit-transition: -webkit-transform 1s,background 1s;
+		padding:5px;
+		
+		}
+	#nav{
+		background:#BBDEFB;
+		width:100%;
+		float:right;
+		margin-right:20px;
+		margin:auto;
+		border-bottom:solid 4px #B6B6B6;
+	}
+	
+/* styling of home page*/
+
+	#home-box ,#about-box,#developer-box{
+		left:4em;
+		padding:3%;
+		top:4em;
+		background:#F5F1DE;
+		border-bottom:solid 8px #4DC700;
+		
+		position:relative;
+		min-width:40%;
+		min-height:40%;
+		
+		max-width:50%;
+		font-size:2vw;
+	}
+
+	/*styling for login form*/
+	
+	
+	#login_main_box{
+		
+		position:relative;
+		margin:auto;
+		padding:5px;
+		width:60vw;
+		height:auto;
+		background:#F5F1DE	;
+		border-bottom:solid 8px #4DC700;
+		border-top:solid 8px #4DC700;
+		opacity:0.8;
+		top:4em;
+		
+	}
+	#student_login  fieldset{
+		
+		
+		font-size:1.3vw;
+		border-bottom:solid 8px #4DC700;
+		
+		left:4.6em;
+		right:5em;
+		margin:auto;
+		width:26vw;
+		height:auto;
+		background:#FFFFE0;
+	}
+	#student_login input{
+		height:2vw;
+		width:15vw;
+	}
+	button{
+		font-size:1.3em;
+		text-align:center;
+		height:2.5vw;
+		width:9vw;
+
+	}
+	
+/* styling of student page...*/
+#student_main_box,#company_main_box{
+		top:4em;
+		position:relative;
+		width:80%;
+		height:auto;
+		margin:auto;
+		background:#F5F1DE;
+        border-bottom:solid 8px #4DC700;
+		border-top:solid 8px #4DC700;
+		opacity:0.8;
+		
+	}
+#student_registration li,#company_registration li{
+	list-style:none;
+	list-style:inline;
+	
+	margin-right: 10px;  
+	font-family:Verdana, Arial, Helvetica, sans-serif;  
+	font-size:1.4vw;
+}
+
+#student_registration fieldset,#company_registration fieldset{
+		text-align:center;
+		border-bottom:solid 8px #4DC700;
+		margin:auto;
+		margin-right:7.5%;
+		margin-bottom:5%;
+		width:90%;
+		height:auto;
+		background:#FFFFE0;
+	
+}
+#student_registration input,#company_registration input{
+	
+	float:left;
+	margin-bottom:10px;
+	height:2vw;
+	width:15vw;
+}
+#student_registration span,#company_registration span{
+	float: left;  
+	clear: left;  
+	width: 30%;  
+	text-align: right;  
+	margin-right: 10px;  
+	font-family:Verdana, Arial, Helvetica, sans-serif;  
+	font-size:1.3vw;  
+}
+
+/*styling for student_dasdboard page*/
+
+#student_exam, #student_practice{
+		
+		position:relative;
+        background:#FBFBFB;
+		border-bottom:solid 8px #4DC700;
+		color:#5A5A5A;
+		font-size:4vw;
+		
+		width:30%;
+		-webkit-transition: -webkit-transform 1s,background 1s;
+		transition:-webkit-transform 1s,background 1s,box-shadow 1s;
+		display:inline;	
+		top:2.5em;
+		padding:1.6%;
+}
+
+#student_exam{
+	left:4em;
+}
+#student_practice{
+	left:9em;
+}
+#student_details{
+		
+		left:1.6em;
+		position:relative;
+		background:#FBFBFB;
+		border-bottom:solid 8px #4DC700;
+		color:#5A5A5A;
+		font-size:3vw;
+		width:30%;
+		-webkit-transition: -webkit-transform 1s,background 1s;
+		transition:-webkit-transform 1s,background 1s,box-shadow 1s;
+		display:inline;	
+		top:6em;
+		padding:1%;
+}
+
 	
