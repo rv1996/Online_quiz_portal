@@ -2,7 +2,7 @@
 include 'page-heading.php';
 include 'bottom-label.php';
 	require 'connect.php';
-	// header('Location: E:\xampp\htdocs\project\page1.php');
+	
 
 
 	
@@ -18,9 +18,7 @@ include 'bottom-label.php';
 		
 		 @$company_number = $_POST['company_number']; //1
 		 @$company_name = $_POST['company_name']; //2
-		 @$company_year = $_POST['company_year']; //3
 		 @$company_email = $_POST['company_email']; //4
-		 @$company_mobile_no = $_POST['company_mobile_no']; //5
 		 @$company_password =$_POST['company_password']; //10
 		 
 		if(empty($company_number)){
@@ -40,10 +38,7 @@ include 'bottom-label.php';
 		else{
 			
 		}
-		if(empty($company_year)){
-			$year_error = 'Enter Your Year';
-			 $field_count++;
-		}
+		
 		if(empty($company_email)){
 			$email_error = "Enter Your Email";
 			 $field_count++;
@@ -72,10 +67,11 @@ include 'bottom-label.php';
 		if(!$field_count){
 
 			$company_password = md5($company_password);
-			//mysql_query("USE OQP");
-			echo "hello";
+			
+			//echo "hello";
 			$sql_query = "INSERT INTO company_info(Name,username,Email,Password) VALUES($company_number,'$company_name','$company_email','$company_password')";
 			//echo "processing";
+
 			if(mysql_query($sql_query)){
 				$record_added =  "records added to the data";
 			}
@@ -86,7 +82,7 @@ include 'bottom-label.php';
 			mysql_close();
 			//function made to check the data entered by the user
 		}else{
-			//echo "123".mysql_error();
+			echo "123".mysql_error();
 		}
 	}
 		 

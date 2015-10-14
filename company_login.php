@@ -15,20 +15,20 @@
 				
 				
 			$password = md5($password);
-			 $query = "SELECT * FROM `company_info` WHERE Username = '$company_number' AND password = '$password' ";
+			 $query = "SELECT * FROM company_info WHERE Name = $company_number AND Password = '$password' ";
 			 // echo mysql_query("use oqp");
 			 // echo mysql_query($query); for testing of the query
-			 $query_run = mysql_query($query);
-			 $mysql_row =mysql_num_rows($query_run);
+			$query_run = mysql_query($query) or die(mysql_error());
+			$mysql_row =mysql_num_rows($query_run);
 			 
 			 
 			 if($mysql_row == 0){
-				 $combination_error =  "invalid entry combination of username and password";
+				 $combination_error =  "invalid entry combination";
 			 }
 			
 				if($mysql_row ==1){
 					$query_result = mysql_fetch_array($query_run);
-					$_SESSION['company_name'] = $query_result['Name'];
+					$_SESSION['company_name'] = $query_result['Username'];
 					//echo 'hello'.$_SESSION['user_name'];
 					header("Location: page2.php");
 					//print_r($query_result); check that we are getting the or not

@@ -4,7 +4,7 @@ include 'bottom-label.php';
 require 'connect.php';
 require 'core.php';
 
-if(is_user_loggedin()){
+if(is_user_loggedin_student()){
 	//echo "Your are logged in....";
 	echo $user_name =  '
 						<div style="font-size:3vw;text-align:left;padding-left:8px;margin:auto;background:#DCEDC8;color:#6D5252;
