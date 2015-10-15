@@ -1,7 +1,4 @@
 <?php 
-session_start();
-
-$_SESSION['marks']=0;
 include 'connect-to-db.php';
 $query_questions = "SELECT question, questionid FROM questionbank_practice WHERE QuestionType='Javascript' ORDER BY questionid";
 
@@ -35,22 +32,22 @@ $q = $_REQUEST['q'];
 	width:95%;
 	margin:auto;
 	padding:1%;
-	font-size:1.8vw;
+	font-size:1.6vw;
 	font-family:"Comic Sans MS", cursive;
 	}
-#ans{
+#options{
 	position:absolute;
-	bottom:5%;
-	height:45%;
+	bottom:10%;
+	height:40%;
 	width:95%;
 	margin:auto;
 	padding:1%;
-	font-size:1.5vw;
+	font-size:1.2vw;
 	font-family:"Comic Sans MS", cursive;
 	}
 #submit{
 	position:absolute;
-	bottom:.06vw;
+	bottom:.01vw;
 	right:5%;
 	height:16%;
 	text-align:center;
@@ -67,7 +64,7 @@ echo $q.") ".htmlentities($question[$q]);
 ?>
 </div>
 <form method="post" action="<?php echo 'exam-area.php?qid='.$q; ?>" onSubmit="">
-<div id="ans">
+<div id="options">
 <ol type="A">
 	<?php
 	for($j=1;$j<=$nofoptions[$q];$j++){
