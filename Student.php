@@ -1,6 +1,7 @@
 <?php
 include 'page-heading.php';
 include 'bottom-label.php';
+include 'core.php';
 	require 'connect.php';
 	// header('Location: E:\xampp\htdocs\project\page1.php');
 
@@ -79,7 +80,11 @@ include 'bottom-label.php';
 
 			if(mysql_query($sql_query)){
 				$record_added =  "records added to the data";
-			}
+				$_SESSION['user_name'] = $student_name;
+				header("Location: page1.php");
+					}
+					
+				}
 			else{
 				echo 'could not insert the data in the data <br> Error :'.mysql_error();
 			}
@@ -89,7 +94,7 @@ include 'bottom-label.php';
 		}else{
 			//echo "123".mysql_error();
 		}
-	}
+	
 		 
 		function proper_input($data){
 			$data = trim($data);
