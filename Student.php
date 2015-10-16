@@ -107,30 +107,29 @@ include 'core.php';
 		<script src="javascript.js"></script>
 
 		<link href="style.css" type = "text/css" rel= "stylesheet">
-		
+		<link href='https://fonts.googleapis.com/css?family=Exo:400,300' rel='stylesheet' type='text/css'>
 
 	</head>
 	<body>
 	
 	<?php include "navigation.php";?>
 
-	<div id="student_main_box">
+	<nav id="login_main_box">
 		<form action = <?php echo $_SERVER['PHP_SELF'];?> method="POST" id="student_registration">
-		<ul>
-			<fieldset>
-				<legend style="font-size:2.5vw;text-align:left;"><b id="form_header">Student Regitration Form</b></legend>
+		
+				<h2>Student Regitration Form</h2>
 				<?= $record_added;?>
-				<li><span>Student Number : </span><input type="text" name="student_number" ></li><label><?php echo $number_error.'<br>';?></label><br>
-				<li><span>Student Name :</span> <input type="text" name="student_name"></li><label><?php echo $name_error.'<br>';?></label><br>
-				<li><span>B-Tech Year :</span> <input type="text"  name="student_year"></li><label><?php echo $year_error.'<br>';?></label><br>
-				<li><span>Email Id : </span><input type="text" name="student_email"></li><label><?php echo $email_error.'<br>';?></label><br>
-				<li><span>Pasword : </span><input type="password" name="student_password"></li><label><?php echo $password_error.'<br>';?></label><br>
+				<input class="f" type="text" name="student_number" placeholder="Student Number" ><?php echo $number_error.'<br>';?>
+				<input class="f" type="text" name="student_name" placeholder="Number"><?php echo $name_error.'<br>';?>
+				<input class="f" type="text"  name="student_year" placeholder="year"><?php echo $year_error.'<br>';?>
+				<input class="f" type="text" name="student_email" placeholder="Email"><?php echo $email_error.'<br>';?>
+				<input class="f" type="password" name="student_password" placeholder="Password"><?php echo $password_error.'<br>';?>
 					
-				<input style="clear:both;margin-top:10px;" type="submit" value="Submit">
+				<button type="submit" class= "f">Done</button>
 					
-				</fieldset>
-			</ul>
+				
+			
 			</form>
-			</div>
+			</nav>
 	</body>
 </html>

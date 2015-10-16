@@ -82,7 +82,7 @@ include 'bottom-label.php';
 			mysql_close();
 			//function made to check the data entered by the user
 		}else{
-			echo "123".mysql_error();
+			//echo "123".mysql_error();
 		}
 	}
 		 
@@ -97,7 +97,7 @@ include 'bottom-label.php';
 <html>
 	<head>
 		<script src="javascript.js"></script>
-
+		<link href='https://fonts.googleapis.com/css?family=Exo:400,300' rel='stylesheet' type='text/css'>
 		<link href="style.css" type = "text/css" rel= "stylesheet">
 		
 
@@ -106,22 +106,25 @@ include 'bottom-label.php';
 	
 	<?php include "navigation.php";?>
 
-	<div id="company_main_box">
+	<nav id="login_main_box">
 		<form action = <?php echo $_SERVER['PHP_SELF'];?> method="POST" id="company_registration">
-		<ul>
-			<fieldset>
-				<legend style="font-size:2.5vw;text-align:left;"><b id="form_header">Company Regitration Form</b></legend>
+		
+			
+				<h2>Company Regitration Form</h2>
 				<?= $record_added;?>
-				<li><span>company Number : </span><input type="text" name="company_number" ></li><label><?php echo $number_error.'<br>';?></label><br>
-				<li><span>company Name :</span> <input type="text" name="company_name"></li><label><?php echo $name_error.'<br>';?></label><br>
-				<li><span>Email Id : </span><input type="text" name="company_email"></li><label><?php echo $email_error.'<br>';?></label><br>
-				<li><span>Pasword : </span><input type="password" name="company_password"></li><label><?php echo $password_error.'<br>';?></label><br>
+				<br>
+				<input class = "f" type="text" name="company_number" placeholder="Company Number" value="<?php echo $number_error;?>" >
+				<input class = "f" type="text" name="company_name" placeHolder="Name" value="<?php echo $name_error;?>">
+				<input class ="f" type="text" name="company_email" placeHolder="Email"value="<?php echo $email_error;?>">
+				<input class ="f" type="password" name="company_password" placeHolder="Password" >
+				<br>
+				<label class="f"><?php echo $password_error;?></label>
 					
-				<input style="clear:both;margin-top:10px;" type="submit" value="Submit">
+				<button class="f" type="submit" >Done</button>
 					
-				</fieldset>
-			</ul>
+				
+			
 			</form>
-			</div>
+	</nav>
 	</body>
 </html>

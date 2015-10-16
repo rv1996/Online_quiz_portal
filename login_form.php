@@ -57,11 +57,11 @@
 	<form action="<?php echo $current_file?>" method="POST" id="student_login">
 	
 			<h2>Sign In.. </h2>
-			<label><?= $entry_error.'<br>';?></label>
+					
+			<label><?= $entry_error.'<br>';?><?php echo $combination_error;?></label>
 			<input class="f" type="text" name="user_name" placeHolder="Username"><br>
 			<input class="f" type="password" name="password" placeHolder="Password"> <br> 
-			<?php echo $combination_error;?><br>
-			<button  class="f" type="submit" name="submit">Submit</button><br>
+			<button  class="f" type="submit" name="submit">Sign in</button><br>
 			<label class="f"><a href="Student.php">Sign Up</a></span>
 	
 	</form>
