@@ -31,6 +31,7 @@
 				if($mysql_row ==1){
 					$query_result = mysql_fetch_array($query_run);
 					$_SESSION['user_name'] = $query_result['Name'];
+					$_SESSION['student_data'] = $query_result;
 					//echo 'hello'.$_SESSION['user_name'];
 					header("Location: page1.php");
 					//print_r($query_result); check that we are getting the or not
@@ -48,31 +49,23 @@
 <html>
 <link href="style.css" type="text/css" rel="stylesheet">
 <script src="javascript.js"></script>
-
+<link href='https://fonts.googleapis.com/css?family=Exo:400,300' rel='stylesheet' type='text/css'>
 <body>
 
-<div id="nav">
-		<ul>
-			<li onClick="return home();">Home</li>
-			<li onClick="return about();">About</li>
-			<li onClick="return developer();">Developer's</li>
-		</ul>
-	</div>
-<div id="login_main_box">
-	<form action="<?php echo $current_file?>" method="POST" id="student_login">
-	<fieldset id="login_student">
-		<legend style="text-align:left;font-size:3vw;"> Login Form </legend>
-		<?= $entry_error.'<br>';?>
-		<span>Username :</span><input type="text" name="user_name"><br>
-		<br><span>Password :</span> <input type="password" name="password"> <br> 
-		<?php echo $combination_error;?><br>
+<?php include "navigation.php";?>
 
-		<button  type="submit" name="submit">Submit</button><br><br>
-		
-		<span>new user : <strong><a href="Student.php">Registration form</a></strong></span>
-	</fieldset>
+<nav id="login_main_box">
+	<form action="<?php echo $current_file?>" method="POST" id="student_login">
+	
+			<h2>Sign In.. </h2>
+			<label><?= $entry_error.'<br>';?></label>
+			<input class="f" type="text" name="user_name" placeHolder="Username"><br>
+			<input class="f" type="password" name="password" placeHolder="Password"> <br> 
+			<?php echo $combination_error;?><br>
+			<button  class="f" type="submit" name="submit">Submit</button><br>
+			<label class="f"><a href="Student.php">Sign Up</a></label>
+	
 	</form>
-</div>
+</nav>
 </body>
 </html>
-_

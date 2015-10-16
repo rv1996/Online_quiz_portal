@@ -2,6 +2,9 @@
 
 <?php include 'page-heading.php' ;
 	  include 'bottom-label.php';
+	  include 'core.php';
+
+		
 ?>
 
 <html>
@@ -9,14 +12,7 @@
 
 	<body>
 	
-	<div id="nav">
-		<ul>
-			<li onclick="return home();">Home</li>
-			<li onclick="return about();">About</li>
-			<li onclick="return developer();">Developer's</li>
-		</ul>
-	</div>
-	
+<?php include "navigation.php";?>	
 		<div id = "developer-box">
 				Contain the information about the developer....
 			</div>

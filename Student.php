@@ -115,13 +115,9 @@ include 'core.php';
 	</head>
 	<body>
 	
-	<div id="nav">
-		<ul>
-			<li onClick="return home();">Home</li>
-			<li onClick="return about();">About</li>
-			<li onClick="return developer();">Developer's</li>
-		</ul>
-	</div>
+
+	<?php include "navigation.php";?>
+
 
 	<div id="student_main_box">
 		<form action = <?php echo $_SERVER['PHP_SELF'];?> method="POST" id="student_registration">

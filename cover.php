@@ -1,8 +1,12 @@
 <?php include 'page-heading.php'?>
 <?php
  //opening page of project....
+ include 'core.php';
  
-
+$_SESSION['page_name'] ='';
+if(is_user_loggedin_student()){
+		  header("Location: page1.php");
+	  }
 ?>
 
 <html>
@@ -13,13 +17,7 @@
 </head>
 
 <body>
-	<div id="nav">
-		<ul>
-			<li onclick="return home();">Home</li>
-			<li onclick="return about();">About</li>
-			<li onclick="return developer();">Developer's</li>
-		</ul>
-	</div>
+	<?php include "navigation.php";?>
 	
 		<div id = "student"  onclick="return student();">Student</div>
 		<div id = "company"  onclick="return company();">Company</div><br>

@@ -5,7 +5,7 @@ function  student(){
 		window.location = "company.php";
 	}
 	function home(){
-		window.location = "home.php";
+		window.location = "cover.php";
 	}
 	function about(){
 		window.location = "about.php";
@@ -15,4 +15,7 @@ function  student(){
 	}
 function company(){
 	window.location = "page2.php";
+}
+function sign_in(){
+		window.location = "cover.php";
 }
