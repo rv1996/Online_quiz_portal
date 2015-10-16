@@ -18,30 +18,45 @@
 		-webkit-background-size:cover;
 		background-repeat: no-repeat;
 	}
-	
+	#cover{
+		position:relative;
+		top:8%;
+		padding:1.5%;
+	}
+	#student footer,#company footer{
+		position:relative;
+		font-size:small;
+		top:4em;
+	}
 	#student, #company {
 		position:relative;
+		display:block;
 		background:#FBFBFB;
 		border-bottom:solid 8px #4DC700;
 		color:#5A5A5A;
-		font-size:4vw;
+		font-size:3vw;
 		width:30%;
+		height:30%;
+		top:inherit;
+		text-align:center;
+		padding:1.5%;
+		box-shadow: 2px 2px 2px #67676D;
 		-webkit-transition: -webkit-transform 1s,background 1s;
 		transition:-webkit-transform 1s,background 1s,box-shadow 1s,,border-radius 1,font-family 1s;
 		/*transition-timing-function:linear;*/
-		display:inline;	
-		top:3.6em;
+		
+		
 	}
 	#student:hover ,#company:hover ,#student_exam:hover,#student_practice:hover,#student_details:hover
 	{
-		-webkit-transform: scale(1.2);
-		transform: scale(1.2,1.2);
+		-webkit-transform: scale(1.1,1.1);
+		transform: scale(1.1,1.1);
 		background:#F5E6E1;
 		box-shadow: 6px 6px 6px grey;
 		cursor:pointer;
 	    font-family: 'Open Sans Condensed', arial, sans;
 		border-radius:5px;
-		color:black;
+		
 	}
 	#nav li:hover{
 		background:#607D8B;
@@ -50,15 +65,7 @@
 		
 		color:#FBF5F3;
 	}
-	#student{
-		left:15%;
-		padding:2%;
-	}
-	#company{
-		
-		padding:2%;
-		left:45%;
-	}
+	
 	ul{
 		margin:0px;
 		
@@ -126,7 +133,7 @@
 		float:left;
 		width:35%;
 		min-width:400px;
-		background:#FFFFE0;
+		background:#DFE0D3;
 		height:90%;
 		
 		
@@ -142,7 +149,7 @@
 		font-family: 'Exo', sans-serif;
 	}
 	
-	.f{
+	.form-input{
 		width:300px;
 		border:none;
 		outline:none;
@@ -158,55 +165,9 @@
 	}
 			
 /* styling of student page...*/
-#company_main_box{
-		top:10%;
-		position:relative;
-		width:80%;
-		height:auto;
-		margin:auto;
-		background:#F5F1DE;
-        border-bottom:solid 8px #4DC700;
-		border-top:solid 8px #4DC700;
-		opacity:0.8;
-		
-	}
-#student_registration li,#company_registration li{
-	list-style:none;
-	list-style:inline;
-	
-	margin-right: 10px;  
-	font-family:Verdana, Arial, Helvetica, sans-serif;  
-	font-size:1.4vw;
 }
 
-#student_registration fieldset,#company_registration fieldset{
-		text-align:center;
-		border-bottom:solid 8px #4DC700;
-		margin:auto;
-		margin-right:7.5%;
-		margin-bottom:5%;
-		width:90%;
-		height:auto;
-		background:#FFFFE0;
-	
-}
-#student_registration input,#company_registration input{
-	
-	float:left;
-	margin-bottom:10px;
-	height:2vw;
-	width:15vw;
-}
-#student_registration span,#company_registration span{
-	float: left;  
-	clear: left;  
-	width: 30%;  
-	text-align: right;  
-	margin-right: 10px;  
-	
-	font-family:Verdana, Arial, Helvetica, sans-serif;  
-	font-size:1.3vw;  
-}
+
 
 /*styling for student_dasdboard page*/
 
@@ -249,8 +210,8 @@
 		top:70%;
 		padding:1%;
 }
-/*
-nav{
+
+.display{
 	height:80%;
 	width:25%;
 	background:#373232;
@@ -258,17 +219,17 @@ nav{
 	color:white;
 	
 }
-nav li{
+.display li{
 	margin-bottom:3px;
 }
-nav ul span{
+.display ul span{
 	border-bottom:solid 2px white;
 	
 }
-nav ul li label,span{
+.display ul li label,span{
 	padding:3px;
 	font-size:2vw;
 }
-*/
+
 
 	

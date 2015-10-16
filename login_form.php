@@ -40,7 +40,7 @@
 			
 			
 		}else{
-			$entry_error = "enter the username and password<br>";
+			$entry_error = "enter the Student Number and Password<br>";
 		}
 	}
 	
@@ -57,13 +57,14 @@
 <nav id="login_main_box">
 	<form action="<?php echo $current_file?>" method="POST" id="student_login">
 	
-			<h2>Sign In.. </h2>
-			<label><?= $entry_error.'<br>';?></label>
-			<input class="f" type="text" name="user_name" placeHolder="Username"><br>
-			<input class="f" type="password" name="password" placeHolder="Password"> <br> 
-			<?php echo $combination_error;?><br>
-			<button  class="f" type="submit" name="submit">Submit</button><br>
-			<label class="f"><a href="Student.php">Sign Up</a></label>
+			<h2>Student Login</h2>
+					
+			<label><?= $entry_error.'<br>';?><?php echo $combination_error;?></label>
+			<input class="form-input" type="text" name="user_name" placeHolder="Student Number"><br>
+			<input class="form-input" type="password" name="password" placeHolder="Password"> <br> 
+			<label class="form-input"><?php  echo $combination_error;?></label><br><br>
+            <button  class="form-input" type="submit" name="submit">Sign In</button><br><br>
+			<label class="form-input">Not a member, <a href="Student.php">Register</a> Here</label>
 	
 	</form>
 </nav>

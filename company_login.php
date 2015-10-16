@@ -7,66 +7,60 @@
 	$combination_error = '';
 		
 	if($_SERVER["REQUEST_METHOD"]== "POST"){
-		$company_number = $_POST['company_number'];
+		$username = $_POST['username'];
 		$password = $_POST['password'];
 		
 		
-		if(!empty($company_number) && !empty($password)){
-				
-				
+		if(!empty($username) && !empty($password)){
 			$password = md5($password);
-			 $query = "SELECT * FROM company_info WHERE Name = $company_number AND Password = '$password' ";
-			 // echo mysql_query("use oqp");
-			 // echo mysql_query($query); for testing of the query
-			$query_run = mysql_query($query) or die(mysql_error());
-			$mysql_row =mysql_num_rows($query_run);
+			$query = "SELECT * FROM company_info WHERE Username='$username' AND Password='$password' ";
+			// echo mysql_query("use oqp");
+			// echo mysql_query($query); for testing of the query
+			$query_run = mysql_query($query);
+			@$mysql_row =mysql_num_rows($query_run);
 			 
 			 
-			 if($mysql_row == 0){
-				 $combination_error =  "invalid entry combination";
-			 }
+			if($mysql_row == 0){
+				$combination_error =  "invalid entry combination";
+			 	}
 			
-				if($mysql_row ==1){
-					$query_result = mysql_fetch_array($query_run);
-					$_SESSION['company_name'] = $query_result['Username'];
-					//echo 'hello'.$_SESSION['user_name'];
-					header("Location: page2.php");
-					//print_r($query_result); check that we are getting the or not
+			if($mysql_row ==1){
+				$query_result = mysql_fetch_array($query_run);
+				$_SESSION['company_name'] = $query_result['Username'];
+				$_SESSION['company_data'] = $query_result;
+				//echo 'hello'.$_SESSION['user_name'];
+				header("Location: page2.php");
+				//print_r($query_result); check that we are getting the or not
 				}
 			
-			
-			
-		}else{
-			$entry_error = "enter the username and password<br>";
 		}
-	}
-	
-	?>
+		else{
+			$entry_error = "enter the username and password<br>";
+			}
+		}
+?>
 
 <html>
 <link href="style.css" type="text/css" rel="stylesheet">
 <script src="javascript.js"></script>
-
+<link href='https://fonts.googleapis.com/css?family=Exo:400,300' rel='stylesheet' type='text/css'>
 <body>
 
-	<?php include "navigation.php";?>
-<div id="login_main_box">
-
-	
+<?php include "navigation.php";?>
+<nav id="login_main_box">
 	<form action="<?php echo $current_file?>" method="POST" id="student_login">
-	<fieldset id="login_student">
-		<legend style="text-align:left;font-size:3vw;"> Login Form </legend>
-		<?= $entry_error.'<br>';?>
-		<span>Company No :<span><input type="text" name="company_number"><br>
-		<br><span>Company ps :<span> <input type="password" name="password"> <br> 
-		<?php echo $combination_error;?><br>
-
-		<button  type="submit" name="submit">Submit</button><br><br>
-		
-		<span>New Company : <strong><a href="company_register.php">Registration form</a></strong></span>
-	</fieldset>
+	
+		<h2>Company Login</h2>
+        <br>
+	
+		<label class="form-input"><?php echo $entry_error.'<br>';?></label>
+		<input class = "form-input" type="text" name="username" placeholder="Username"><br>
+		<input class = "form-input" type="password" name="password" placeholder="Password"> <br> 
+		<label class="form-input"><?php  echo $combination_error;?></label><br><br>
+		<button class="form-input"  type="submit" name="submit">Sign In</button><br><br>
+		<label class="form-input">Not a member, <a href="company_register.php">Register</a> Here</label>
+	
 	</form>
-</div>
+</nav>
 </body>
 </html>
-_

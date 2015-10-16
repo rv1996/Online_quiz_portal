@@ -25,48 +25,48 @@ require 'connect.php';
 		 @$student_password =$_POST['student_password']; //5
 		 
 		if(empty($student_number)){
-			 $number_error = "Enter your number";
+			 $number_error = "Enter Student Number";
 			 $field_count++;
 			}
 		else{
 			$student_number = proper_input($student_number);
 			if(preg_match("/\D/",$student_number)){
-			   $number_error = "Only number's";
+			   $number_error = "Only Numbers";
 			   $field_count++;
 			   }
 		    }
 		
 		if(empty($student_name)){
-			 $name_error = "Enter Your name";
+			 $name_error = "Enter Student's Name";
 			 $field_count++;
 		     }
 		else{
 			$student_name = proper_input($student_name);
 			if(!preg_match("/^[a-zA-Z ]*$/",$student_name)){
-				$name_error = "Only letters whitespaces allowed";
+				$name_error = "Only Letters & Whitespaces Allowed";
 				$field_count++;
 		    	}
 		    }
 
 		if(empty($student_year)){
-			$year_error = 'Enter Your Year';
+			$year_error = 'Enter BTech Year';
 			$field_count++;
 		    }
 		else{
 			$student_year = proper_input($student_year);
 			if(preg_match("/\D/",$student_year)){
-				$year_error = 'Only no. in year';
+				$year_error = 'Only No. in Year';
 			    $field_count++;
 				}
 			
 			if($student_year<1 && $student_year>4){
-				 $year_error = 'Wrong year';
+				 $year_error = 'Year only B/w 1 and 4';
 				 $field_count++;
 				 }
 			}
 
 		if(empty($student_email)){
-			$email_error = "Enter Your Email";
+			$email_error = "Enter Email";
 			$field_count++;
 		    }
 		else{
@@ -80,27 +80,23 @@ require 'connect.php';
 		
 
 		if(empty($student_password)){
-			$password_error = "enter Your password..";
+			$password_error = "Enter Password";
 			$field_count++;
 		}
 		else{
+			$student_password = proper_input($student_password);
 			if(!preg_match("/\d/",$student_password)){
-				$password_error ='No digits in Password';
+				$password_error ='No Digits in Password';
 				$field_count++;
 				}
-			else 
-				if(!preg_match("/\W/",$student_password)){
-					$password_error ='No Special Chars in Password';
-					$field_count++;
-			    	}
-			    else{
-				    $student_password = proper_input($student_password);
-					}
+			if(!preg_match("/\W/",$student_password)){
+				$password_error ='No Special Chars in Password';
+				$field_count++;
+			    }
 			}
 		
 		
-		 //echo "processing";
-		//echo $field_count;                                 all for testing perpose...
+		
 	    // inserting the data in the data bas
 		if(!$field_count){
 			$student_password = md5($student_password);
@@ -112,61 +108,46 @@ require 'connect.php';
 				$_SESSION['user_name'] = $student_name;
 				header("Location: page1.php");
 				}
-					
+			else{
+				die(mysql_error());
+				}
 			}
-		else{
-			echo 'could not insert the data in the data <br> Error :'.mysql_error();
-			}
-			
 		mysql_close();
-			//function made to check the data entered by the user
 		}
 	
-		 
-		function proper_input($data){
-			$data = trim($data);
-			$data = stripslashes($data);
-			$data = htmlspecialchars($data);
-			return($data);
-	}
-	
-
-	?>
+		//function made to check the data entered by the user 
+	function proper_input($data){
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return($data);
+		}
+?>
 <html>
 	<head>
 		<script src="javascript.js"></script>
 
 		<link href="style.css" type = "text/css" rel= "stylesheet">
-		
+		<link href='https://fonts.googleapis.com/css?family=Exo:400,300' rel='stylesheet' type='text/css'>
 
 	</head>
 	<body>
-	<?php include "navigation.php"; ?>
-    
-    <div id="student_main_box">
-		<form action = <?php echo htmlspecialchars($_SERVER['PHP_SELF']);?> method="POST" id="student_registration" autocomplete="off">
-		<ul>
-			<fieldset>
-				<legend style="font-size:2.5vw;text-align:left;"><b id="form_header">Student Regitration Form</b></legend>
-				<?php //echo $record_added;?>
-				<li><span>Student Number : </span><input type="text" name="student_number" ></li><label><?php echo $number_error."<br>";?></label><br>
-				<li><span>Student Name :</span> <input type="text" name="student_name"></li><label><?php echo $name_error.'<br>';?></label><br>
-				<li><span>B-Tech Year :</span> <input type="text"  name="student_year"></li><label><?php echo $year_error.'<br>';?></label><br>
-				<li><span>Email Id : </span><input type="text" name="student_email" autocomplete="off"></li><label><?php 
-				echo $email_error.'<br>';?></label><br>
-				<li><span>Password : </span><input type="password" name="student_password" autocomplete="off"></li><label><?php 
-				echo $password_error.'<br>';?></label><br>
+	<?php include "navigation.php";?>
+
+	<nav id="login_main_box">
+		<form action = <?php echo $_SERVER['PHP_SELF'];?> method="POST" id="student_registration">
+		
+				<h2>Student Regitration Form</h2>
+				<?= $record_added;?>
+				<input class="form-input" type="text" name="student_number" placeholder="Student Number" ><?php echo '<br><center>'.$number_error.'</center>';?>
+				<input class="form-input" type="text" name="student_name" placeholder="Name"><?php echo '<br><center>'.$name_error.'</center>';?>
+				<input class="form-input" type="text"  name="student_year" placeholder="BTech Year"><?php echo '<br><center>'.$year_error.'</center>';?>
+				<input class="form-input" type="text" name="student_email" placeholder="Email" ><?php echo '<br><center>'.$email_error.'</center>';?>
+				<input class="form-input" type="password" name="student_password" placeholder="Password"><?php echo '<br><center>'.$password_error.'</center>';?>
 					
-				<input style="clear:both;margin-top:10px;" type="submit" value="Submit">
+				<button type="submit" class= "form-input">Done</button>
 					
-				</fieldset>
-			</ul>
-			</form>
-			</div>
-
-	
-
-
-	
+		</form>
+	</nav>
 	</body>
 </html>

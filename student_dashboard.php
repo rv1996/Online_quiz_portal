@@ -10,6 +10,7 @@ include 'connect.php';
 	<head>
 	<link href="style.css" type="text/css" rel="stylesheet">
 	<script src = "javascript.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Exo:400,300' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 	
@@ -17,6 +18,7 @@ include 'connect.php';
 	<?php include 'navigation.php';?>
 	
 	<nav id="display">
+		
 		<ul>
 			<li><label>Name:</label></li><span><?= $_SESSION['student_data']['StudentNumber']?></span>
 			<br><br>
