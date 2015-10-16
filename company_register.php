@@ -80,6 +80,8 @@ require 'connect.php';
 			if(mysql_query($sql_query)){
 				$record_added =  "records added to the data";
 				$_SESSION['company_name'] = $company_name;
+				$company_result = mysql_query("SELECT * FROM company_info WHERE Username='$username' AND Password='$password'");
+				$_SESSION['company_data'] = $company_result;
 				header("Location: page2.php");
 				}
 			else{

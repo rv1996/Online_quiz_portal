@@ -165,20 +165,18 @@
 	}
 			
 /* styling of student page...*/
-}
+
 
 
 
 /*styling for student_dasdboard page*/
 
-#student_exam, #student_practice{
-		
+#student-exam, #student-practice{
 		position:absolute;
         background:#FBFBFB;
 		border-bottom:solid 8px #4DC700;
 		color:#5A5A5A;
 		font-size:4vw;
-		
 		width:18%;
 		-webkit-transition: -webkit-transform 1s,background 1s;
 		transition:-webkit-transform 1s,background 1s,box-shadow 1s;
@@ -188,13 +186,16 @@
 		padding:1.6%;
 }
 
-#student_exam{
+
+#student-exam{
 	left:9em;
+	
 }
-#student_practice{
+#student-practice{
 	left:17em;
+	
 }
-#student_details{
+#student-details{
 		
 		left:53%;
 		position:absolute;

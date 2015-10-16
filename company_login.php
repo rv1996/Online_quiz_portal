@@ -26,7 +26,7 @@
 			
 			if($mysql_row ==1){
 				$query_result = mysql_fetch_array($query_run);
-				$_SESSION['company_name'] = $query_result['Username'];
+				$_SESSION['company_name'] = $query_result['Name'];
 				$_SESSION['company_data'] = $query_result;
 				//echo 'hello'.$_SESSION['user_name'];
 				header("Location: page2.php");

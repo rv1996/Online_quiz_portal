@@ -19,9 +19,9 @@ include 'connect.php';
 	<nav class="display">
 		
 		<ul>
-			<li><label>Company no:</label></li><span><?= $_SESSION['company_data']['Name']?></span>
+			<li><label>Company ID:</label></li><span><?php echo @$_SESSION['company_data']['CompanyId']?></span>
 			<br><br>
-			<li><label>company name</label></li><span><?= $_SESSION['company_data']['Username']?></span>
+			<li><label>Name:</label></li><span><?php echo @$_SESSION['company_data']['Name']?></span>
 			
 			<br>
 		</ul>

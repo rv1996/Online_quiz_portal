@@ -28,11 +28,11 @@
 			 }
 			
 
-				if($mysql_row ==1){
+				if($mysql_row == 1){
 					$query_result = mysql_fetch_array($query_run);
 					$_SESSION['user_name'] = $query_result['Name'];
 					$_SESSION['student_data'] = $query_result;
-					//echo 'hello'.$_SESSION['user_name'];
+					
 					header("Location: page1.php");
 					//print_r($query_result); check that we are getting the or not
 				}
@@ -40,7 +40,7 @@
 			
 			
 		}else{
-			$entry_error = "enter the Student Number and Password<br>";
+			$entry_error = "Enter the Student Number and Password<br>";
 		}
 	}
 	
@@ -59,10 +59,10 @@
 	
 			<h2>Student Login</h2>
 					
-			<label><?= $entry_error.'<br>';?><?php echo $combination_error;?></label>
+			<label><center><?php echo $entry_error.'<br>';?><?php echo $combination_error;?></center></label>
 			<input class="form-input" type="text" name="user_name" placeHolder="Student Number"><br>
 			<input class="form-input" type="password" name="password" placeHolder="Password"> <br> 
-			<label class="form-input"><?php  echo $combination_error;?></label><br><br>
+			
             <button  class="form-input" type="submit" name="submit">Sign In</button><br><br>
 			<label class="form-input">Not a member, <a href="Student.php">Register</a> Here</label>
 	

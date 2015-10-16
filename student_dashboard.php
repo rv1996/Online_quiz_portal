@@ -17,20 +17,22 @@ include 'connect.php';
 		
 	<?php include 'navigation.php';?>
 	
-	<nav id="display">
+	<nav class="display">
 		
 		<ul>
-			<li><label>Name:</label></li><span><?= $_SESSION['student_data']['StudentNumber']?></span>
+			<li><label>Student ID:</label></li><span><?php echo @$_SESSION['student_data']['StudentNumber']?></span>
 			<br><br>
-			<li><label>Student:</label></li><span><?= $_SESSION['student_data']['Name']?></span>
+			<li><label>Name:</label></li><span><?php echo @$_SESSION['student_data']['Name']?></span>
 			<br><br>
-			<li><label>B-Tech:</label></li><span><?= $_SESSION['student_data']['Btech_year'].'nd'?></span>
+			<li><label>B-Tech Year:</label></li><span><?php echo @$_SESSION['student_data']['BTechYear'].'nd'?></span>
 			<br>
 		</ul>
 	</nav>
 	
 	
-	<div id="student_exam" onclick="return exam();">Exam</div> <div id="student_practice" onclick="return practice();">Practice</div><div id="student_details">Details</div>
+	<div id="student-exam" onClick="return exam();">Exam</div> 
+    <div id="student-practice" onClick="return practice();">Practice</div>
+    <div id="student-details">Details</div>
 
 	</body>
 </html>
