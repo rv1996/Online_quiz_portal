@@ -11,6 +11,7 @@ include 'connect.php';
 	<link href="style.css" type="text/css" rel="stylesheet">
 	<script src = "javascript.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Exo:400,300' rel='stylesheet' type='text/css'>
+    <link href="dashboard.css" type="text/css" rel="stylesheet">
 	</head>
 	<body>
 	

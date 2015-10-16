@@ -1,6 +1,6 @@
-<?php
-//navigation bar for all the pages.....
-?>
+
+<link rel="stylesheet" type="text/css" href="navigation.css" />
+
 <div id="nav">
 		<ul>
 			<li onclick="return home();">Home</li>

@@ -10,6 +10,7 @@ include 'connect.php';
 	<head>
 	<link href="style.css" type="text/css" rel="stylesheet">
 	<script src = "javascript.js"></script>
+    <link href="dashboard.css" type="text/css" rel="stylesheet">
 	</head>
 	<body>
 	

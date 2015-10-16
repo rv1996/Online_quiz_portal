@@ -13,6 +13,7 @@ if(is_user_loggedin_student()){
 <head>
 <meta name="viewport" content="width=device-width,initial-scale = 1.0">
 <link href="style.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="cover.css">
 <script src="javascript.js"></script>
 </head>
 
@@ -24,7 +25,7 @@ if(is_user_loggedin_student()){
 		<footer>What profession could you be succesful in ???</footer>
 		</div><br>
 		<div id = "company"  onclick="return company();">Company
-		<footer>If you really wanna fly give up the things that way you down...</footer>
+		<footer>If you really wanna fly give up the things that weigh you down...</footer>
 		</div><br>
 		</div>
 	

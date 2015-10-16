@@ -102,6 +102,7 @@ require 'connect.php';
 <html>
 	<head>
 		<script src="javascript.js"></script>
+        <link href="login.css" type="text/css" rel="stylesheet">
 		<link href='https://fonts.googleapis.com/css?family=Exo:400,300' rel='stylesheet' type='text/css'>
 		<link href="style.css" type = "text/css" rel= "stylesheet">
 		
