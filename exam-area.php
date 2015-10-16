@@ -1,3 +1,5 @@
+<?php
+$_SESSION['table']=NULL; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -105,11 +107,15 @@ for($i=1;$i <= $question_count;$i++){
 	}
 ?>
 </div>
-<button id="end" onclick="endExam()">END</button>
+<button id="end" onclick="endExam()" style="height:1.5vw;width:3vw;padding:auto">END</button>
 <script>
-/*function endExam(){
-	document.getElementById('phpcode').innerHTML = "<?php session_destroy(); ?>";
-	}*/
+function endExam(){
+	jstophp('delete-temp-table.php',del);
+	}
+	
+function del(xhhtp){
+	document.getElementById('phpcode').innerHTML = xhttp.responseText;
+	}
 	
 function quesSelector(selection){	
 	jstophp('question-show.php?q=' + selection,myFunction);

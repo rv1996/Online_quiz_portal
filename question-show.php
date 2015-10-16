@@ -35,6 +35,7 @@ $q = $_REQUEST['q'];
 	font-size:1.6vw;
 	font-family:"Comic Sans MS", cursive;
 	}
+	
 #options{
 	position:absolute;
 	bottom:10%;
