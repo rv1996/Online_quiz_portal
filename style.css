@@ -1,6 +1,7 @@
 /* styling of all the  pages are done here....*/
 *{
 		box-sizing:border-box;
+		 font-family: 'Open Sans Condensed', arial, sans;
 	}
 
 #form_header{
@@ -9,9 +10,9 @@
 /* styling of cover page */
 
 	body{
-		width:80%;
+		width:90%;
 		margin:auto;
-		margin-top:1%;
+		
 		/*background:#00CCFF;*/
 		background:off-white;
 		-webkit-background-size:cover;
@@ -26,20 +27,28 @@
 		font-size:4vw;
 		width:30%;
 		-webkit-transition: -webkit-transform 1s,background 1s;
-		transition:-webkit-transform 1s,background 1s,box-shadow 1s,,border-radius 1;
-		transition-timing-function:linear;
+		transition:-webkit-transform 1s,background 1s,box-shadow 1s,,border-radius 1,font-family 1s;
+		/*transition-timing-function:linear;*/
 		display:inline;	
 		top:3.6em;
 	}
-	#student:hover ,#company:hover ,#nav li:hover,#student_exam:hover,#student_practice:hover,#student_details:hover
+	#student:hover ,#company:hover ,#student_exam:hover,#student_practice:hover,#student_details:hover
 	{
 		-webkit-transform: scale(1.2);
 		transform: scale(1.2,1.2);
 		background:#F5E6E1;
-		box-shadow: 6px 6px 6px black;
+		box-shadow: 6px 6px 6px grey;
 		cursor:pointer;
-	
+	    font-family: 'Open Sans Condensed', arial, sans;
 		border-radius:5px;
+		color:black;
+	}
+	#nav li:hover{
+		background:#607D8B;
+		cursor:pointer;
+		
+		
+		color:#FBF5F3;
 	}
 	#student{
 		left:15%;
@@ -51,30 +60,46 @@
 		left:45%;
 	}
 	ul{
-		margin-top:0px;
+		margin:0px;
+		
 	}
-	#nav li {
-		float:right;
+	li{
 		list-style:none;
-		margin-top:0px;
-		margin-right:12px;
-		margin-left:5px;
-		color:#5A5A5A;
+
+	}
+	#nav li,#nav_side{
+		float:left;
+		
+		margin-right:20px;
+		margin-top:5px;
+		color:#FBF5F3;
 		display:inline;
 		
-		background:#BBDEFB;
-		font-size:2vw;
-		-webkit-transition: -webkit-transform 1s,background 1s;
-		padding:5px;
+		background:#607D8B;
+		font-size:large;
 		
-		}
+		/*-webkit-transition: -webkit-transform 1s,background 1s;*/
+		
+	}
+	#nav_side{
+		width:30%;
+		margin-right:10px;
+		margin-top:5px;
+		float:right;
+		text-align:right;
+		color:#FBF5F3;
+	}
+	
+		
 	#nav{
-		background:#BBDEFB;
+		background:#607D8B;
 		width:100%;
 		float:right;
-		margin-right:20px;
-		margin:auto;
+		
 		border-bottom:solid 4px #B6B6B6;
+	}
+	li#button{
+		float:right;
 	}
 	
 /* styling of home page*/
@@ -98,47 +123,43 @@
 	
 	
 	#login_main_box{
-		
-		position:relative;
-		margin:auto;
-		padding:5px;
-		width:60vw;
-		height:auto;
-		background:#F5F1DE	;
-		border-bottom:solid 8px #4DC700;
-		border-top:solid 8px #4DC700;
-		opacity:0.8;
-		top:4em;
-		
-	}
-	#student_login  fieldset{
-		
-		
-		font-size:1.3vw;
-		border-bottom:solid 8px #4DC700;
-		
-		left:4.6em;
-		right:5em;
-		margin:auto;
-		width:26vw;
-		height:auto;
+		float:left;
+		width:35%;
+		min-width:400px;
 		background:#FFFFE0;
-	}
-	#student_login input{
-		height:2vw;
-		width:15vw;
-	}
-	button{
-		font-size:1.3em;
-		text-align:center;
-		height:2.5vw;
-		width:9vw;
-
+		height:90%;
+		
+		
 	}
 	
+	#login_main_box h2{
+		
+		background:#373232;
+		color:white;
+		margin-top:0px;
+		padding:4%;
+		text-align:center;
+		font-family: 'Exo', sans-serif;
+	}
+	
+	.f{
+		width:300px;
+		border:none;
+		outline:none;
+		height:7%;
+		margin-left:13%;
+		margin-bottom:10px;
+		
+	}
+	#login_main_box button{
+		background:#373232;
+		color:white;
+		font-size:large;
+	}
+			
 /* styling of student page...*/
-#student_main_box,#company_main_box{
-		top:4em;
+#company_main_box{
+		top:10%;
 		position:relative;
 		width:80%;
 		height:auto;
@@ -182,6 +203,7 @@
 	width: 30%;  
 	text-align: right;  
 	margin-right: 10px;  
+	
 	font-family:Verdana, Arial, Helvetica, sans-serif;  
 	font-size:1.3vw;  
 }
@@ -190,40 +212,63 @@
 
 #student_exam, #student_practice{
 		
-		position:relative;
+		position:absolute;
         background:#FBFBFB;
 		border-bottom:solid 8px #4DC700;
 		color:#5A5A5A;
 		font-size:4vw;
 		
-		width:30%;
+		width:18%;
 		-webkit-transition: -webkit-transform 1s,background 1s;
 		transition:-webkit-transform 1s,background 1s,box-shadow 1s;
 		display:inline;	
-		top:2.5em;
+		top:40%;
+		text-align:center;
 		padding:1.6%;
 }
 
 #student_exam{
-	left:4em;
+	left:9em;
 }
 #student_practice{
-	left:9em;
+	left:17em;
 }
 #student_details{
 		
-		left:1.6em;
-		position:relative;
+		left:53%;
+		position:absolute;
 		background:#FBFBFB;
 		border-bottom:solid 8px #4DC700;
 		color:#5A5A5A;
 		font-size:3vw;
-		width:30%;
+		width:13%;
+		text-align:center;
 		-webkit-transition: -webkit-transform 1s,background 1s;
 		transition:-webkit-transform 1s,background 1s,box-shadow 1s;
 		display:inline;	
-		top:6em;
+		top:70%;
 		padding:1%;
 }
+/*
+nav{
+	height:80%;
+	width:25%;
+	background:#373232;
+	padding-top:5%;
+	color:white;
+	
+}
+nav li{
+	margin-bottom:3px;
+}
+nav ul span{
+	border-bottom:solid 2px white;
+	
+}
+nav ul li label,span{
+	padding:3px;
+	font-size:2vw;
+}
+*/
 
 	

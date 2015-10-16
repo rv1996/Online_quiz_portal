@@ -1,3 +1,3 @@
-<div style="background:#1976D2;width:80%;height:auto;border-bottom:solid 6px #0A00A9;
+<div style="background:#00796B;width:90%;height:auto;
 font-size:2vw;padding:.6%;
-bottom:2px;position:fixed;color:#DED9D9;"><center>&copy srs 2015 .</center></div>
+bottom:2px;position:fixed;color:#FBF5F3;font-family: 'Open Sans Condensed', arial, sans;"><center>&copy srs 2015 .</center></div>

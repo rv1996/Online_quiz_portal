@@ -2,19 +2,15 @@
 
 <?php include 'page-heading.php' ;
 	  include 'bottom-label.php';
+	  include 'core.php';
+
+		
 ?>
 <html>
 <script src="javascript.js"></script>
 
 	<body>
-	
-	<div id="nav">
-		<ul>
-			<li onclick="return home();">Home</li>
-			<li onclick="return about();">About</li>
-			<li onclick="return developer();">Developer's</li>
-		</ul>
-	</div>
+	<?php include "navigation.php";?>
 		<div id ="about-box">
 			hello people !!!
 		</div>

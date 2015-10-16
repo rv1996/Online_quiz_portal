@@ -44,29 +44,102 @@
 	?>
 
 <html>
-<link href="style.css" type="text/css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Exo:400,300' rel='stylesheet' type='text/css'>
 <script src="javascript.js"></script>
+<style>
 
+*{
+		box-sizing:border-box;
+		font-family: 'Open Sans Condensed', arial, sans;
+	}
+nav{
+	float:left;
+	width:35%;
+	background:#FFFFE0;
+	min-width:400px;
+	min-height:350px;
+	margin:auto;
+	
+	
+}
+nav h2{
+	min-width:400px;
+	margin:0px;
+	color:white;
+	text-align:center;
+	background:#373232;	
+	padding:2%;
+	font-size:30px;
+	font-family: 'Exo', sans-serif;
+	
+}
+nav input{
+	width:350px;
+	height:30px;
+	outline: none;
+    border: none;
+	
+	margin-left:10px;
+	margin-top:15px;
+	border: solid 0.001% black;
+	
+	
+	-webkit-transition: border 1s linear,-webkit-transform 1s,font-family 1s ease-in-out;
+}
+nav input:focus{
+	border:solid 2px cyan;
+	box-shadow:3px 3px 3px black;
+	font-family: 'Open Sans Condensed', arial, sans;
+	font-size:1.2vw;
+	
+	outline: none;
+    border: none;
+	
+}
+nav label{
+	font-family: 'Open Sans Condensed', arial, sans;
+	color:#373232;
+	top:15%;
+	margin:10px;
+	}
+button{
+	
+	background:#373232;
+	border-radius:0px;
+	border:solid 2px #373232; 
+	color:white;
+	font-family: 'Open Sans Condensed', arial, sans;
+	width:20%;
+	
+	font-size:15px;
+	width:350px;
+	height:30px;
+	margin-left:10px;
+	margin-top:15px;
+	
+	}
+</style>
 <body>
 
 	<?php include "navigation.php";?>
-<div id="login_main_box">
 
-	
+
+<nav>	
 	<form action="<?php echo $current_file?>" method="POST" id="student_login">
-	<fieldset id="login_student">
-		<legend style="text-align:left;font-size:3vw;"> Login Form </legend>
+	
+		<h2>Login Form</h2><br>
+		<label>Enter your Sign Details....</label>
 		<?= $entry_error.'<br>';?>
-		<span>Company No :<span><input type="text" name="company_number"><br>
-		<br><span>Company ps :<span> <input type="password" name="password"> <br> 
-		<?php echo $combination_error;?><br>
+		<input type="text" name="company_number" placeholder="Company Number"><br>
+		<input type="password" name="password" placeholder="**********"> <br> 
+		<?php echo $combination_error;?>
 
 		<button  type="submit" name="submit">Submit</button><br><br>
 		
 		<span>New Company : <strong><a href="company_register.php">Registration form</a></strong></span>
-	</fieldset>
+	
 	</form>
-</div>
+</nav>
 </body>
 </html>
 _

@@ -104,13 +104,7 @@ include 'bottom-label.php';
 	</head>
 	<body>
 	
-	<div id="nav">
-		<ul>
-			<li onclick="return home();">Home</li>
-			<li onclick="return about();">About</li>
-			<li onclick="return developer();">Developer's</li>
-		</ul>
-	</div>
+	<?php include "navigation.php";?>
 
 	<div id="company_main_box">
 		<form action = <?php echo $_SERVER['PHP_SELF'];?> method="POST" id="company_registration">
