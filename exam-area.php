@@ -75,7 +75,7 @@ $_SESSION['table']=NULL; ?>
 <body>
 <?php 
 include 'Page-heading.php';
-include 'connect-to-db.php';
+require 'connect.php';
 include 'bottom-label.php';
 include 'ans-check.php';
 ?>

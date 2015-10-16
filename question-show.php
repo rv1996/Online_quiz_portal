@@ -1,5 +1,5 @@
 <?php 
-include 'connect-to-db.php';
+require 'connect.php';
 $query_questions = "SELECT question, questionid FROM questionbank_practice WHERE QuestionType='Javascript' ORDER BY questionid";
 
 

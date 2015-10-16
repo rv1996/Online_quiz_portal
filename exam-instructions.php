@@ -30,7 +30,7 @@
 <?php 
 include 'Page-heading.php';
 include 'bottom-label.php';
-include 'connect-to-db.php';
+require 'connect.php';
 $query_temp_table = "INSERT INTO temp_table (questionid) SELECT questionid FROM questionbank_practice" ;
 mysql_query($query_temp_table);
 
