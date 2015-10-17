@@ -7,8 +7,6 @@ $result_questions = mysql_query($query_questions) or die(mysql_error());
 while($row = mysql_fetch_array($result_questions)){
 	$question[$i]=$row['question'];
 	$questionid[$i]=$row['questionid'];
-	//$query_temptable = "INSERT INTO temp_table (questionid) VALUES ($questionid[$i])";
-	//mysql_query($query_temptable) or die(mysql_error());
 	$i++;
 	}
 	

@@ -1,5 +1,8 @@
-<?php
-$_SESSION['table']=NULL; ?>
+<?php include 'core.php';
+/*if(!isset($_SESSION['ques'])){
+	$_SESSION['ques'] = 1;
+	}*/
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,8 +11,9 @@ $_SESSION['table']=NULL; ?>
 <link rel="stylesheet" type="text/css" href="style.css">
 <style>
 
-#displayarea {
+#displayarea{
 	position:relative;
+	top:3vw;
 	padding:1%;
 	width:60%;
 	height:30vw;
@@ -18,8 +22,10 @@ $_SESSION['table']=NULL; ?>
 	background-color:rgba(195, 205, 50, 0.37);
 	border:1px solid black;
 	}
+	
 #questionarea{
 	position:relative;
+	top:3vw;
 	left:0;
 	margin:auto;
 	padding:1%;
@@ -29,6 +35,7 @@ $_SESSION['table']=NULL; ?>
 	height:30vw;
 	border:1px solid black;
 	}
+	
 .questionnav {
   background: rgba(25, 210, 201, 0.66);
   font-family: Courier New;
@@ -44,6 +51,13 @@ $_SESSION['table']=NULL; ?>
   color: inherit;
   text-decoration: none;
 }
+
+#end{
+	position:relative;
+	margin:1%;
+	top:3vw;
+	right:1%;
+	}
 /*#submit{
 	position:relative;
 	top:24em;
@@ -80,7 +94,7 @@ include 'bottom-label.php';
 include 'ans-check.php';
 ?>
 
-
+<div id="timer"></div>
 <div id="phpcode"></div>
 <div id="displayarea">
 <!--div id="question"></div>
@@ -109,6 +123,8 @@ for($i=1;$i <= $question_count;$i++){
 </div>
 <button id="end" onclick="endExam()" style="height:1.5vw;width:3vw;padding:auto">END</button>
 <script>
+var t = 0;
+quesSelector(<?php echo $_SESSION['ques'];?>);
 function endExam(){
 	jstophp('delete-temp-table.php',del);
 	}
@@ -131,10 +147,15 @@ function jstophp(url,cfunc){
     xhttp.open("GET", url, true);
     xhttp.send();
 	}
+	
 function myFunction(xhttp){
 	document.getElementById('displayarea').innerHTML = xhttp.responseText;
 	}
-	
+
+function timer(){
+	t++;
+	}	
+
 </script>
 
 </body>

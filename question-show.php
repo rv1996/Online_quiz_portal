@@ -1,10 +1,10 @@
 <?php 
 require 'connect.php';
+include 'core.php';
+
 $query_questions = "SELECT question, questionid FROM questionbank_practice WHERE QuestionType='Javascript' ORDER BY questionid";
 
-
 $result_questions = mysql_query($query_questions) or die(mysql_error());
-
 
 for($i=1;$row = mysql_fetch_array($result_questions);$i++){
 	$question[$i] = $row['question'];
@@ -14,11 +14,13 @@ for($i=1;$row = mysql_fetch_array($result_questions);$i++){
 	for($j=1;$row2 = mysql_fetch_array($result_ans);$j++){
 		$ans[$i][$j] = $row2['options'];
 		}
-	$nofoptions[$i]=$j - 1;
+	$nofoptions[$i] = $j - 1;
 	}
 ?>
 <?php
 $q = $_REQUEST['q'];
+
+$_SESSION['ques'] = $q + 1;
 
 //echo "<div id='question'>".$q.") ".htmlentities($question[$q])."</div>";
 ?>
@@ -73,7 +75,7 @@ echo $q.") ".htmlentities($question[$q]);
 	}
 	?>
 </ol>
-<input id="submit" type="submit">
+<input id="submit" type="submit" >
 </div>
 </form>
 

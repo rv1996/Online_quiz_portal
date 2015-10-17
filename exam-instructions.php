@@ -1,3 +1,4 @@
+<?php include 'core.php'; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -31,6 +32,7 @@
 include 'Page-heading.php';
 include 'bottom-label.php';
 require 'connect.php';
+$_SESSION['ques'] = 1;
 $query_temp_table = "INSERT INTO temp_table (questionid) SELECT questionid FROM questionbank_practice" ;
 mysql_query($query_temp_table);
 
