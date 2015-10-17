@@ -20,7 +20,8 @@
 	float:right;
 	right:0;	
 	background-color:rgba(195, 205, 50, 0.37);
-	border:1px solid black;
+	border:1px solid #009688;
+	
 	}
 	
 #questionarea{
@@ -33,7 +34,7 @@
 	overflow:scroll;
 	background-color:rgba(195, 205, 50, 0.37);
 	height:30vw;
-	border:1px solid black;
+	border:1px solid #009688;
 	}
 	
 .questionnav {
@@ -94,7 +95,7 @@ include 'bottom-label.php';
 include 'ans-check.php';
 ?>
 
-<div id="timer"></div>
+
 <div id="phpcode"></div>
 <div id="displayarea">
 <!--div id="question"></div>

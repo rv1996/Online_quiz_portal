@@ -20,7 +20,7 @@ for($i=1;$row = mysql_fetch_array($result_questions);$i++){
 <?php
 $q = $_REQUEST['q'];
 
-$_SESSION['ques'] = $q + 1;
+$_SESSION['ques'] = $q;
 
 //echo "<div id='question'>".$q.") ".htmlentities($question[$q])."</div>";
 ?>
@@ -60,13 +60,14 @@ $_SESSION['ques'] = $q + 1;
 </style>
 </head>
 <body>
+<div id="php"></div>
 
-<div id="question">
+<div id="question" onClick="ne()">
 <?php 
 echo $q.") ".htmlentities($question[$q]);
 ?>
 </div>
-<form method="post" action="<?php echo 'exam-area.php?qid='.$q; ?>" onSubmit="">
+<form method="post" action="<?php echo 'exam-area.php?qid='.$q; ?>" >
 <div id="options">
 <ol type="A">
 	<?php
@@ -75,8 +76,28 @@ echo $q.") ".htmlentities($question[$q]);
 	}
 	?>
 </ol>
-<input id="submit" type="submit" >
+<button id="submit" type="submit">Next</button>
 </div>
 </form>
+<!--script>
+function next(){
+	jstophp('next.php',next1);
+	}
+
+function jstophp(url,cfunc){
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      cfunc(xhttp);
+      }
+    }
+    xhttp.open("GET", url, true);
+    xhttp.send();
+	}
+
+function next1(xhttp){
+	document.getElementById('php').innerHTML = xhttp.responseText ;
+	}
+</script-->
 
 </body>

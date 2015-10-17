@@ -16,6 +16,7 @@ check_ans($questionid);
 <?php
 function check_ans($questionid){
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	$_SESSION['ques']++;
 	$q = $_REQUEST['qid'];
 	$query = "SELECT CheckAns FROM answers_practice WHERE questionid=$questionid[$q] ORDER BY optionid";
 	$r = mysql_query($query) or die(mysql_error());
