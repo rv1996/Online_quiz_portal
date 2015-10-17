@@ -30,7 +30,7 @@
 	/*transition-timing-function:linear;*/
 }
 
-#student:hover ,#company:hover ,#student_exam:hover,#student_practice:hover,#student_details:hover{
+#student:hover ,#company:hover {
 	-webkit-transform: scale(1.1,1.1);
 	transform: scale(1.1,1.1);
 	background:#F5E6E1;

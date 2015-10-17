@@ -9,7 +9,7 @@ require 'connect.php';
 	
 	// variable to be be taken from the dom....
 	//data variable
-	$username = $company_name = $company_email =$company_password = ' ';
+	$username = $company_name = $company_email =$company_password = '';
 	$username_error = $name_error = $email_error = $password_error = '';
 	//variable which decide to run the query..
 	$field_count = 0;
@@ -22,7 +22,7 @@ require 'connect.php';
 		@$company_password =$_POST['company_password']; //4
 		 
 		if(empty($username)){
-			$username_error = "Enter Username";
+			$username_error = "/Enter Username";
 			$field_count++;
 			}
 		else{
@@ -30,42 +30,42 @@ require 'connect.php';
 			}
 		
 		if(empty($company_name)){
-			 $name_error = "Enter Company Name";
+			 $name_error = "/Enter Company Name";
 			 $field_count++;
 			 }
 		else{
 			$company_name = proper_input($company_name);
 			if(!preg_match("/^[a-zA-Z ]*$/",$company_name)){
-				$name_error = "Only Letters & Whitespaces Allowed";
+				$name_error = "/Only Letters & Whitespaces Allowed";
 				$field_count++;
 				}
 			}
 		
 		if(empty($company_email)){
-			$email_error = "Enter Company Email";
+			$email_error = "/Enter Company Email";
 			$field_count++;
 			}
 		else{
 			$company_email = proper_input($company_email);
 			$company_email = filter_var($company_email, FILTER_SANITIZE_EMAIL);
 			if(!filter_var($company_email, FILTER_VALIDATE_EMAIL)){
-				$email_error = "Invalid Email";
+				$email_error = "/Invalid Email";
 				$field_count++;	  
 				}
 			}
 		
 		if(empty($company_password)){
-			$password_error = "Enter Password";
+			$password_error = "/Enter Password";
 			$field_count++;
 			}
 		else{
 			$company_password = proper_input($company_password);
 			if(!preg_match("/\d/",$company_password)){
-				$password_error ='No Digits in Password';
+				$password_error ='/No Digits in Password';
 				$field_count++;
 				}
 			if(!preg_match("/\W/",$company_password)){
-				$password_error ='No Special Chars in Password';
+				$password_error ='/No Special Chars in Password';
 				$field_count++;
 				}
 			}
@@ -80,8 +80,8 @@ require 'connect.php';
 			if(mysql_query($sql_query)){
 				$record_added =  "records added to the data";
 				$_SESSION['company_name'] = $company_name;
-				$company_result = mysql_query("SELECT * FROM company_info WHERE Username='$username' AND Password='$password'");
-				$_SESSION['company_data'] = $company_result;
+				$company_result = mysql_query("SELECT * FROM company_info WHERE Username='$username'");
+				$_SESSION['company_data'] = mysql_fetch_array($company_result);
 				header("Location: page2.php");
 				}
 			else{
@@ -119,15 +119,10 @@ require 'connect.php';
 				<h2>Company Registration Form</h2>
 				<?= $record_added;?>
 				<br>
-				<input class = "form-input" type="text" name="username" placeholder="Username" ><?php 
-				echo '<br><center>'.$username_error.'</center>';?>
-				<input class = "form-input" type="text" name="company_name" placeHolder="Company Name" ><?php 
-				echo '<br><center>'.$name_error.'</center>';?>
-				<input class ="form-input" type="text" name="company_email" placeHolder="Email" ><?php
-				 echo '<br><center>'.$email_error.'</center>';?>
-				<input class ="form-input" type="password" name="company_password" placeHolder="Password"><?php 
-				echo '<br><center>'.$password_error.'</center>';?>
-									
+				<input class = "form-input" type="text" name="username" placeholder="<?php echo 'Username'.$username_error; ?>" >
+				<input class = "form-input" type="text" name="company_name" placeHolder="<?php echo 'Company Name'.$name_error; ?>" >
+                <input class ="form-input" type="text" name="company_email" placeHolder="<?php echo 'Company Email'.$email_error; ?>">
+                <input class ="form-input" type="password" name="company_password" placeHolder="<?php echo 'Password'.$password_error;?>">			
 				<button class="form-input" type="submit" >DONE</button>
 					
 				
