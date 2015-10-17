@@ -1,0 +1,37 @@
+/* styling of all the  pages are done here....*/
+*{
+		box-sizing:border-box;
+		 font-family: 'Open Sans Condensed', arial, sans;
+	}
+
+#form_header{
+	border-bottom:solid 3px #4DC700;
+}
+
+
+body{
+	width:90%;
+	margin:auto;
+	/*background:#00CCFF;*/
+	background:off-white;
+	-webkit-background-size:cover;
+	background-repeat: no-repeat;
+}
+	
+	
+/* styling of about and developers box*/
+
+#home-box ,#about-box,#developer-box{
+	left:4em;
+	padding:3%;
+	top:4em;
+	background:#F5F1DE;
+	border-bottom:solid 8px #4DC700;
+	
+	position:relative;
+	min-width:40%;
+	min-height:40%;
+	
+	max-width:50%;
+	font-size:2vw;
+}

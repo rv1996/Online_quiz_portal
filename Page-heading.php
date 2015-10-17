@@ -1,3 +1,3 @@
-<div style="position:relative;top:0%;margin:1%;padding:1%;font-family:'Yu Gothic', 'Wide Latin', Stencil, 'Freestyle Script';font-size:1.5em;">
-<h1 style="text-align:center">ONLINE QUIZ PORTAL</h1></div>
+<div style="background:#00796B;color:#FBF5F3;width:100%;height:auto;font-size:45px;padding:1%;
+position:relative;font-family: 'Open Sans Condensed', arial, sans;"><center>Online Quiz Portal</center></div>
 
