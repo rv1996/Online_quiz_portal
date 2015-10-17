@@ -110,7 +110,7 @@ include 'bottom-label.php';
 		<form action = <?php echo $_SERVER['PHP_SELF'];?> method="POST" id="company_registration">
 		
 			
-				<h2>Company Regitration Form</h2>
+				<h2>Company Registration Form</h2>
 				<?= $record_added;?>
 				<br>
 				<input class = "f" type="text" name="company_number" placeholder="Company Number" value="<?php echo $number_error;?>" >

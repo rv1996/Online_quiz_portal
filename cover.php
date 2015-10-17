@@ -14,6 +14,20 @@ if(is_user_loggedin_student()){
 <meta name="viewport" content="width=device-width,initial-scale = 1.0">
 <link href="style.css" type="text/css" rel="stylesheet">
 <script src="javascript.js"></script>
+
+<style>
+	#random_image img{
+		
+		position:absolute;
+		
+		top:22%;
+		left:37%;
+		width:50%;
+		height:65%;
+		float:right;
+		background-repeat: no-repeat;
+	}
+</style>
 </head>
 
 <body>
@@ -26,6 +40,17 @@ if(is_user_loggedin_student()){
 		<div id = "company"  onclick="return company();">Company
 		<footer>If you really wanna fly give up the things that way you down...</footer>
 		</div><br>
+		</div>
+		
+		<div id="random_image">
+			<?php
+			$image_dir = "random_image/";
+			$images = glob($image_dir.'*.{jpg,jpeg,png,gif}',GLOB_BRACE);
+			$random_images = $images[array_rand($images)];
+			;
+			?>
+			<img src='<?= $random_images?>'>
+			
 		</div>
 	
 </body>
