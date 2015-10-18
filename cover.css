@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+#cover{
+	position:relative;
+	top:8%;
+	padding:1.5%;
+}
+
+#student footer,#company footer{
+	position:relative;
+	font-size:small;
+	top:4em;
+}
+
+#student, #company {
+	position:relative;
+	display:block;
+	background:#FBFBFB;
+	border-bottom:solid 8px #4DC700;
+	color:#5A5A5A;
+	font-size:3vw;
+	width:30%;
+	height:30%;
+	top:inherit;
+	text-align:center;
+	padding:1.5%;
+	box-shadow: 2px 2px 2px #67676D;
+	-webkit-transition: -webkit-transform 1s,background 1s;
+	transition:-webkit-transform 1s,background 1s,box-shadow 1s,,border-radius 1,font-family 1s;
+	/*transition-timing-function:linear;*/
+}
+
+#student:hover ,#company:hover {
+	-webkit-transform: scale(1.1,1.1);
+	transform: scale(1.1,1.1);
+	background:#F5E6E1;
+	box-shadow: 6px 6px 6px grey;
+	cursor:pointer;
+	font-family: 'Open Sans Condensed', arial, sans;
+	border-radius:5px;
+}
+
