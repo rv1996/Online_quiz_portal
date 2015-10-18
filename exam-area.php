@@ -98,6 +98,7 @@ include 'ans-check.php';
 
 <div id="phpcode"></div>
 <div id="displayarea">
+exam
 <!--div id="question"></div>
 <div id="ans"></div>
 <div id="submit"><input type='submit' /></div-->

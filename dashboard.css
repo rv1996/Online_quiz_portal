@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+/*styling for student_dasdboard page*/
+
+#student-exam, #student-practice{
+	position:absolute;
+	background:#FBFBFB;
+	border-bottom:solid 8px #4DC700;
+	color:#5A5A5A;
+	font-size:4vw;
+	width:18%;
+	-webkit-transition: -webkit-transform 1s,background 1s;
+	transition:-webkit-transform 1s,background 1s,box-shadow 1s;
+	display:inline;	
+	top:40%;
+	text-align:center;
+	padding:1.6%;
+}
+
+#student-exam:hover,#student-practice:hover,#student-details:hover{
+	-webkit-transform: scale(1.1,1.1);
+	transform: scale(1.1,1.1);
+	background:#F5E6E1;
+	box-shadow: 6px 6px 6px grey;
+	cursor:pointer;
+	font-family: 'Open Sans Condensed', arial, sans;
+	border-radius:5px;
+}
+
+#student-exam{
+	left:9em;
+	
+}
+#student-practice{
+	left:17em;
+	
+}
+#student-details{
+		
+	left:53%;
+	position:absolute;
+	background:#FBFBFB;
+	border-bottom:solid 8px #4DC700;
+	color:#5A5A5A;
+	font-size:3vw;
+	width:13%;
+	text-align:center;
+	-webkit-transition: -webkit-transform 1s,background 1s;
+	transition:-webkit-transform 1s,background 1s,box-shadow 1s;
+	display:inline;	
+	top:70%;
+	padding:1%;
+}
+
+.display{
+	height:75.7vh;
+	width:25%;
+	background:#373232;
+	padding-top:5%;
+	color:#FFFFFF;
+	border-right:solid 2px #B6B6B6;
+	border-bottom:solid 4px #B6B6B6;
+	float:left;
+	
+}
+.display li{
+	margin-bottom:3px;
+}
+.display ul span{
+	border-bottom:solid 2px white;
+	
+}
+.display ul li label,span{
+	padding:3px;
+	font-size:2vw;
+}
+
+
+	
