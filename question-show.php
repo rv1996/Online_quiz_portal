@@ -34,7 +34,7 @@ $_SESSION['ques'] = $q;
 	width:95%;
 	margin:auto;
 	padding:1%;
-	font-size:1.6vw;
+	font-size:2vw;
 	font-family:"Comic Sans MS", cursive;
 	}
 	
@@ -45,7 +45,7 @@ $_SESSION['ques'] = $q;
 	width:95%;
 	margin:auto;
 	padding:1%;
-	font-size:1.2vw;
+	font-size:1.5vw;
 	font-family:"Comic Sans MS", cursive;
 	}
 #submit{

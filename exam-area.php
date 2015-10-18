@@ -13,27 +13,27 @@
 
 #displayarea{
 	position:relative;
-	top:3vw;
+	top:2.3vw;
 	padding:1%;
 	width:60%;
-	height:30vw;
+	height:35vw;
 	float:right;
 	right:0;	
-	background-color:rgba(195, 205, 50, 0.37);
+	background-color:rgba(195, 205, 50,.37);
 	border:1px solid #009688;
 	
 	}
 	
 #questionarea{
 	position:relative;
-	top:3vw;
+	top:2.3vw;
 	left:0;
 	margin:auto;
 	padding:1%;
 	width:auto;
 	overflow:scroll;
 	background-color:rgba(195, 205, 50, 0.37);
-	height:30vw;
+	height:35vw;
 	border:1px solid #009688;
 	}
 	
@@ -42,7 +42,7 @@
   font-family: Courier New;
   color: rgba(90, 16, 206, 0.78);
   margin: 1%;
-  font-size: 2vw;
+  font-size: 2.4vw;
   padding: 2%;
   text-decoration: none;
 }
@@ -56,7 +56,7 @@
 #end{
 	position:relative;
 	margin:1%;
-	top:3vw;
+	top:1.5vw;
 	right:1%;
 	}
 /*#submit{
