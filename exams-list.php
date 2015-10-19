@@ -11,7 +11,7 @@ while($row = mysql_fetch_array($result_exams)){
 	}
 $n_of_exams = $i - 1;
 ?>
-
+<div id="test"></div>
 <ul>
     <?php
     for($i=1;$i<=$n_of_exams;$i++){
@@ -26,7 +26,7 @@ function start(s){
 	window.location = 'exam-instructions.php';
 	}
 function e(xhttp){
-	document.getElementById('exams-list').innerHTML = xhttp.responseText;
+	document.getElementById('test').innerHTML = xhttp.responseText;
 	}
 
 </script>

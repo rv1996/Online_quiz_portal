@@ -25,10 +25,10 @@ $n_of_companies = $i -1;
 
 <script>
 function examsLoader(s){
-	jstophp("companytoexam.php?cId=" + s,e);
+	jstophp("companytoexam.php?cId=" + s,ex);
 	}
 
-function e(xhttp){
+function ex(xhttp){
 	document.getElementById('exams-list').innerHTML = xhttp.responseText ;
 	}
 </script>
