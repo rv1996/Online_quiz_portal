@@ -13,14 +13,14 @@
 	border-left:solid 2px #B6B6B6;
 	background:#B2DFDB;
 	height:75.7vh;
-	border-bottom:solid 4px #B6B6B6;
+	/*border-bottom:solid 4px #B6B6B6;*/
 	}
 #companies,#exams{
 	position:relative;
 	display:inline-block;
 	width:49.7%;
 	color:#727272;	
-	padding:2%;	
+	padding:2%;
 	}
 #exams{
 	float:right;
@@ -35,7 +35,8 @@
 	font-size:1.5vw;
 	border:solid 2px #607D8B;
 	height:25vh;
-	
+	overflow:scroll;
+	height:50vh
 	}
 #companies-list ul,#exams-list ul{
 	text-align:center;
@@ -59,11 +60,15 @@ include 'profile.php';
 	<div id="section">
 		<div id="companies">
 			<h2 class="list-names">COMPANIES</h2>
+			<div id="companies-list">
 			<?php include 'companies-list.php'; ?>
+            </div>
 		</div>
 		<div id="exams">
 			<h2 class="list-names">EXAMS</h2>
-			<?php include 'exams-list.php'; ?>	
+			<div id="exams-list">
+			<?php include 'exams-list.php'; ?>
+            </div>
 		</div>
     </div>
 </body>

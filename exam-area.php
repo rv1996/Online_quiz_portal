@@ -13,10 +13,10 @@
 
 #displayarea{
 	position:relative;
-	top:2.3vw;
+	top:6vh;
 	padding:1%;
 	width:60%;
-	height:35vw;
+	height:70vh;
 	float:right;
 	right:0;	
 	background-color:rgba(195, 205, 50,.37);
@@ -26,14 +26,14 @@
 	
 #questionarea{
 	position:relative;
-	top:2.3vw;
+	top:6vh;
 	left:0;
 	margin:auto;
 	padding:1%;
 	width:auto;
 	overflow:scroll;
 	background-color:rgba(195, 205, 50, 0.37);
-	height:35vw;
+	height:70vh;
 	border:1px solid #009688;
 	}
 	
@@ -56,7 +56,7 @@
 #end{
 	position:relative;
 	margin:1%;
-	top:1.5vw;
+	top:4vh;
 	right:1%;
 	}
 /*#submit{
@@ -85,6 +85,7 @@
 	border:1px solid #000;
 	}*/
 </style>
+<script src="ajax.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -98,7 +99,7 @@ include 'ans-check.php';
 
 <div id="phpcode"></div>
 <div id="displayarea">
-exam
+
 <!--div id="question"></div>
 <div id="ans"></div>
 <div id="submit"><input type='submit' /></div-->
@@ -116,14 +117,13 @@ for($i=1;$i <= $question_count;$i++){
 		$zero = '';
 		}
 	echo ("<button class='questionnav' onclick='quesSelector($i)'>$zero".$i."</button>");
-	
 	if(($i) % $ques_columns == 0){
 		echo "<br><br>";
 		}
 	}
 ?>
 </div>
-<button id="end" onclick="endExam()" style="height:1.5vw;width:3vw;padding:auto">END</button>
+<button id="end" onclick="endExam()" style="height:3vh;width:3vw;padding:auto">END</button>
 <script>
 var t = 0;
 quesSelector(<?php echo $_SESSION['ques'];?>);
@@ -137,17 +137,6 @@ function del(xhhtp){
 	
 function quesSelector(selection){	
 	jstophp('question-show.php?q=' + selection,myFunction);
-	}
-	
-function jstophp(url,cfunc){
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-      cfunc(xhttp);
-      }
-    }
-    xhttp.open("GET", url, true);
-    xhttp.send();
 	}
 	
 function myFunction(xhttp){

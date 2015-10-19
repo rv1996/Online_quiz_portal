@@ -1,3 +1,4 @@
+<script src="ajax.js" type="text/javascript"></script>
 <?php
 require 'connect.php';
 
@@ -11,13 +12,21 @@ while($row = mysql_fetch_array($result_exams)){
 $n_of_exams = $i - 1;
 ?>
 
-<div id="exams-list">
-	<ul>
-    	<?php
-		for($i=1;$i<=$n_of_exams;$i++){
-			echo "<li>EXAM <b>".$exam_id[$i]."</b></li>";
-			}
-		 ?>
-    </ul>
+<ul>
+    <?php
+    for($i=1;$i<=$n_of_exams;$i++){
+        echo "<li onclick='start($exam_id[$i])'>EXAM <b>".$exam_id[$i]."</b></li>";
+        }
+     ?>
+</ul>
 
-</div>
+<script>
+function start(s){
+	jstophp("exam-starter.php?exId=" + s,e);
+	window.location = 'exam-instructions.php';
+	}
+function e(xhttp){
+	document.getElementById('exams-list').innerHTML = xhttp.responseText;
+	}
+
+</script>

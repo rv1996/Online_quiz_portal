@@ -1,3 +1,4 @@
+<script src="ajax.js" type="text/javascript"></script>
 <?php 
 require 'connect.php';
 //require 'core.php';
@@ -13,13 +14,21 @@ while($row = mysql_fetch_array($result_company)){
 	}
 $n_of_companies = $i -1;
 ?>
-<div id="companies-list">
-	<ul>
-    	<?php 
-			for($i=1;$i<=$n_of_companies;$i++){
-				echo "<li><b>".$company_name[$i]."</b></li>";
-				}
-		?>
-    </ul>
 
-</div>
+<ul>
+    <?php 
+        for($i=1;$i<=$n_of_companies;$i++){
+            echo "<li onclick='examsLoader($company_id[$i])'><b>".$company_name[$i]."</b></li>";
+            }
+    ?>
+</ul>
+
+<script>
+function examsLoader(s){
+	jstophp("companytoexam.php?cId=" + s,e);
+	}
+
+function e(xhttp){
+	document.getElementById('exams-list').innerHTML = xhttp.responseText ;
+	}
+</script>
