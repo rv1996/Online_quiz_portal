@@ -20,7 +20,6 @@ li{
 	
 	margin-right:20px;
 	margin-top:5px;
-	color:#FBF5F3;
 	display:inline;
 	
 	background:#607D8B;
@@ -35,15 +34,15 @@ li{
 	margin-top:5px;
 	float:right;
 	text-align:right;
-	color:#FBF5F3;
 }
 
 	
 #nav{
+	position:relative;
 	background:#607D8B;
 	width:100%;
 	float:right;
-	
+	color:#F0F3BD;
 	border-bottom:solid 4px #B6B6B6;
 }
 li#button{

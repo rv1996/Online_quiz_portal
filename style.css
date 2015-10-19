@@ -1,7 +1,7 @@
 /* styling of all the  pages are done here....*/
 *{
 		box-sizing:border-box;
-		 font-family: 'Open Sans Condensed', arial, sans;
+		font-family: 'Open Sans Condensed', arial, sans;
 	}
 
 #form_header{
@@ -13,7 +13,6 @@ body{
 	width:90%;
 	margin:auto;
 	/*background:#00CCFF;*/
-	background:off-white;
 	-webkit-background-size:cover;
 	background-repeat: no-repeat;
 }

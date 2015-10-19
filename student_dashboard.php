@@ -16,20 +16,10 @@ include 'connect.php';
 	<body>
 	
 		
-	<?php include 'navigation.php';?>
-	
-	<nav class="display">
-		
-		<ul>
-			<li><label>Student ID:</label></li><span><?php echo @$_SESSION['student_data']['StudentNumber']?></span>
-			<br><br>
-			<li><label>Name:</label></li><span><?php echo @$_SESSION['student_data']['Name']?></span>
-			<br><br>
-			<li><label>B-Tech Year:</label></li><span><?php echo @$_SESSION['student_data']['BTechYear'].'nd'?></span>
-			<br>
-		</ul>
-	</nav>
-	
+	<?php 
+	include 'navigation.php';
+	include 'profile.php';
+	?>	
 	
 	<div id="student-exam" onClick="return exam();">Exam</div> 
     <div id="student-practice" onClick="return practice();">Practice</div>

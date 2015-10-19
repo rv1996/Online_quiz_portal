@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" type="text/css" href="navigation.css" />
 
 <div id="nav">
@@ -8,8 +7,6 @@
 			<li onclick="return developer();">Developers</li>
 			
 			
-		
-		
 		<label id="nav_side">
 		<?php  
 		if(empty($_SESSION['user_name'])){
