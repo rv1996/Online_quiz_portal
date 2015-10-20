@@ -64,7 +64,7 @@
 	
 }
 .display li{
-	margin-bottom:3px;
+	margin-bottom:.3vh;
 }
 .display ul span{
 	border-bottom:solid 2px white;
@@ -72,7 +72,7 @@
 }
 .display ul li label,span{
 	padding:3px;
-	font-size:2vw;
+	font-size:3vmin;
 }
 
 

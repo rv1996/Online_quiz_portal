@@ -12,20 +12,21 @@ while($row = mysql_fetch_array($result_company)){
 	$company_name[$i] = $row['name'];
 	$i++;
 	}
-$n_of_companies = $i -1;
+$n_of_companies = $i - 1;
 ?>
 
 <ul>
-    <?php 
+	<li onclick='examsLoader(0)'><b>All</b></li>
+    <?php
         for($i=1;$i<=$n_of_companies;$i++){
             echo "<li onclick='examsLoader($company_id[$i])'><b>".$company_name[$i]."</b></li>";
-            }
+			}
     ?>
 </ul>
 
 <script>
 function examsLoader(s){
-	jstophp("companytoexam.php?cId=" + s,ex);
+	jstophp("exams-list.php?cId=" + s,ex);
 	}
 
 function ex(xhttp){
