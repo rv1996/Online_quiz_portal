@@ -120,7 +120,7 @@ include 'core.php';
 				<h2>Student Regitration Form</h2>
 				<?= $record_added;?>
 				<input class="f" type="text" name="student_number" placeholder="Student Number" ><?php echo $number_error.'<br>';?>
-				<input class="f" type="text" name="student_name" placeholder="Number"><?php echo $name_error.'<br>';?>
+				<input class="f" type="text" name="student_name" placeholder="Name"><?php echo $name_error.'<br>';?>
 				<input class="f" type="text"  name="student_year" placeholder="year"><?php echo $year_error.'<br>';?>
 				<input class="f" type="text" name="student_email" placeholder="Email"><?php echo $email_error.'<br>';?>
 				<input class="f" type="password" name="student_password" placeholder="Password"><?php echo $password_error.'<br>';?>
