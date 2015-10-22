@@ -4,9 +4,6 @@ include 'bottom-label.php';
 include 'core.php';
 require 'connect.php';
 	
-
-
-	
 	// variable to be be taken from the dom....
 	//data variable
 	$username = $company_name = $company_email =$company_password = '';
@@ -74,7 +71,9 @@ require 'connect.php';
 	    // inserting the data in the data bas
 		if(!$field_count){
 			$company_password = md5($company_password);
-			$sql_query = "INSERT INTO company_info(Username,Name,Email,Password) VALUES('$username','$company_name','$company_email','$company_password')";
+			$sql_query = "INSERT INTO
+			company_info(Username,Name,Email,Password)
+			VALUES('$username','$company_name','$company_email','$company_password')";
 			
 			//mysql_query($sql_query) or die(mysql_error());
 			if(mysql_query($sql_query)){
