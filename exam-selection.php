@@ -49,6 +49,9 @@
 #companies-list li,#exams-list li{
 	margin:1%;
 	}
+#companies-list li:hover,#exams-list li:hover{
+	cursor:pointer;
+	}
 	
 #about-company li,#about-exam li{
 	margin:4%;

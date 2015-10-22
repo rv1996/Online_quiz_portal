@@ -22,32 +22,50 @@ include 'exam-starter.php';
 	
 #instructions{
 	position:relative;
+	font-size:2.2vmin;
 	}
-
+#instructions caption{
+	font-size:2.5vmin;
+	margin-right:2%
+	}
+	
 #instructions ol{
+	list-style:decimal;
+	margin-top:3%;
 	margin-left:15%;
 	margin-bottom:1%
 	}
 	
 #instructions li{
-	margin:1%;
+	margin:.5%;
+	margin-bottom:1.5%;
 	}
 	
 h2{
-	text-align:center;
+	margin-left:36%;
 	}
 
 #start{
+	position:fixed;
+	padding-left:28%;
+	bottom:10%;
 	}
 	
 	
 table{
-	margin-left:23%;
+	margin-left:20%;
 	margin-top:2%;
-	width:55%;}
+	width:55%;
+	height:auto;
+	}
 	
 th,td{
-	padding:1%
+	padding:1%;
+	text-align:center;
+	}
+button:hover{
+	cursor:pointer;
+	
 	}
 </style>
 </head>
@@ -64,7 +82,7 @@ include 'exam-info.php';
 
 $_SESSION['ques'] = 1;
 
-$query_temp_table = "INSERT INTO temp_table (questionid) SELECT questionid FROM questionbank_practice" ;
+$query_temp_table = "INSERT INTO temp_table (questionid) SELECT questionid FROM questionbank_company" ;
 mysql_query($query_temp_table);
 
 ?>
@@ -72,9 +90,10 @@ mysql_query($query_temp_table);
     <h2>Exam Instructions</h2>
     <div id="instructions"> 
     	<ol>
-        	<li>The Company which created this exam is <?php echo @$company_name; ?></li>
-            <li>The maximum amount of Time for this exam is <?php echo @$time; ?></li>
-            <li>The Question types present in exam are :</li>
+        	<li>The Company which created this exam is <b><?php echo @$company_name; ?></b></li>
+            <li>The maximum amount of Time for this exam is <b><?php echo @$_SESSION['time']; ?> min</b>, after that the exam will end itself</li>
+            
+            <li>The details regarding how marks are awarded is given here:</li>
         </ol>
 		<table>
         	<caption>Questions</caption>
@@ -85,18 +104,29 @@ mysql_query($query_temp_table);
                 <th>Negative Marks</th>
             </tr>
             <?php
-            	for($i=0;$i<=$n_of_type;$i++){
-					echo "<tr><td>".$type."</td><td>".$n."</td><td>".$pmarks."</td><td>".$nmarks."</td>";
+            	for($i=1;$i<=$n_of_type;$i++){
+					echo "<tr><td>".$type[$i]."</td><td>".@$n[$i]."</td><td>".@$pmarks[$i]."</td><td>".@$nmarks[$i]."</td></tr>";
 					}
 			?>
         </table>
+        <ol>
+        	<li>Choose the correct option and then click on next to go to the next question</li>
+            <li>On the left side is the navigation-box to directly go to any particular question</li>
+            <li>Any question can be submitted any number of times until the exam is over,no limits</li>
+            
+        </ol>
         <!--?php echo $_SESSION['examid']; ?-->
 	</div>
 	<div id="start">
-		<!--div>
-			<a href="exam-area.php">Exam Start</a>
-		</div-->
+		<div>
+			<button style="text-decoration:none;font-size:3vmin;" type="button" onclick="examStart()">START</button>
+		</div>
 	</div> 
 </div>
+<script>
+function examStart(){
+	window.location = "exam-area.php";
+	}
+</script>
 </body>
 </html>

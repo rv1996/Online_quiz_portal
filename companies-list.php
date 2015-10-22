@@ -19,7 +19,7 @@ $n_of_companies = $i - 1;
 	<li onclick='examsLoader(0)'><b>All</b></li>
     <?php
         for($i=1;$i<=$n_of_companies;$i++){
-            echo "<li onclick='examsLoader($company_id[$i])'><b>".$company_name[$i]."</b></li>";
+            echo "<li><b onclick='examsLoader($company_id[$i])'>".$company_name[$i]."</b></li>";
 			}
     ?>
 </ul>
