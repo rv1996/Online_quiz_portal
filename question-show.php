@@ -1,15 +1,15 @@
 <?php 
 require 'connect.php';
 include 'core.php';
-
-$query_questions = "SELECT question, questionid FROM questionbank_practice WHERE QuestionType='Javascript' ORDER BY questionid";
+$examid = $_SESSION['examid'];
+$query_questions = "SELECT questions,questionid FROM questionbank_company WHERE examid='$examid' ORDER BY questionid";
 
 $result_questions = mysql_query($query_questions) or die(mysql_error());
 
 for($i=1;$row = mysql_fetch_array($result_questions);$i++){
-	$question[$i] = $row['question'];
+	$question[$i] = $row['questions'];
 	$questionid[$i] = $row['questionid'];
-	$query_ans = "SELECT options FROM answers_practice WHERE questionid=$questionid[$i] ORDER BY optionid";
+	$query_ans = "SELECT options FROM answers_company WHERE questionid='$questionid[$i]' ORDER BY optionid";
 	$result_ans = mysql_query($query_ans) or die(mysql_error());
 	for($j=1;$row2 = mysql_fetch_array($result_ans);$j++){
 		$ans[$i][$j] = $row2['options'];

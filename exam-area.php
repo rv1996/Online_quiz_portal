@@ -2,7 +2,7 @@
 /*if(!isset($_SESSION['ques'])){
 	$_SESSION['ques'] = 1;
 	}*/
- ?>
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -95,17 +95,16 @@ require 'connect.php';
 include 'bottom-label.php';
 include 'ans-check.php';
 ?>
-
-
+<div id="timer"></div>
 <div id="phpcode"></div>
 <div id="displayarea">
-
-<!--div id="question"></div>
-<div id="ans"></div>
-<div id="submit"><input type='submit' /></div-->
+	<!--div id="question"></div>
+	<div id="ans"></div>
+	<div id="submit"><input type='submit' /></div-->
 </div> 
 <div id="questionarea">
 <?php 
+
 $question_count = mysql_num_rows($result_questions);
 //$question_count = 19;
 $ques_columns = ceil($question_count/5);
@@ -125,8 +124,13 @@ for($i=1;$i <= $question_count;$i++){
 </div>
 <button id="end" onclick="endExam()" style="height:3vh;width:3vw;padding:auto">END</button>
 <script>
-var t = 0;
+var t = <?php echo $_SESSION['time']; ?>;
+var seconds = <?php echo $_SESSION['sec']; ?>;
+
+setInterval(timer,1000);
+
 quesSelector(<?php echo $_SESSION['ques'];?>);
+	
 function endExam(){
 	jstophp('delete-temp-table.php',del);
 	}
@@ -144,9 +148,34 @@ function myFunction(xhttp){
 	}
 
 function timer(){
-	t++;
-	}	
+	if(t<10){
+		var minutes = "0" + t;
+		}
+	else{
+		var minutes = t;
+		}
+	if(Number(seconds)<10){
+		seconds = "0" + seconds;
+		}
+	document.getElementById('timer').innerHTML = minutes + ":" + seconds;
+	if(Number(seconds) == 0){
+		if(t > 0){
+			t = t - 1;
+			seconds = "59";
+			}
+		else{
+			
+			}
+		}
+	else{
+		seconds = Number(seconds) - 1;
+		}
+	jstophp("timer.php?t=" + t + "&sec=" + seconds,timeChanger);
+	}
 
+function timeChanger(xhttp){
+	document.getElementById('phpcode').innerHTML = xhttp.responseText;
+	}
 </script>
 
 </body>

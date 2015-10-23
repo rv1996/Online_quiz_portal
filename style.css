@@ -2,6 +2,7 @@
 *{
 		box-sizing:border-box;
 		font-family: 'Open Sans Condensed', arial, sans;
+		
 	}
 
 #form_header{
@@ -10,6 +11,7 @@
 
 
 body{
+	font-size:2.5vmin;
 	width:90%;
 	margin:auto;
 	/*background:#00CCFF;*/
