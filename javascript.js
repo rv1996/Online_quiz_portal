@@ -17,5 +17,8 @@ function company(){
 	window.location = "page2.php";
 }
 function sign_in(){
-		window.location = "cover.php";
+	window.location = "cover.php";
 }
+function exam(){
+	window.location = "exam-selection.php";
+	}

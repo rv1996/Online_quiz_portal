@@ -17,6 +17,15 @@
 	padding:1.6%;
 }
 
+#student-exam:hover,#student-practice:hover,#student-details:hover{
+	-webkit-transform: scale(1.1,1.1);
+	transform: scale(1.1,1.1);
+	background:#F5E6E1;
+	box-shadow: 6px 6px 6px grey;
+	cursor:pointer;
+	font-family: 'Open Sans Condensed', arial, sans;
+	border-radius:5px;
+}
 
 #student-exam{
 	left:9em;
@@ -44,12 +53,14 @@
 }
 
 .display{
-	height:80%;
+	height:75.7vh;
 	width:25%;
 	background:#373232;
 	padding-top:5%;
-	color:white;
-	
+	color:#FFFFFF;
+	border-right:solid 2px #B6B6B6;
+	/*border-bottom:solid 4px #B6B6B6;*/
+	float:left;	
 }
 .display li{
 	margin-bottom:3px;

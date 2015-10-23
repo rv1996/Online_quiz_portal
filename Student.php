@@ -25,72 +25,72 @@ require 'connect.php';
 		 @$student_password =$_POST['student_password']; //5
 		 
 		if(empty($student_number)){
-			 $number_error = "Enter Student Number";
+			 $number_error = "/Enter Student Number";
 			 $field_count++;
 			}
 		else{
 			$student_number = proper_input($student_number);
 			if(preg_match("/\D/",$student_number)){
-			   $number_error = "Only Numbers";
+			   $number_error = "/Only Numbers";
 			   $field_count++;
 			   }
 		    }
 		
 		if(empty($student_name)){
-			 $name_error = "Enter Student's Name";
+			 $name_error = "/Enter Student's Name";
 			 $field_count++;
 		     }
 		else{
 			$student_name = proper_input($student_name);
 			if(!preg_match("/^[a-zA-Z ]*$/",$student_name)){
-				$name_error = "Only Letters & Whitespaces Allowed";
+				$name_error = "/Only Letters & Whitespaces Allowed";
 				$field_count++;
 		    	}
 		    }
 
 		if(empty($student_year)){
-			$year_error = 'Enter BTech Year';
+			$year_error = '/Enter BTech Year';
 			$field_count++;
 		    }
 		else{
 			$student_year = proper_input($student_year);
 			if(preg_match("/\D/",$student_year)){
-				$year_error = 'Only No. in Year';
+				$year_error = '/Only No. in Year';
 			    $field_count++;
 				}
 			
 			if($student_year<1 && $student_year>4){
-				 $year_error = 'Year only B/w 1 and 4';
+				 $year_error = '/Year only B/w 1 and 4';
 				 $field_count++;
 				 }
 			}
 
 		if(empty($student_email)){
-			$email_error = "Enter Email";
+			$email_error = "/Enter Email";
 			$field_count++;
 		    }
 		else{
 			$student_email = proper_input($student_email);
 			$student_email = filter_var($student_email, FILTER_SANITIZE_EMAIL);
 			if(!filter_var($student_email, FILTER_VALIDATE_EMAIL)){
-				$email_error = "Invalid Email";
+				$email_error = "/Invalid Email";
 				$field_count++;	  
 				}
 			}
 		
 
 		if(empty($student_password)){
-			$password_error = "Enter Password";
+			$password_error = "/Enter Password";
 			$field_count++;
 		}
 		else{
 			$student_password = proper_input($student_password);
 			if(!preg_match("/\d/",$student_password)){
-				$password_error ='No Digits in Password';
+				$password_error ='/No Digits in Password';
 				$field_count++;
 				}
 			if(!preg_match("/\W/",$student_password)){
-				$password_error ='No Special Chars in Password';
+				$password_error ='/No Special Chars in Password';
 				$field_count++;
 			    }
 			}
@@ -106,6 +106,8 @@ require 'connect.php';
 			if(mysql_query($sql_query)){
 				$record_added =  "records added to the data";
 				$_SESSION['user_name'] = $student_name;
+				$student_result = mysql_query("SELECT * FROM student_info WHERE StudentNumber='$student_number'");
+				$_SESSION['student_data'] = mysql_fetch_array($student_result);
 				header("Location: page1.php");
 				}
 			else{
@@ -139,11 +141,11 @@ require 'connect.php';
 		
 				<h2>Student Regitration Form</h2>
 				<?= $record_added;?>
-				<input class="form-input" type="text" name="student_number" placeholder="Student Number" ><?php echo '<br><center>'.$number_error.'</center>';?>
-				<input class="form-input" type="text" name="student_name" placeholder="Name"><?php echo '<br><center>'.$name_error.'</center>';?>
-				<input class="form-input" type="text"  name="student_year" placeholder="BTech Year"><?php echo '<br><center>'.$year_error.'</center>';?>
-				<input class="form-input" type="text" name="student_email" placeholder="Email" ><?php echo '<br><center>'.$email_error.'</center>';?>
-				<input class="form-input" type="password" name="student_password" placeholder="Password"><?php echo '<br><center>'.$password_error.'</center>';?>
+				<input class="form-input" type="text" name="student_number" placeholder="<?php echo 'Student Number'.$number_error;?>">
+				<input class="form-input" type="text" name="student_name" placeholder="<?php echo 'Name'.$name_error ;?>">
+				<input class="form-input" type="text"  name="student_year" placeholder="<?php echo 'BTech Year'.$year_error ;?>">
+				<input class="form-input" type="text" name="student_email" placeholder="<?php echo 'Email'.$email_error ;?>">
+				<input class="form-input" type="password" name="student_password" placeholder="<?php echo 'Password'.$password_error ;?>">
 					
 				<button type="submit" class= "form-input">Done</button>
 					
