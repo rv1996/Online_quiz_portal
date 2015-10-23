@@ -20,7 +20,7 @@ if(is_user_loggedin_student()){
 		
 		position:absolute;
 		
-		top:22%;
+		top:24%;
 		left:37%;
 		width:50%;
 		height:65%;

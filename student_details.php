@@ -3,7 +3,14 @@
 
 include 'page-heading.php';
 include 'bottom-label.php';
-include 'navigation.php'
+include 'navigation.php';
+include 'connect.php'  ;
+
+//$student_number = //variable to be updated with the session entry....
+$sql_query = "SELECT * FROM records  ";
+$result = mysql_query($sql_query);
+$result_data = mysql_fetch_array($result);
+
 
 ?>
 
@@ -11,7 +18,7 @@ include 'navigation.php'
 <head>
 	<link href="style.css" type="text/css" rel="stylesheet">
 	<script src = "javascript.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="jquery-1.11.3.min.js"></script>
 	<script>
 		$(document).ready(function(){
 			
@@ -24,7 +31,9 @@ include 'navigation.php'
 			$("#graph").click(function(){
 				$("#slide-graph").slideToggle("slow");
 			})
-			
+			$(".table_data").click(function(){
+				$("#data1").slideToggle("slow");
+			})
 		});
 	</script>
 	<style>
@@ -73,6 +82,12 @@ include 'navigation.php'
 				
 			
 		</nav>
+			
+		<div id="details_data">
+				<span class="table_data" id="exams">Exams Id</span><br>
+				<span style="display:none;" id="data1"><?= $result_data['ExamId']?></span><br>
+				
+		<div>
 	</body>
 	
 </html>

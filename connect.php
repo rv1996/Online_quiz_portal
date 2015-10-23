@@ -12,7 +12,7 @@
 	$mysql_database = "OQP";
 	
 	if(mysql_connect($server,$server_name,$server_password) &&mysql_select_db($mysql_database)){
-		// echo "connection are made<br><br>";
+		//echo "connection are made<br><br>";
 	}else{
 		die("could not establish the conncetion");
 	}
