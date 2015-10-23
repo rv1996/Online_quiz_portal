@@ -146,7 +146,7 @@ require 'connect.php';
 				<input class="form-input" type="text"  name="student_year" placeholder="<?php echo 'BTech Year'.$year_error ;?>">
 				<input class="form-input" type="text" name="student_email" placeholder="<?php echo 'Email'.$email_error ;?>">
 				<input class="form-input" type="password" name="student_password" placeholder="<?php echo 'Password'.$password_error ;?>">
-					
+				
 				<button type="submit" class= "form-input">Done</button>
 					
 		</form>

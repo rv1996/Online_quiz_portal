@@ -28,22 +28,37 @@
 	
 .list-names{
 	text-align:center;
-	font-size:5vh;
+	font-size:5vmin;
 	}
 #companies-list,#exams-list{
-	color:#212121;
+	color:#252525;
 	font-size:1.5vw;
 	border:solid 2px #607D8B;
 	height:25vh;
-	overflow:scroll;
-	height:50vh
+	overflow:hidden;
+	background-color:#3CF;
+	height:25vh;
 	}
+#companies-list:hover,#exams-list:hover{
+	overflow:scroll;
+	}	
 #companies-list ul,#exams-list ul{
 	text-align:center;
-	padding:2%;
+	padding:2%;	
 	}
 #companies-list li,#exams-list li{
 	margin:1%;
+	}
+#companies-list li:hover,#exams-list li:hover{
+	cursor:pointer;
+	}
+	
+#about-company li,#about-exam li{
+	margin:4%;
+	margin-bottom:6%;
+	margin-top:6%;
+	font-size:3vmin;
+	color:rgba(7,45,52,1);
 	}
 </style>
 
@@ -63,11 +78,24 @@ include 'profile.php';
 			<div id="companies-list">
 			<?php include 'companies-list.php'; ?>
             </div>
+            <div  id="about-company">
+            	<ul>
+                	<li>This is the list of all the companies registered with us</li>
+                    <li>Click on any particular company to see its available exams</li>
+                </ul>
+            </div>
 		</div>
 		<div id="exams">
 			<h2 class="list-names">EXAMS</h2>
 			<div id="exams-list">
 			<?php include 'exams-list.php'; ?>
+            </div>
+            <div id="about-exam">
+            	<ul>
+            		<li>This is the list of exams available</li>
+                    <li>Click on any exam to start the exam</li>
+                    <li>You will be redirected to the page containing the relevant instructions</li>  
+            	</ul>
             </div>
 		</div>
     </div>

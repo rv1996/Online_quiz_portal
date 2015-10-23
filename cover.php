@@ -21,7 +21,7 @@ if(is_user_loggedin_student()){
 		
 		position:absolute;
 		
-		top:22%;
+		top:24%;
 		left:37%;
 		width:50%;
 		height:65%;
@@ -34,12 +34,12 @@ if(is_user_loggedin_student()){
 <body>
 	<?php include "navigation.php";?>
 		<div id="cover">
-		<div id = "student"  onclick="return student();">Student
-		
-		<footer>What profession could you be succesful in ???</footer>
+			<div id = "student"  onclick="return student();">Student
+			<footer>What profession could you be succesful in ???</footer>
 		</div><br>
 		<div id = "company"  onclick="return company();">Company
 		<footer>If you really wanna fly give up the things that weigh you down...</footer>
+
 		</div><br>
 		</div>
 		
