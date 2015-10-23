@@ -11,4 +11,5 @@
 	mysql_connect($server,$server_name,$server_password) or die("ConnectionError");
 	mysql_select_db($mysql_database) or die(mysql_error());
 
+
 ?>

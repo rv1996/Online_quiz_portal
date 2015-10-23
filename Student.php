@@ -139,12 +139,13 @@ require 'connect.php';
 		
 				<h2>Student Regitration Form</h2>
 				<?= $record_added;?>
+
 				<input class="form-input" type="text" name="student_number" placeholder="Student Number" ><?php echo '<br><center>'.$number_error.'</center>';?>
 				<input class="form-input" type="text" name="student_name" placeholder="Name"><?php echo '<br><center>'.$name_error.'</center>';?>
 				<input class="form-input" type="text"  name="student_year" placeholder="BTech Year"><?php echo '<br><center>'.$year_error.'</center>';?>
 				<input class="form-input" type="text" name="student_email" placeholder="Email" ><?php echo '<br><center>'.$email_error.'</center>';?>
 				<input class="form-input" type="password" name="student_password" placeholder="Password"><?php echo '<br><center>'.$password_error.'</center>';?>
-					
+		
 				<button type="submit" class= "form-input">Done</button>
 					
 		</form>
