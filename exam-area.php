@@ -30,13 +30,14 @@
 	top:0;
 	left:0;
 	margin:auto;
-	padding:1%;
+	padding:5%;
 	width:auto;
 	overflow:hidden;
 	background-color:rgba(195, 205, 50, 0.37);
 	height:81vh;
 	border:1px solid #009688;
 	border-top:solid 4px #B6B6B6;
+	
 	}
 #questionarea:hover{
 	overflow:scroll;
@@ -46,7 +47,7 @@
   background: rgba(25, 210, 201, 0.66);
   font-family: Courier New;
   color: rgba(90, 16, 206, 0.78);
-  margin: 1%;
+  margin-left:2%;
   font-size: 2.4vw;
   padding: 2%;
   text-decoration: none;
@@ -59,11 +60,12 @@
 }
 
 #end{
-	position:relative;
+	position:absolute;
 	margin:1%;
-	top:4vh;
-	right:1%;
+	bottom:7vh;
+	right:7.5%;
 	z-index:2;
+	
 	}
 /*#submit{
 	position:relative;
@@ -137,7 +139,7 @@ for($i=1;$i <= $question_count;$i++){
 	}
 ?>
 </div>
-<!--button id="end" onclick="endExam()" style="height:3vh;width:3vw;padding:auto">END</button-->
+<button id="end" onclick="endExam()" style="font-size:4vmin;padding:auto">END</button>
 <script>
 var t = <?php echo $_SESSION['time']; ?>;
 var seconds = <?php echo $_SESSION['sec']; ?>;
@@ -147,7 +149,7 @@ quesSelector(<?php echo $_SESSION['ques'];?>);
 setInterval(timer,1000);
 	
 function endExam(){
-	jstophp('delete-temp-table.php',del);
+	window.location = "end-score.php";
 	}
 	
 function del(xhttp){
@@ -179,7 +181,7 @@ function timer(){
 			seconds = "59";
 			}
 		else{
-			
+			window.location = "end-score.php";
 			}
 		}
 	else{
