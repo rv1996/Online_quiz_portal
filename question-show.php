@@ -2,7 +2,8 @@
 require 'connect.php';
 include 'core.php';
 $examid = $_SESSION['examid'];
-$query_questions = "SELECT questions,questionid FROM questionbank_company WHERE examid='$examid' ORDER BY questionid";
+$typeid = $_SESSION['typeid'];
+$query_questions = "SELECT questions,questionid FROM questionbank_company WHERE examid='$examid' AND typeid='$typeid' ORDER BY questionid";
 
 $result_questions = mysql_query($query_questions) or die(mysql_error());
 
