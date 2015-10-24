@@ -39,8 +39,8 @@ ques
 <body onload="visible('single','multi','match')">
 
 <?php
-include 'oqpall/core.php';
-include 'oqpall/page-heading.php';
+include 'core.php';
+include 'page-heading.php';
 session_start();
 
 ?>
@@ -98,7 +98,7 @@ TYPES OF QUESTIONS:
         <form action="multidb.php" method="post">
               <?php echo "<b>Question no.".$_SESSION['number']."</b>";?><br><br>   <label for="question">Ask Question</label><br>
                 
-                <textarea name="question" rows = "4" cols="50" placeholder="Enter your question here" required="required"></textarea>&nbsp; &nbsp;
+                <textarea name="question" rows = "4" cols="50" placeholder="Enter your question here" required></textarea>&nbsp; &nbsp;
                 Postive marks:<textarea name="pmarks" rows = "1" cols="1" required='required'></textarea>&nbsp; &nbsp;
                 Negative marks:<textarea name="nmarks" rows = "1" cols="1" required='required'></textarea>
                 <br><br>
