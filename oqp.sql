@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2015 at 07:01 AM
+-- Generation Time: Oct 24, 2015 at 12:00 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.5.28
 
@@ -31,7 +31,95 @@ CREATE TABLE IF NOT EXISTS `answers_company` (
   `Options` text NOT NULL,
   `CheckAns` int(11) NOT NULL DEFAULT '0',
   `OptionId` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `answers_company`
+--
+
+INSERT INTO `answers_company` (`QuestionId`, `Options`, `CheckAns`, `OptionId`) VALUES
+(1, '<js>', 0, 1),
+(1, '<javascript>', 0, 2),
+(1, '<scripting>', 0, 3),
+(1, '<script>', 1, 4),
+(2, 'document.getElementById("demo").innerHTML = "Hello World!";', 1, 5),
+(2, '#demo.innerHTML = "Hello World!";', 0, 6),
+(2, 'document.getElement("p").innerHTML = "Hello World!";', 0, 7),
+(2, 'document.getElementByName("p").innerHTML = "Hello World!";', 0, 8),
+(3, 'Both the <head> section and the <body> section are correct', 1, 9),
+(3, 'The <head> section', 0, 10),
+(3, 'The <body> section', 0, 11),
+(4, '<script src="xxx.js">', 1, 12),
+(4, '<script name="xxx.js">', 0, 13),
+(4, '<script href="xxx.js">', 0, 14),
+(5, 'True', 0, 15),
+(5, 'False', 1, 16),
+(6, 'msgBox("Hello World");', 0, 17),
+(6, 'alert("Hello World");', 1, 18),
+(6, 'alertBox("Hello World");', 0, 19),
+(6, 'msg("Hello World");', 0, 20),
+(7, 'function myFunction()', 1, 21),
+(7, 'function:myFunction()', 0, 22),
+(7, 'function = myFunction()', 0, 23),
+(8, 'myFunction()', 1, 24),
+(8, 'call myFunction()', 0, 25),
+(8, 'call function myFunction()', 0, 26),
+(9, 'if (i == 5)', 1, 27),
+(9, 'if i == 5 then', 0, 28),
+(9, 'if i = 5', 0, 29),
+(9, 'if i = 5 then', 0, 30),
+(10, 'if (i <> 5)', 0, 31),
+(10, 'if i <> 5', 0, 32),
+(10, 'if i =! 5 then', 0, 33),
+(10, 'if (i != 5)', 1, 34),
+(11, 'while i = 1 to 10', 0, 35),
+(11, 'while (i <= 10; i++)', 0, 36),
+(11, 'while (i <= 10)', 1, 37),
+(12, 'for i = 1 to 5', 0, 38),
+(12, 'for (i = 0; i <= 5; i++)', 1, 39),
+(12, 'for (i = 0; i <= 5)', 0, 40),
+(12, 'for (i <= 5; i++)', 0, 41),
+(13, '//This is a comment', 1, 42),
+(13, '<!--This is a comment-->', 0, 43),
+(13, '''This is a comment', 0, 44),
+(14, '/*This comment has\r\nmore than one line*/', 1, 45),
+(14, '//This comment has\r\nmore than one line//', 0, 46),
+(14, '<!--This comment has\r\nmore than one line-->', 0, 47),
+(15, 'var colors = "red", "green", "blue"', 0, 48),
+(15, 'var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue")', 0, 49),
+(15, 'var colors = ["red", "green", "blue"]', 1, 50),
+(15, 'var colors = (1:"red", 2:"green", 3:"blue")', 0, 51),
+(16, 'rnd(7.25)', 0, 52),
+(16, 'round(7.25)', 0, 53),
+(16, 'Math.rnd(7.25)', 0, 54),
+(16, 'Math.round(7.25)', 1, 55),
+(17, 'ceil(x, y)', 0, 56),
+(17, 'top(x, y)', 0, 57),
+(17, 'Math.max(x, y)', 1, 58),
+(17, 'Math.ceil(x, y)', 0, 59),
+(18, 'w2 = window.open("http://www.w3schools.com");', 1, 60),
+(18, 'w2 = window.new("http://www.w3schools.com");', 0, 61),
+(19, 'False', 1, 62),
+(19, 'True', 0, 63),
+(20, 'browser.name', 0, 64),
+(20, 'client.navName', 1, 65),
+(20, 'navigator.appName', 0, 66),
+(21, 'onmouseover', 0, 67),
+(21, 'onchange', 0, 68),
+(21, 'onmouseclick', 0, 69),
+(21, 'onclick', 1, 70),
+(22, 'variable carName;', 0, 71),
+(22, 'var carName;', 1, 72),
+(22, 'v carName;', 0, 73),
+(23, '-', 0, 74),
+(23, '+', 0, 75),
+(23, '=', 1, 76),
+(23, '*', 0, 77),
+(24, 'false', 0, 78),
+(24, 'NaN', 0, 79),
+(24, 'true', 1, 80),
+(25, 'No', 0, 81),
+(25, 'Yes', 1, 82);
 
 -- --------------------------------------------------------
 
@@ -144,7 +232,19 @@ CREATE TABLE IF NOT EXISTS `company_exams` (
   `CompanyId` int(11) NOT NULL,
   `ExamId` int(11) NOT NULL,
   `Time` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `company_exams`
+--
+
+INSERT INTO `company_exams` (`CompanyId`, `ExamId`, `Time`) VALUES
+(5, 1, 10),
+(5, 2, 5),
+(5, 3, 10),
+(3, 4, 10),
+(4, 5, 7),
+(1, 6, 5);
 
 -- --------------------------------------------------------
 
@@ -158,14 +258,21 @@ CREATE TABLE IF NOT EXISTS `company_info` (
   `Username` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `company_info`
 --
 
 INSERT INTO `company_info` (`CompanyId`, `Name`, `Username`, `Email`, `Password`) VALUES
-(1, 'HCL', 'hcl', 'hcl@gmail.com', 'e81c3498aba0e190103e317d8388a022');
+(1, 'SRS', 'srs', 'dagasatvik@gmail.com', '91deb626b692ecdf5926d4d7cb1c16fa'),
+(2, 'h', 'h', 'h@gmail.com', '8fee646aae6f8e5bf07243dd9b54d289'),
+(3, 'sat', 'sat', 'sat@gmail.com', '68e2be3ce9d2ed2810ca906a74e16b11'),
+(4, 'sd', 'sd', 'sd@g.com', '4c66b16bd8aa6672eedf0a7107e49681'),
+(5, 'HCL', 'hcl', 'hcl@gmail.com', 'e81c3498aba0e190103e317d8388a022'),
+(6, 'Snapdeal', 'snap', 'snap@gmail.com', 'e3b22c681d15f62f69d257979c3f6f28'),
+(7, 'AKGEC', 'akg', 'akg@gmail.com', 'a560b2128ca7331cdb29a0918e4f83e5'),
+(8, 'Flipkart', 'flip', 'flip@gmail.com', 'b169efd5b12cf922d8935fbb146da7bf');
 
 -- --------------------------------------------------------
 
@@ -180,7 +287,16 @@ CREATE TABLE IF NOT EXISTS `exam_type_linked` (
   `nmarks` int(11) NOT NULL,
   `noofquestions` int(11) NOT NULL,
   `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `exam_type_linked`
+--
+
+INSERT INTO `exam_type_linked` (`typeid`, `examid`, `pmarks`, `nmarks`, `noofquestions`, `id`) VALUES
+(1, 1, 3, 1, 10, 1),
+(2, 1, 4, 0, 5, 2),
+(1, 6, 4, 1, 25, 3);
 
 -- --------------------------------------------------------
 
@@ -193,7 +309,38 @@ CREATE TABLE IF NOT EXISTS `questionbank_company` (
   `QuestionId` int(11) NOT NULL,
   `Questions` text NOT NULL,
   `typeid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `questionbank_company`
+--
+
+INSERT INTO `questionbank_company` (`ExamId`, `QuestionId`, `Questions`, `typeid`) VALUES
+(6, 1, 'Inside which HTML element do we put the JavaScript?', 1),
+(6, 2, 'What is the correct JavaScript syntax to change the content of the HTML element given ?\n<p id=''demo''>This is a demonstration.</p>', 1),
+(6, 3, 'Where is the correct place to insert a JavaScript?', 1),
+(6, 4, 'What is the correct syntax for referring to an external script called "xxx.js"?', 1),
+(6, 5, 'The external JavaScript file must contain the <script> tag.', 1),
+(6, 6, 'How do you write "Hello World" in an alert box?', 1),
+(6, 7, 'How do you create a function in JavaScript?', 1),
+(6, 8, 'How do you call a function named "myFunction"?', 1),
+(6, 9, 'How to write an IF statement in JavaScript?', 1),
+(6, 10, 'How to write an IF statement for executing some code if "i" is NOT equal to 5?', 1),
+(6, 11, 'How does a WHILE loop start?', 1),
+(6, 12, 'How does a FOR loop start?', 1),
+(6, 13, 'How can you add a comment in a JavaScript?', 1),
+(6, 14, 'How to insert a comment that has more than one line?', 1),
+(6, 15, 'What is the correct way to write a JavaScript array?', 1),
+(6, 16, 'How do you round the number 7.25, to the nearest integer?', 1),
+(6, 17, 'How do you find the number with the highest value of x and y?', 1),
+(6, 18, 'What is the correct JavaScript syntax for opening a new window called "w2" ?', 1),
+(6, 19, 'JavaScript is the same as Java.', 1),
+(6, 20, 'How can you detect the client''s browser name?', 1),
+(6, 21, 'Which event occurs when the user clicks on an HTML element?', 1),
+(6, 22, 'How do you declare a JavaScript variable?', 1),
+(6, 23, 'Which operator is used to assign a value to a variable?', 1),
+(6, 24, 'What will the following code return: Boolean(10 > 9)', 1),
+(6, 25, 'Is JavaScript case-sensitive?', 1);
 
 -- --------------------------------------------------------
 
@@ -250,7 +397,7 @@ CREATE TABLE IF NOT EXISTS `records` (
   `Score` int(11) DEFAULT NULL,
   `Id` int(11) NOT NULL,
   `ExamGiven` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -271,9 +418,12 @@ CREATE TABLE IF NOT EXISTS `student_info` (
 --
 
 INSERT INTO `student_info` (`StudentNumber`, `Name`, `BTechYear`, `Email`, `Password`) VALUES
+(1210024, 'Ranchi', 3, 'r@gmail.com', '757fb66ad042d0f68825d46aacc782f3'),
+(1210025, 'Sanchi Daga', 2, 'sanchi.daga@gmail.com', '433e05d8dcdadabbc86b52a538760ae1'),
 (1410025, 'Satvik Daga', 2, 'dagasatvik@gmail.com', '1f7bf1f636e8528d6135109159dcbcac'),
 (1410053, 'Sagarika Vishnoi', 2, 'sagarikavishnoi7@gmail.com', '58762b1c17fabdf89c04b75936a74519'),
-(1410172, 'Rupanshu Verma', 2, 'vermarupanshu733@gmail.com', 'eb16f458fb2e8470dd394eb66eb8ecc1');
+(1410172, 'Rupanshu Verma', 2, 'vermarupanshu733@gmail.com', 'eb16f458fb2e8470dd394eb66eb8ecc1'),
+(1510025, 'Ayushi Chauhan', 1, 'sona@gmail.com', 'd27ef34297cc73d1b62059becd68e82f');
 
 -- --------------------------------------------------------
 
@@ -285,7 +435,38 @@ CREATE TABLE IF NOT EXISTS `temp_table` (
   `checkans` int(11) NOT NULL DEFAULT '0',
   `id` int(11) NOT NULL,
   `questionid` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `temp_table`
+--
+
+INSERT INTO `temp_table` (`checkans`, `id`, `questionid`) VALUES
+(-1, 1, 1),
+(0, 2, 2),
+(0, 3, 3),
+(0, 4, 4),
+(0, 5, 5),
+(0, 6, 6),
+(0, 7, 7),
+(0, 8, 8),
+(0, 9, 9),
+(0, 10, 10),
+(0, 11, 11),
+(0, 12, 12),
+(0, 13, 13),
+(0, 14, 14),
+(0, 15, 15),
+(0, 16, 16),
+(0, 17, 17),
+(0, 18, 18),
+(0, 19, 19),
+(0, 20, 20),
+(0, 21, 21),
+(0, 22, 22),
+(0, 23, 23),
+(0, 24, 24),
+(0, 25, 25);
 
 -- --------------------------------------------------------
 
@@ -390,27 +571,32 @@ ALTER TABLE `typeofquestions`
 -- AUTO_INCREMENT for table `answers_company`
 --
 ALTER TABLE `answers_company`
-  MODIFY `OptionId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=101;
+  MODIFY `OptionId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=83;
 --
 -- AUTO_INCREMENT for table `answers_practice`
 --
 ALTER TABLE `answers_practice`
   MODIFY `OptionId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=183;
 --
+-- AUTO_INCREMENT for table `company_exams`
+--
+ALTER TABLE `company_exams`
+  MODIFY `ExamId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
 -- AUTO_INCREMENT for table `company_info`
 --
 ALTER TABLE `company_info`
-  MODIFY `CompanyId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `CompanyId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `exam_type_linked`
 --
 ALTER TABLE `exam_type_linked`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `questionbank_company`
 --
 ALTER TABLE `questionbank_company`
-  MODIFY `QuestionId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `QuestionId` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `questionbank_practice`
 --
@@ -420,12 +606,12 @@ ALTER TABLE `questionbank_practice`
 -- AUTO_INCREMENT for table `records`
 --
 ALTER TABLE `records`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=101;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `temp_table`
 --
 ALTER TABLE `temp_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT for table `typeofquestions`
 --
