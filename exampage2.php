@@ -7,7 +7,6 @@
  
  <script type="text/javascript">
 visible();
-
 function showdiv(d1,d2,d3)
 {
 	document.getElementById(d1).style.display="block";
@@ -53,7 +52,7 @@ include 'page-heading.php';
     <br>
     <br>
 
-    TYPES OF QUESTIONS:
+    <b>TYPE OF QUESTIONS:</b>
                <button type="button" onClick="showdiv('single','multi','match')" onclick="this.form.reset();">SINGLE CORRECT</button>
                <button type="button" onClick="showdiv('multi','single','match')" onclick="this.form.reset();" >MULTI CORRECT</button>
                <button type="button" onClick="showdiv('match','single','multi')" onclick="this.form.reset();">MATCH THE FOLLOWING</button>
@@ -84,7 +83,10 @@ include 'page-heading.php';
                     <tr>
                        <td>OPTION.$i</td>
                        <td><td><input type='text' name='option".$i."' </td>
-                       <td><label style='cursor:pointer; color:#06F;'><input type='radio' name='radio' value='radio".$i."'>Correct Answer?</label></td>
+                       <td><label style='cursor:pointer; color:#06F;'>
+					   <input type='radio' id='rad' name='radio' value='radio".$i."'>Correct Answer?
+				       
+					   </label></td>
                     </tr>
                    </table>";
          }
