@@ -12,6 +12,7 @@ $host="localhost";
 $username="root";
 $password="";
 $db_name="oqp";
+session_start();
 $con=new MySQLi("$host","$username","$password","$db_name");
 	// Check connection
   if ($con->connect_error)
@@ -23,13 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
 	for($i=1;$i<=10;$i++)
 	{
-    if(!empty($_POST["column1".$i]) || !empty($_POST["column2".$i]))
+    if(!empty($_POST["column1".$i]) || !empty($_POST["column2".$i]) && isset($_POST["pmarks"]) && isset($_POST["nmarks"]))
 {
 	$column1=$_POST["column1".$i];
 	$column2=$_POST["column1".$i];
-	echo $column1;
-	$sql="INSERT INTO matchthefollowing(columnA,columnB)
-	VALUES ('$column1','$column2')";
+	$pmarks=$_POST["pmarks"];
+	$nmarks=$_POST["nmarks"];
+	$sql="INSERT INTO matchthefollowing(columnA,columnB,pmarks,nmarks)
+	VALUES ('$column1','$column2','$pmarks','$nmarks')";
 	 if($con->query($sql) ===TRUE)
 	{
 		 echo "New record created successfully<br>";
@@ -66,6 +68,7 @@ if(!empty($_POST["option".$i]) )
 	}
 }
 }
+$_SESSION['number']++;
 	
 }
 header('Location:exampage2.php');

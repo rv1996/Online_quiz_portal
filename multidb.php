@@ -12,6 +12,7 @@ $host="localhost";
 $username="root";
 $password="";
 $db_name="oqp";
+session_start();
 $con=new MySQLi("$host","$username","$password","$db_name");
 	echo "p";	// Check connection
   if ($con->connect_error)
@@ -21,11 +22,14 @@ $con=new MySQLi("$host","$username","$password","$db_name");
 	  echo "connected successfully";
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
-if(isset($_POST["question"]) )
+   if(isset($_POST["question"]) && isset($_POST["pmarks"]) && isset($_POST["nmarks"]))
 {
+	
 	$question=$_POST["question"];
-	 $sql="INSERT INTO questionbank_company(QuestionS,typeid)
-	VALUES ('$question',2)";
+	$pmarks=$_POST["pmarks"];
+	$nmarks=$_POST["nmarks"];
+	$sql="INSERT INTO questionbank_company(QuestionS,typeid,pmarks,nmarks)
+	VALUES ('$question',1,'$pmarks','$nmarks')";
 	 if($con->query($sql) ===TRUE)
 	{
 		 echo "New record created successfully<br>";
@@ -40,7 +44,7 @@ for($i=1;$i<=4;$i++)
 if(!empty($_POST["option".$i]) )
 {
     $option=$_POST["option".$i] ;
-	if(isset($_POST["check".$i]))
+	if(!empty($_POST["check".$i]))
 	{
 	$check=1;
 	}
@@ -62,7 +66,8 @@ if(!empty($_POST["option".$i]) )
 }
 }
 }
-	
+$_SESSION['number']++;
+
 }
 header('Location:exampage2.php');
 ?>
