@@ -1,7 +1,8 @@
 <?php
 $i = 1;
 $examid = $_SESSION['examid'];
-$query_questions = "SELECT questions,questionid FROM questionbank_company WHERE examid='$examid' ORDER BY questionid";
+$type_id = $_SESSION['typeid'];
+$query_questions = "SELECT questions,questionid FROM questionbank_company WHERE examid='$examid' AND typeid='$type_id' ORDER BY questionid";
 $result_questions = mysql_query($query_questions) or die(mysql_error());
 
 
@@ -11,11 +12,21 @@ while($row = mysql_fetch_array($result_questions)){
 	$i++;
 	}
 	
-check_ans($questionid);
-?>
 
+?>
 <?php
-function check_ans($questionid){
+$query = "SELECT pmarks,nmarks FROM exam_type_linked WHERE examid='$examid' AND typeid='$type_id'";
+$result = mysql_query($query) or die(mysql_error());
+
+while($row=mysql_fetch_array($result)){
+	$pmarks = $row['pmarks'];
+	$nmarks = $row['nmarks'];
+	}
+	
+check_ans($questionid,$pmarks,$nmarks);	
+?>
+<?php
+function check_ans($questionid,$pmarks,$nmarks){
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$_SESSION['ques']++;
 	$q = $_REQUEST['qid'];
@@ -36,10 +47,10 @@ function check_ans($questionid){
 			}
 			
 		if($qcheckans[$j] == $options[$j]){
-			$check = 1;
+			$check = $pmarks;
 			}
 		else{
-			$check = -1;
+			$check = -$nmarks;
 			break;
 			}
 		}

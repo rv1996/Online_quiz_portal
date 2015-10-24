@@ -87,7 +87,10 @@ login_redirect_student();
 	require 'connect.php';
 	include 'exam-info.php';
 
-	$_SESSION['ques'] = 1;
+
+$_SESSION['ques'] = 1;
+$_SESSION['typeid'] = $typeid[1];
+
 
 	$query_temp_table = "INSERT INTO temp_table (questionid) SELECT questionid FROM questionbank_company" ;
 	mysql_query($query_temp_table);
