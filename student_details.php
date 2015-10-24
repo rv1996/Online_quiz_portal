@@ -1,18 +1,22 @@
 <?php 
 //student details form... regarding the exam which had been given by the individual student..
 
-
+//---- all the file equivalent to the templetes are include here....
 include 'page-heading.php';
 include 'navigation.php';
 include 'bottom-label.php';
 include 'connect.php'  ;
 include 'core.php';
 
-//$student_number = //variable to be updated with the session entry....
+//---$student_number = //variable to be updated with the session entry....
+
+//---basic SQL uqery
 $sql_query = "SELECT * FROM records  ";
 $result = mysql_query($sql_query);
 $result_data = mysql_fetch_array($result);
 
+
+//force redirection to login page...
 login_redirect_student();
 
 
@@ -24,17 +28,29 @@ login_redirect_student();
 	<script src = "javascript.js"></script>
 	<script src="jquery-1.11.3.min.js"></script>
 	<script>
+	
+	
+	
+		
+		
+		
+		//----sliding effect of the JQuery is used....
+		//----for now CDN is not used...instead we have downloaded the coresponding JQuery file in the same Directory...
+		
 		$(document).ready(function(){
 			
 			$("#exam").click(function(){
 				$("#slide-exam").slideToggle("slow");
 			})
+			
 			$("#percent").click(function(){
 				$("#slide-percent").slideToggle("slow");
 			})
+			
 			$("#graph").click(function(){
 				$("#slide-graph").slideToggle("slow");
 			})
+			
 			$(".table_data").click(function(){
 				$("#data1").slideToggle("slow");
 			})
@@ -68,30 +84,29 @@ login_redirect_student();
 			heigth:100px;
 		}
 		
-		
 	</style>
-	
-</head>
-	<body>
+	</head>
 
+
+	<body>
+		
 		
 		<nav id="list">
-			
 				<div id="exam">Exam Given</div>
 				<span id="slide-exam">Contain the details about the exam given </span>
 				<div id="percent">Percentile</div>
 				<span id="slide-percent">Contain the details about the percentage and high score</span>
 				<div id="graph">Graph Analysis</div>
 				<span id="slide-graph">Graphical analysis is shown here....</span>
-				
-			
 		</nav>
+			
 			
 		<div id="details_data">
 				<span class="table_data" id="exams">Exams Id</span><br>
 				<span style="display:none;" id="data1"><?= $result_data['ExamId']?></span><br>
-				
 		<div>
+		
+		
 	</body>
 	
 </html>
