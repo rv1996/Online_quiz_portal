@@ -62,8 +62,8 @@
 #end{
 	position:absolute;
 	margin:1%;
-	bottom:7vh;
-	right:7.5%;
+	bottom:11.5%;
+	right:4%;
 	z-index:2;
 	
 	}
@@ -97,7 +97,7 @@
 	position:fixed;
 	font-size:5vmin;
 	right:5%;
-	top:12%;
+	top:14.5%;
 	}
 </style>
 <script src="ajax.js" type="text/javascript"></script>
@@ -139,7 +139,7 @@ for($i=1;$i <= $question_count;$i++){
 	}
 ?>
 </div>
-<button id="end" onclick="endExam()" style="font-size:4vmin;padding:auto">END</button>
+<button id="end" onclick="endExam()" style="font-size:3vmin;padding:auto">END</button>
 <script>
 var t = <?php echo $_SESSION['time']; ?>;
 var seconds = <?php echo $_SESSION['sec']; ?>;
