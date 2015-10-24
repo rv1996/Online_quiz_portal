@@ -1,12 +1,9 @@
 <?php
-//include 'core.php';
+include_once 'core.php';
 include 'connect.php';
 
 
-if(!is_user_loggedin_student()){
-	header("Location: page1.php");
-}
-
+login_redirect_student();
 // below state is made to check that is the data has been shifted to the page.....
 //print_r($_SESSION['student_data']);
 ?>

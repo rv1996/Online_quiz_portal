@@ -13,9 +13,7 @@ $sql_query = "SELECT * FROM records  ";
 $result = mysql_query($sql_query);
 $result_data = mysql_fetch_array($result);
 
-if(!is_user_loggedin_student()){
-	header("Location: page1.php");
-}
+login_redirect_student();
 
 
 ?>
