@@ -41,7 +41,7 @@ ques
 <?php
 include 'core.php';
 include 'page-heading.php';
-session_start();
+@session_start();
 
 ?>
 
@@ -88,8 +88,9 @@ TYPES OF QUESTIONS:
 }
 
 ?>
+<br>
 <input type="hidden" value="single" name="type">
-<input type="submit" value="next" ></form>
+<input type="submit" value="Add to Quiz" > &nbsp;&nbsp;&nbsp;<button type="button" onClick="location.href='exampage3.php';">FINISH</button></form>
             </div>
             
             
@@ -118,7 +119,7 @@ echo
 ?>
 <br>
 <input type="hidden" value="multi" name="type">
-<input type="submit" value="next" >
+<input type="submit" value="Add to Quiz" >&nbsp;&nbsp;&nbsp;<button type="button" onClick="location.href='exampage3.php';">FINISH</button>
 </form>
 </div>
 
@@ -175,7 +176,7 @@ echo
 <br>
 
 <input type="hidden" value="single" name="type">
-<input type="submit" name="submit" value="next" >
+<input type="submit" name="submit" value="Add to Quiz" >&nbsp;&nbsp;&nbsp;<button type="button" onClick="location.href='exampage3.php';">FINISH</button>
 </form>
 
             </div>
