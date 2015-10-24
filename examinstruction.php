@@ -9,9 +9,9 @@
 <body>
 
 <?php
-include 'oqpall/core.php';
-include 'oqpall/bottom-label.php';
-include 'oqpall/page-heading.php';
+include 'core.php';
+include 'bottom-label.php';
+include 'page-heading.php';
 $_SESSION['number']=1;
 ?>
 <div id="instructions" style="background:#00796B;color:#FBF5F3; width:750px;height:400px;font-family:'Open Sans Condensed', arial, sans;">
