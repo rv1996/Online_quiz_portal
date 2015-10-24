@@ -24,6 +24,11 @@
 #exam-over h1{
 	font-size:5.5vmin;
 	}
+
+#dash{
+	position:relative;
+	top:4vh;	
+	}
 </style>
 </head>
 
@@ -58,11 +63,20 @@ include 'student-records-editor.php';
 				echo $max_marks;
 			?>
             </h3>
+            <div id="dash">
+            	<button onclick="toDashboard()" style="font-size:4vmin">Dashboard</button>
+            </div>
     	</div>
     </div>
 
 <?php
 //include 'delete-temp-table.php';
 ?>
+<script>
+function toDashboard(){
+	window.location = "page1.php";
+	}
+
+</script>
 </body>
 </html>
