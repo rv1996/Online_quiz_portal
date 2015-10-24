@@ -70,7 +70,7 @@ include 'student-records-editor.php';
     </div>
 
 <?php
-//include 'delete-temp-table.php';
+include 'delete-temp-table.php';
 ?>
 <script>
 function toDashboard(){
