@@ -3,6 +3,10 @@
 include 'connect.php';
 
 
+if(!is_user_loggedin_student()){
+	header("Location: page1.php");
+}
+
 // below state is made to check that is the data has been shifted to the page.....
 //print_r($_SESSION['student_data']);
 ?>
@@ -23,7 +27,7 @@ include 'connect.php';
 	
 	<div id="student-exam" onClick="return exam();">Exam</div> 
     <div id="student-practice" onClick="return practice();">Practice</div>
-    <div id="student-details">Details</div>
+    <div id="student-details" onClick="return student_details()">Details</div>
 
 	</body>
 </html>

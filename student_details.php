@@ -1,15 +1,21 @@
 <?php 
 //student details form... regarding the exam which had been given by the individual student..
 
+
 include 'page-heading.php';
-include 'bottom-label.php';
 include 'navigation.php';
+include 'bottom-label.php';
 include 'connect.php'  ;
+include 'core.php';
 
 //$student_number = //variable to be updated with the session entry....
 $sql_query = "SELECT * FROM records  ";
 $result = mysql_query($sql_query);
 $result_data = mysql_fetch_array($result);
+
+if(!is_user_loggedin_student()){
+	header("Location: page1.php");
+}
 
 
 ?>

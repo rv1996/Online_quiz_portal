@@ -22,3 +22,7 @@ function sign_in(){
 function exam(){
 	window.location = "exam-selection.php";
 	}
+function student_details(){
+	
+	window.location = "student_details.php";
+}

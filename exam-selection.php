@@ -71,6 +71,11 @@ include 'Page-heading.php';
 include 'bottom-label.php';
 include 'navigation.php';
 include 'profile.php';
+
+if(!is_user_loggedin_student()){
+	header("Location: page1.php");
+}
+
 ?>
 	<div id="section">
 		<div id="companies">
