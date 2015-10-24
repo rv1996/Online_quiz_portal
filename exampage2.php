@@ -4,8 +4,10 @@
 <meta charset="utf-8">
 <title>Untitled Document</title>
  <link rel="stylesheet" href="style.css">
+ 
  <script type="text/javascript">
- visible();
+visible();
+
 function showdiv(d1,d2,d3)
 {
 	document.getElementById(d1).style.display="block";
@@ -21,6 +23,7 @@ function visible(d1,d2,d3)
 	document.getElementById(d3).style.display="none";
 	
 }
+
 </script>
 
 <style>
@@ -42,91 +45,112 @@ ques
 include 'core.php';
 include 'page-heading.php';
 @session_start();
-
 ?>
 
 <div id= "ques">
 
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
 
-TYPES OF QUESTIONS:
-<button type="button" onClick="showdiv('single','multi','match')" >SINGLE CORRECT</button>
-
-<button type="button" onClick="showdiv('multi','single','match')" >MULTI CORRECT</button>
-<button type="button" onClick="showdiv('match','single','multi')" >MATCH THE FOLLOWING</button>
+    TYPES OF QUESTIONS:
+               <button type="button" onClick="showdiv('single','multi','match')" onclick="this.form.reset();">SINGLE CORRECT</button>
+               <button type="button" onClick="showdiv('multi','single','match')" onclick="this.form.reset();" >MULTI CORRECT</button>
+               <button type="button" onClick="showdiv('match','single','multi')" onclick="this.form.reset();">MATCH THE FOLLOWING</button>
 
 </div>
 
 <div class="Content" id="single" >
-   <h1>Add Single correct</h1><?php  $message="";?>
-  
-        <form action="singledb.php" method="post">
-       <?php echo "<b>Question no.".$_SESSION['number']."</b>";?><br><br>
-       <label for="question">Ask Question</label><br>
+     <h1>Add Single correct</h1><?php  $message="";?>
+    <form action="singledb.php" method="post">
+        <?php echo "<b>Question no.".$_SESSION['number']."</b>";?>
+        <br>
+        <br>
+        <label for="question">Ask Question</label><br>
         <textarea name="question" id="q" rows = "4" cols="50" placeholder="Enter your question here" required='required'></textarea>
-         &nbsp; &nbsp;
-                Postive marks:<textarea name="pmarks" rows = "1" cols="1" required='required'></textarea>&nbsp; &nbsp;
-                Negative marks:<textarea name="nmarks" rows = "1" cols="1" required='required'></textarea>
-		 
-                <br>
-                <br>
+         &nbsp; 
+         &nbsp;
+         Postive marks:<textarea name="pmarks" rows = "1" cols="1" required='required'></textarea>
+         &nbsp;
+         &nbsp;
+         Negative marks:<textarea name="nmarks" rows = "1" cols="1" required='required'></textarea>
+		 <br>
+         <br>
          <?php
-		
-               for($i=1;$i<=4;$i++)
-                 {
-                 echo 
+		    for($i=1;$i<=4;$i++)
+          {
+               echo 
                    "<table>
-                     <tr>
+                    <tr>
                        <td>OPTION.$i</td>
                        <td><td><input type='text' name='option".$i."' </td>
-                       <td><label style='cursor:pointer; color:#06F;'><input type='radio' name='radio".$i."'>Correct Answer?</label></td>
+                       <td><label style='cursor:pointer; color:#06F;'><input type='radio' name='radio' value='radio".$i."'>Correct Answer?</label></td>
+                    </tr>
+                   </table>";
+         }
 
-</tr>
-</table>";
-}
-
-?>
-<br>
-<input type="hidden" value="single" name="type">
-<input type="submit" value="Add to Quiz" > &nbsp;&nbsp;&nbsp;<button type="button" onClick="location.href='exampage3.php';">FINISH</button></form>
-            </div>
+          ?>
+          <br>
+          <input type="hidden" value="single" name="type">
+          <input type="submit" value="Add to Quiz" > 
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          <input type="button" name="reset_form" value="Reset QUESTION" onclick="this.form.reset();" > 
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          <button type="button" onClick="location.href='exampage3.php';">FINISH</button>
+      </form>
+</div>
             
             
  <div class="Content" id="multi" >
-        <h1>Add Multi Correct</h1>
-        <form action="multidb.php" method="post">
-              <?php echo "<b>Question no.".$_SESSION['number']."</b>";?><br><br>   <label for="question">Ask Question</label><br>
-                
-                <textarea name="question" rows = "4" cols="50" placeholder="Enter your question here" required></textarea>&nbsp; &nbsp;
-                Postive marks:<textarea name="pmarks" rows = "1" cols="1" required='required'></textarea>&nbsp; &nbsp;
-                Negative marks:<textarea name="nmarks" rows = "1" cols="1" required='required'></textarea>
-                <br><br>
-<?php
-for($i=1;$i<=4;$i++)
-{
-echo 
-"<table>
-<tr>
-<td>OPTION.$i</td>
-<td><td><input type='text' name='option".$i."'> </td>
-<td><label style='cursor:pointer; color:#06F;'><input type='checkbox' name='check".$i."'>Correct Answer?</label></td>
-</tr>
-
-</table>";
-}
-?>
-<br>
-<input type="hidden" value="multi" name="type">
-<input type="submit" value="Add to Quiz" >&nbsp;&nbsp;&nbsp;<button type="button" onClick="location.href='exampage3.php';">FINISH</button>
-</form>
+       <h1>Add Multi Correct</h1>
+       <form action="multidb.php" method="post">
+           <?php echo "<b>Question no.".$_SESSION['number']."</b>";?>
+           <br>
+           <br>   
+           <label for="question">Ask Question</label>
+           <br>
+           <textarea name="question" rows = "4" cols="50" placeholder="Enter your question here" required></textarea>
+           &nbsp;
+           &nbsp;
+           Postive marks:<textarea name="pmarks" rows = "1" cols="1" required='required'></textarea>
+           &nbsp;
+           &nbsp;
+           Negative marks:<textarea name="nmarks" rows = "1" cols="1" required='required'></textarea>
+           <br>
+           <br>
+           <?php for($i=1;$i<=4;$i++)
+            {
+              echo "<table>
+                    <tr>
+                      <td>OPTION.$i</td>
+                      <td><td><input type='text' name='option".$i."'> </td>
+                      <td><label style='cursor:pointer; color:#06F;'>
+					       <input type='checkbox' name='check".$i."'>Correct Answer?</label></td>
+                    </tr>
+					</table>";
+            }?>
+            <br>
+           <input type="hidden" value="multi" name="type">
+           <input type="submit" value="Add to Quiz" >
+           &nbsp;
+           &nbsp;
+           &nbsp;
+           <input type="button" name="reset_form" value="Reset QUESTION" onclick="this.form.reset();" >
+           &nbsp;
+           &nbsp;
+           &nbsp;
+           <button type="button" onClick="location.href='exampage3.php';">FINISH</button>
+        </form>
 </div>
 
 <div class="Content" id="match" >
         <h1>Add MATCH THE FOLLOWING</h1>
-         <form action="matchdb.php" method="post">
-<br>
+        <form action="matchdb.php" method="post">
+       <br>
  <?php echo "<b>Question no.".$_SESSION['number']."</b>";?><br><br>
          <?php
 		
@@ -176,7 +200,7 @@ echo
 <br>
 
 <input type="hidden" value="single" name="type">
-<input type="submit" name="submit" value="Add to Quiz" >&nbsp;&nbsp;&nbsp;<button type="button" onClick="location.href='exampage3.php';">FINISH</button>
+<input type="submit" name="submit" value="Add to Quiz" >&nbsp;&nbsp;&nbsp;<input type="button" name="reset_form" value="Reset QUESTION" onclick="this.form.reset();" >&nbsp;&nbsp;&nbsp;<button type="button" onClick="location.href='exampage3.php';">FINISH</button>
 </form>
 
             </div>
