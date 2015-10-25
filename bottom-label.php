@@ -1,3 +1,4 @@
-<div style="background:#00796B;width:90%;height:auto;
-font-size:2vw;padding:.6%;
-bottom:2px;position:fixed;color:#FBF5F3;font-family: 'Open Sans Condensed', arial, sans;"><center>&copy srs 2015 .</center></div>
+<footer style="background:#00796B;width:90%;
+font-size:4vmin;padding:.6%;
+bottom:.4vh;;z-index:1;border-top:solid 4px #B6B6B6;padding-right:2%;position:fixed;color:white;"><div style="float:right">&copy srs 2015</div></footer>
+

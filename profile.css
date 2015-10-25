@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+.display{
+	height:75.7vh;
+	width:25%;
+	background:#373232;
+	padding-top:5%;
+	color:#FFFFFF;
+	border-right:solid 2px #B6B6B6;
+	/*border-bottom:solid 4px #B6B6B6;*/
+	float:left;	
+}
+.display li{
+	margin-bottom:.3vh;
+}
+.display ul span{
+	border-bottom:solid 2px white;
+	
+}
+.display ul li label,span{
+	padding:1%;
+	font-size:3vmin;
+}
+
