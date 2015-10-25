@@ -8,7 +8,7 @@ if(@$_REQUEST['cId'] != 0 && !empty($company_id)){
 	$query_exam = "SELECT examid,examname FROM company_exams WHERE companyid=$company_id ORDER BY examid";
 	}
 else{
-	$query_exam = "SELECT examid,examname FROM company_exams ORDER BY examid";
+	$query_exam = "SELECT examid,examname FROM company_exams WHERE companyid!=1 ORDER BY examid";
 	}
 	
 $result_exam = mysql_query($query_exam) or die(mysql_error());
@@ -23,7 +23,7 @@ $n_of_exams = $i - 1;
 <ul type="disc">
     <?php
     for($i=1;$i<=$n_of_exams;$i++){
-        echo "<li><label onclick='start($exam_id[$i])'>$exam_id[$i] <b>".$examname[$i]."</b></label></li>";
+        echo "<li><label onclick='start($exam_id[$i])'><b>".$examname[$i]."</b></label></li>";
         }
      ?>
 </ul>

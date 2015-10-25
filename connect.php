@@ -11,4 +11,9 @@
 	mysql_connect($server,$server_name,$server_password) or die("ConnectionError");
 	mysql_select_db($mysql_database) or die(mysql_error());
 
+    $con=new MySQLi($server,$server_name,$server_password,$mysql_database);
+    if ($con->connect_error)
+    {
+    	die( "Connection failed: " .$con->connect_error);
+    }
 ?>

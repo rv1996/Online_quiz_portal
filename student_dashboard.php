@@ -21,9 +21,9 @@ include 'connect.php';
 	include 'student-profile.php';
 	?>	
 	<div id="section">
-        <div id="card1" onClick="return examStart();">Exam</div> 
-        <div id="card2" onClick="return practice();">Practice</div>
-        <div id="card3">Details</div>
+        <div id="card1" onClick="return examSelect()">Exam</div> 
+        <div id="card2" onClick="return practice()">Practice</div>
+        <div id="card3" onClick="return studentDetails()">Details</div>
 	</div>
 	</body>
 </html>

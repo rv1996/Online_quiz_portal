@@ -1,9 +1,6 @@
 function  student(){
-		window.location= "page1.php";
+	window.location= "page1.php";
 	}
-function company(){
-	window.location = "company.php";
-}
 function home(){
 	window.location = "cover.php";
 }
@@ -19,12 +16,18 @@ function company(){
 function sign_in(){
 	window.location = "cover.php";
 }
-function examStart(){
+function examSelect(){
 	window.location = "exam-selection.php";
 	}
-function details(){
-	window.location = "";
+function companyDetails(){
+	window.location = "company-records.php";
 	}
 function createExam(){
+	window.location = "exampage1.php";
+	}
+function practice(){
+	window.location = "exam-practice.php";
+	}
+function studentDetails(){
 	window.location = "";
 	}

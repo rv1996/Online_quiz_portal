@@ -1,5 +1,9 @@
 <?php
 include 'core.php';
+
+if(!is_user_loggedin_student()){
+	header("Location: page1.php");
+	}
 include 'exam-starter.php';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

@@ -30,7 +30,7 @@ $_SESSION['time'] = $row['Time'];
 $companyid = $row['CompanyId'];
 $_SESSION['n_of_questions'] = $row['noofquestions'];
 
-$result = mysql_query("SELECT name FROM company_info WHERE companyid=$companyid");
+$result = mysql_query("SELECT name FROM company_info WHERE companyid=$companyid") or die(mysql_error());
 $row = mysql_fetch_array($result);
 $company_name = $row['name'];
 

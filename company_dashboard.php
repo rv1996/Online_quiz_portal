@@ -21,7 +21,7 @@ include 'connect.php';
 	?>
 	<div id="section">
 	<div id="card1" onClick="createExam()" style="top:33%;font-size:6vmin">Create</div> 
-    <div id="card2" onClick="details()" style="top:33%;left:45vw;font-size:6vmin">Records</div>
+    <div id="card2" onClick="companyDetails()" style="top:33%;left:45vw;font-size:6vmin">Records</div>
     </div>
 	
 	

@@ -16,7 +16,7 @@ if(is_user_loggedin_student()){
 }
 else{
 	//echo "hello";
-	include 'login_form.php';
+	include 'student-login.php';
 }
 
 /*
