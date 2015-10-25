@@ -13,6 +13,7 @@ $username="root";
 $password="";
 $db_name="oqp";
 session_start();
+$examid = $_SESSION['examid'];
 $con=new MySQLi("$host","$username","$password","$db_name");
 	echo "p";	// Check connection
   if ($con->connect_error)
@@ -22,14 +23,13 @@ $con=new MySQLi("$host","$username","$password","$db_name");
 	  echo "connected successfully";
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
-   if(isset($_POST["question"]) && isset($_POST["pmarks"]) && isset($_POST["nmarks"]))
+   if(isset($_POST["question"]))
 {
 	
 	$question=$_POST["question"];
-	$pmarks=$_POST["pmarks"];
-	$nmarks=$_POST["nmarks"];
-	$sql="INSERT INTO questionbank_company(QuestionS,typeid,pmarks,nmarks)
-	VALUES ('$question',1,'$pmarks','$nmarks')";
+	
+	$sql="INSERT INTO questionbank_company(ExamId,Questions,typeid)
+	VALUES ('$examid','$question',1)";
 	 if($con->query($sql) ===TRUE)
 	{
 		 echo "New record created successfully<br>";
@@ -39,6 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 	{
 		echo "Error:" . $sql. "<br>" .$con->error;
 	}
+	$sql="SELECT QuestionId FROM questionbank_company ORDER BY QuestionId DESC";
+	$result = $con->query($sql);
+	$row = $result->fetch_assoc();
+	$q_id = $row['QuestionId'];
+
 for($i=1;$i<=4;$i++)
 {
 if(!empty($_POST["option".$i]) )
@@ -51,8 +56,8 @@ if(!empty($_POST["option".$i]) )
 	else
 	$check=0;
 	
-	$res="INSERT INTO answers_company(Options,CheckAns)
-	VALUES ('$option','$check')";
+	$res="INSERT INTO answers_company(QuestionId,Options,CheckAns)
+	VALUES ($q_id,'$option','$check')";
 	 if($con->query($res) ===TRUE)
 	{
 		 echo "New res record created successfully<br>";

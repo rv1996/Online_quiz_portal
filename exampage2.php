@@ -65,6 +65,7 @@ include 'company-profile.php';
 
 @session_start();
 ?>
+
 <div id="section">
     <div id= "ques">
     	<b>TYPE OF QUESTIONS:</b>
@@ -89,7 +90,7 @@ include 'company-profile.php';
                            
                            <td><td><input type='text' name='option".$i."' placeholder='OPTION".$i."'</td>
                            <td><label>
-                           <input type='radio' id='rad' name='radio' value='radio".$i."'>
+                           <input type='radio' id='rad' name='radio' value=$i>
                            
                            </label></td>
                         </tr>

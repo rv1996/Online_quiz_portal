@@ -15,6 +15,7 @@
         session_start();
         $con=new MySQLi("$host","$username","$password","$db_name");
         $c=0;
+		$examid = @$_SESSION['examid'];
       if ($con->connect_error)
     {
        die( "Connection failed: " .$con->connect_error);
@@ -22,22 +23,20 @@
 
       if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
-         if(isset($_POST["question"]) && 
-	        isset($_POST["pmarks"]) && 
-	        isset($_POST["nmarks"]))
+         if(isset($_POST["question"]))
     {
 	
 	           $question=$_POST["question"];
-	           $pmarks=$_POST["pmarks"];
-	           $nmarks=$_POST["nmarks"];
-	           $sql="INSERT INTO questionbank_company(QuestionS,typeid,pmarks,nmarks)
-	                 VALUES ('$question',1,'$pmarks','$nmarks')";
+	           $sql="INSERT INTO questionbank_company(ExamId,Questions,typeid)
+	                 VALUES ('$examid','$question',1)";
 	            if($con->query($sql) ===TRUE)
                    echo "New record created successfully<br>";
                 else
 				   echo "Error:" . $sql. "<br>" .$con->error;
-	
-
+				$sql="SELECT QuestionId FROM questionbank_company ORDER BY QuestionId DESC";
+				$result = $con->query($sql);
+				$row = $result->fetch_assoc();
+				$q_id = $row['QuestionId'];
 
                 for($i=1;$i<=4;$i++)
          {
@@ -53,15 +52,15 @@
 	           {
                      $option=$_POST["option".$i] ;
                      //echo $option;
-                       if(isset($_POST["radio".$i]))
+                       if($i==($_POST["radio"]))
 	                {
 	                      $radio=1;
 
 	                 }
 	                    else
 	                       $radio=0;
-	                       $res="INSERT INTO answers_company(Options,CheckAns)
-	                              VALUES ('$option','$radio')";
+	                       $res="INSERT INTO answers_company(QuestionId,Options,CheckAns)
+	                              VALUES ('$q_id','$option','$radio')";
 	                  if($con->query($res) ===TRUE)
 		                 echo "New res record created successfully<br>";
 		              else

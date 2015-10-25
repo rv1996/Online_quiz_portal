@@ -23,8 +23,8 @@ function examStart(){
 	window.location = "exam-selection.php";
 	}
 function details(){
-	window.location = "";
+	window.location = "companyrecords.php";
 	}
 function createExam(){
-	window.location = "";
+	window.location = "exampage1.php";
 	}
