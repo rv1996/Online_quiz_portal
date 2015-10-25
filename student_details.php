@@ -87,7 +87,7 @@ $result_data = mysql_fetch_array($result);
 				<span class="table_data" id="exams">Exams Id</span><br>
 				<span style="display:none;" id="data1"><?= $result_data['ExamId']?></span><br>
 				
-		<div>
+		</div>
 	</body>
 	
 </html>

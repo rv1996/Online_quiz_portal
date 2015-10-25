@@ -1,7 +1,7 @@
 /* styling of all the  pages are done here....*/
 *{
 		box-sizing:border-box;
-		font-family: 'Open Sans Condensed', arial, sans;
+		font-family: 'Exo', sans-serif;
 		
 	}
 
@@ -73,3 +73,12 @@ body{
 	max-width:50%;
 	font-size:2vw;
 }
+#section{
+	position:relative;
+	float:right;
+	width:75%;
+	border-left:solid 2px #B6B6B6;
+	background:#B2DFDB;
+	height:75.7vh;
+	/*border-bottom:solid 4px #B6B6B6;*/
+	}

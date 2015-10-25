@@ -20,7 +20,7 @@
 			}
 		else{
 			echo " ".$_SESSION['user_name']." <a style ='padding:2%;
-					margin-left:10px;margin:auto;color:#6D5252;border-left:solid 2px #B6B6B6;' href='logout_page.php' >Logout</a>";
+					margin-left:10px;margin:auto;color:#732424;border-left:solid 2px #B6B6B6;' href='logout_page.php'>Logout</a>";
 			}
 		?>
         </label>

@@ -8,6 +8,7 @@ include 'exam-starter.php';
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <link rel="stylesheet" href="style.css" />
+<script type="text/javascript" src="javascript.js"></script>
 <style>
 #exam-start{
 	position:relative;
@@ -76,7 +77,7 @@ button:hover{
 include 'Page-heading.php';
 include 'bottom-label.php';
 include 'navigation.php';
-include 'profile.php';
+include 'student-profile.php';
 require 'connect.php';
 include 'exam-info.php';
 

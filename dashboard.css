@@ -2,77 +2,56 @@
 /* CSS Document */
 /*styling for student_dasdboard page*/
 
-#student-exam, #student-practice{
+#card1, #card2{
 	position:absolute;
 	background:#FBFBFB;
 	border-bottom:solid 8px #4DC700;
 	color:#5A5A5A;
-	font-size:4vw;
-	width:18%;
+	font-size:7vmin;
+	width:auto;
 	-webkit-transition: -webkit-transform 1s,background 1s;
 	transition:-webkit-transform 1s,background 1s,box-shadow 1s;
 	display:inline;	
-	top:40%;
+	top:25%;
 	text-align:center;
 	padding:1.6%;
 }
 
-#student-exam:hover,#student-practice:hover,#student-details:hover{
+#card1:hover,#card2:hover,#card3:hover{
 	-webkit-transform: scale(1.1,1.1);
 	transform: scale(1.1,1.1);
 	background:#F5E6E1;
 	box-shadow: 6px 6px 6px grey;
 	cursor:pointer;
-	font-family: 'Open Sans Condensed', arial, sans;
+	
 	border-radius:5px;
 }
 
-#student-exam{
-	left:9em;
+#card1{
+	left:10vw;
 	
 }
-#student-practice{
-	left:17em;
+#card2{
+	left:40vw;
 	
 }
-#student-details{
+#card3{
 		
-	left:53%;
+	left:37%;
 	position:absolute;
 	background:#FBFBFB;
 	border-bottom:solid 8px #4DC700;
 	color:#5A5A5A;
-	font-size:3vw;
-	width:13%;
+	font-size:7vmin;
+	width:auto;
 	text-align:center;
 	-webkit-transition: -webkit-transform 1s,background 1s;
 	transition:-webkit-transform 1s,background 1s,box-shadow 1s;
 	display:inline;	
-	top:70%;
+	top:60%;
 	padding:1%;
 }
 
-.display{
-	height:75.7vh;
-	width:25%;
-	background:#373232;
-	padding-top:5%;
-	color:#FFFFFF;
-	border-right:solid 2px #B6B6B6;
-	/*border-bottom:solid 4px #B6B6B6;*/
-	float:left;	
-}
-.display li{
-	margin-bottom:.3vh;
-}
-.display ul span{
-	border-bottom:solid 2px white;
-	
-}
-.display ul li label,span{
-	padding:3px;
-	font-size:3vmin;
-}
 
 
 	

@@ -18,12 +18,12 @@ include 'connect.php';
 		
 	<?php 
 	include 'navigation.php';
-	include 'profile.php';
+	include 'student-profile.php';
 	?>	
-	
-	<div id="student-exam" onClick="return exam();">Exam</div> 
-    <div id="student-practice" onClick="return practice();">Practice</div>
-    <div id="student-details">Details</div>
-
+	<div id="section">
+        <div id="card1" onClick="return examStart();">Exam</div> 
+        <div id="card2" onClick="return practice();">Practice</div>
+        <div id="card3">Details</div>
+	</div>
 	</body>
 </html>

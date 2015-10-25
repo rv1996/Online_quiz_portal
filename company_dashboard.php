@@ -15,19 +15,14 @@ include 'connect.php';
 	<body>
 	
 		
-	<?php include 'navigation.php';?>
-	
-	<nav class="display">
-		
-		<ul>
-			<li><label>Company ID:</label></li><span><?php echo @$_SESSION['company_data']['CompanyId']?></span>
-			<br><br>
-			<li><label>Name:</label></li><span><?php echo @$_SESSION['company_data']['Name']?></span>
-			
-			<br>
-		</ul>
-	</nav>
-	
+	<?php 
+	include 'navigation.php';
+	include 'company-profile.php';
+	?>
+	<div id="section">
+	<div id="card1" onclick="createExam()" style="top:33%;font-size:10vmin">Create</div> 
+    <div id="card2" onclick="details()" style="top:33%;font-size:10vmin">Records</div>
+    </div>
 	
 	
 
