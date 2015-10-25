@@ -84,7 +84,7 @@ include 'page-heading.php';
                        <td>OPTION.$i</td>
                        <td><td><input type='text' name='option".$i."' </td>
                        <td><label style='cursor:pointer; color:#06F;'>
-					   <input type='radio' id='rad' name='radio' value='radio".$i."'>Correct Answer?
+					   <input type='radio' id='rad' name='radio' value='$i'>Correct Answer?
 				       
 					   </label></td>
                     </tr>

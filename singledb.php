@@ -22,16 +22,12 @@
 
       if ($_SERVER['REQUEST_METHOD'] === 'POST')
     {
-         if(isset($_POST["question"]) && 
-	        isset($_POST["pmarks"]) && 
-	        isset($_POST["nmarks"]))
+         if(isset($_POST["question"]))
     {
 	
 	           $question=$_POST["question"];
-	           $pmarks=$_POST["pmarks"];
-	           $nmarks=$_POST["nmarks"];
-	           $sql="INSERT INTO questionbank_company(QuestionS,typeid,pmarks,nmarks)
-	                 VALUES ('$question',1,'$pmarks','$nmarks')";
+	           $sql="INSERT INTO questionbank_company(QuestionS,typeid)
+	                 VALUES ('$question',1)";
 	            if($con->query($sql) ===TRUE)
                    echo "New record created successfully<br>";
                 else
@@ -53,7 +49,7 @@
 	           {
                      $option=$_POST["option".$i] ;
                      //echo $option;
-                       if(isset($_POST["radio".$i]))
+                       if($i==($_POST["radio"]))
 	                {
 	                      $radio=1;
 
