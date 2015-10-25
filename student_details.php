@@ -3,10 +3,11 @@
 
 //---- all the file equivalent to the templetes are include here....
 include 'page-heading.php';
-include 'navigation.php';
 include 'bottom-label.php';
 include 'connect.php'  ;
 include 'core.php';
+include 'navigation.php';
+
 
 //---$student_number = //variable to be updated with the session entry....
 
@@ -29,6 +30,16 @@ login_redirect_student();
 	<script src="jquery-1.11.3.min.js"></script>
 	<script>
 	
+	function details(){
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) {
+			document.getElementById('details_data_display').innerHTML = xhttp.responseText;
+		}
+		}
+		xhttp.open('student_graph.php',true);
+		xhttp.send();
+	}
 	
 	
 		
@@ -92,7 +103,7 @@ login_redirect_student();
 		
 		
 		<nav id="list">
-				<div id="exam">Exam Given</div>
+				<div id="exam" onclick="return details();">Exam Given</div>
 				<span id="slide-exam">Contain the details about the exam given </span>
 				<div id="percent">Percentile</div>
 				<span id="slide-percent">Contain the details about the percentage and high score</span>
@@ -101,10 +112,9 @@ login_redirect_student();
 		</nav>
 			
 			
-		<div id="details_data">
-				<span class="table_data" id="exams">Exams Id</span><br>
-				<span style="display:none;" id="data1"><?= $result_data['ExamId']?></span><br>
-		<div>
+		<section id="details_data_display" >
+			
+		</section>
 		
 		
 	</body>

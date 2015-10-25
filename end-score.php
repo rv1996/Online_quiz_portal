@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
+<script src="javascript.js"></script>
 <style>
 #section{
 	position:relative;
@@ -37,6 +38,10 @@ include 'navigation.php';
 include 'profile.php';
 include 'score-calculator.php';
 include 'student-records-editor.php';
+
+
+login_redirect_student();
+
 ?>
 
 	<div id="section">
