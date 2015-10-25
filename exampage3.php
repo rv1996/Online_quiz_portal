@@ -25,29 +25,28 @@ echo "<br><br><br>";
 <form method="post" action="input.php">
 <fieldset>  
   <ul style="list-style-type:none" class="items">
-  <li><b>EXAM NAME:</b><input type="text" name="examname" required='required'></li>
+     <li><b>EXAM NAME:</b><input type="text" name="examname" required='required'></li>
    <br>
    
-   <li><b>TIME TAKEN FOR EXAM(in minutes):</b><input type="number" name="timer" required='required'></li>
+     <li><b>TIME TAKEN FOR EXAM(in minutes):</b><input type="number" name="timer" required='required'></li>
    <br>
    
-   <li><b>SINGLE CORRECT:</b> 
+     <li><b>SINGLE CORRECT:</b> 
      Postive marks:<textarea name='spmarks' rows = '1' cols='1' required='required'></textarea>&nbsp; &nbsp;
-                Negative marks:<textarea name='snmarks' rows = '1' cols='1' required='required'></textarea></li>
+     Negative marks:<textarea name='snmarks' rows = '1' cols='1' required='required'></textarea></li>
    
    <li><b>MULTI-CORRECT:</b> 
     Postive marks:<textarea name='mpmarks' rows = '1' cols='1' required='required'></textarea>&nbsp; &nbsp;
-                Negative marks:<textarea name='mnmarks' rows = '1' cols='1' required='required'></textarea></li>
+    Negative marks:<textarea name='mnmarks' rows = '1' cols='1' required='required'></textarea></li>
    <br><br>
   
   
    <li><input type="submit" name="submit" value="Submit"></li> 
    </ul>
    
-   </fieldset>
-</form></center>
+</fieldset>
+</form>
+</center>
 </div>
-                         
-
 </body>
 </html>
