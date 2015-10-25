@@ -20,8 +20,8 @@ include 'connect.php';
 	include 'company-profile.php';
 	?>
 	<div id="section">
-	<div id="card1" onclick="createExam()" style="top:33%;font-size:10vmin">Create</div> 
-    <div id="card2" onclick="details()" style="top:33%;font-size:10vmin">Records</div>
+	<div id="card1" onClick="createExam()" style="top:33%;font-size:6vmin">Create</div> 
+    <div id="card2" onClick="details()" style="top:33%;left:45vw;font-size:6vmin">Records</div>
     </div>
 	
 	

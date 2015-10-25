@@ -49,7 +49,8 @@ h2{
 #start{
 	position:fixed;
 	padding-left:28%;
-	bottom:10%;
+	bottom:3%;
+	z-index:3;
 	}
 	
 	
@@ -94,20 +95,19 @@ mysql_query($query_temp_table);
     	<ol>
         	<li>The Company which created this exam is <b><?php echo @$company_name; ?></b></li>
             <li>The maximum amount of Time for this exam is <b><?php echo @$_SESSION['time']; ?> min</b>, after that the exam will end itself</li>
-            
+            <li>The total Number of Questions in the exam are <b><?php echo @$_SESSION['n_of_questions']; ?></b></li>
             <li>The details regarding how marks are awarded is given here:</li>
         </ol>
 		<table>
         	<caption>Questions</caption>
         	<tr>
             	<th>Question Type</th>
-                <th>Number of Questions</th>
                 <th>Marks per Question</th>
                 <th>Negative Marks</th>
             </tr>
             <?php
             	for($i=1;$i<=$n_of_type;$i++){
-					echo "<tr><td>".$type[$i]."</td><td>".@$n[$i]."</td><td>".@$pmarks[$i]."</td><td>".@$nmarks[$i]."</td></tr>";
+					echo "<tr><td>".$type[$i]."</td><td>".@$pmarks[$i]."</td><td>".@$nmarks[$i]."</td></tr>";
 					}
 			?>
         </table>
