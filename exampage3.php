@@ -37,7 +37,7 @@ include 'company-profile.php';
 ?>
 <div id="section">
 	<div id="d1">
-    	<h3><b>QUIZ CREATED SUCCESSFULLY!</b></h3>
+    	<h3><b>Questions Added Successfully!</b></h3>
         <h4>No. Of Questions added to the Quiz: <?php echo $_SESSION['number'];?></h4>
                          
      	<form method="post" action="input.php">
