@@ -50,7 +50,7 @@
 #companies-list li,#exams-list li{
 	margin:1%;
 	}
-#companies-list li:hover,#exams-list li:hover{
+#companies-list li b:hover,#exams-list li label:hover{
 	cursor:pointer;
 	}
 	

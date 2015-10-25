@@ -4,6 +4,9 @@
 		font-family: 'Exo', sans-serif;
 		
 	}
+* button:hover{
+	cursor:pointer;
+	}
 
 #form_header{
 	border-bottom:solid 3px #4DC700;

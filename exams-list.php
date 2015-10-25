@@ -5,16 +5,17 @@ require 'connect.php';
 @$company_id = $_REQUEST['cId'];
 
 if(@$_REQUEST['cId'] != 0 && !empty($company_id)){
-	$query_exam = "SELECT examname FROM company_exams WHERE companyid=$company_id ORDER BY examid";
+	$query_exam = "SELECT examid,examname FROM company_exams WHERE companyid=$company_id ORDER BY examid";
 	}
 else{
-	$query_exam = "SELECT examname FROM company_exams ORDER BY examid";
+	$query_exam = "SELECT examid,examname FROM company_exams ORDER BY examid";
 	}
 	
 $result_exam = mysql_query($query_exam) or die(mysql_error());
 
 for($i=1;$row = mysql_fetch_array($result_exam);$i++){
-	$examname[$i] = $row[0];
+	$examname[$i] = $row[1];
+	$exam_id[$i] = $row[0];
 	}
 $n_of_exams = $i - 1;
 ?>
@@ -22,7 +23,7 @@ $n_of_exams = $i - 1;
 <ul type="disc">
     <?php
     for($i=1;$i<=$n_of_exams;$i++){
-        echo "<li onclick='start($exam_id[$i])'><b>".$examname[$i]."</b></li>";
+        echo "<li><label onclick='start($exam_id[$i])'>$exam_id[$i] <b>".$examname[$i]."</b></label></li>";
         }
      ?>
 </ul>
