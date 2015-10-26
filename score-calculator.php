@@ -1,5 +1,7 @@
 <?php
 include 'connect.php';
+include_once 'core.php';
+
 $query = "SELECT SUM(checkans) FROM temp_table";
 $result = mysql_query($query) or die(mysql_error());
 
@@ -7,7 +9,7 @@ $row = mysql_fetch_array($result);
 
 $score = $row['SUM(checkans)'];
 $max_marks = 0;
-$examid = $_SESSION['examid'];
+@$examid = $_SESSION['examid'];
 
 $query = "SELECT pmarks,typeid FROM exam_type_linked WHERE examid='$examid'";
 $result = mysql_query($query) or die(mysql_error());

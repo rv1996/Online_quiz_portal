@@ -3,10 +3,12 @@
 	$_SESSION['ques'] = 1;
 	}*/
 
+
 if(!is_user_loggedin_student()){
 	header("Location: page1.php");
 	}
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -22,13 +24,13 @@ if(!is_user_loggedin_student()){
 	width:60%;
 	height:81vh;
 	float:right;
-	right:0;	
+	right:0;
 	background-color:#DBE1E2;
 	border:1px solid #009688;
 	border-top:solid 4px #B6B6B6;
-	
+
 	}
-	
+
 #questionarea{
 	position:relative;
 	top:0;
@@ -41,12 +43,12 @@ if(!is_user_loggedin_student()){
 	height:81vh;
 	border:1px solid #009688;
 	border-top:solid 4px #B6B6B6;
-	
+
 	}
 #questionarea:hover{
 	overflow:auto;
 	}
-	
+
 .questionnav {
   background: rgba(25, 210, 201, 0.66);
   font-family: Courier New;
@@ -69,7 +71,7 @@ if(!is_user_loggedin_student()){
 	bottom:1%;
 	right:50%;
 	z-index:2;
-	
+
 	}
 /*#submit{
 	position:relative;
@@ -96,7 +98,7 @@ if(!is_user_loggedin_student()){
 	padding:1%;
 	border:1px solid #000;
 	}*/
-	
+
 #timer{
 	position:fixed;
 	font-size:5vmin;
@@ -109,7 +111,7 @@ if(!is_user_loggedin_student()){
 </head>
 
 <body>
-<?php 
+<?php
 include 'Page-heading.php';
 require 'connect.php';
 include 'bottom-label.php';
@@ -123,9 +125,9 @@ include 'ans-check.php';
 	<!--div id="question"></div>
 	<div id="ans"></div>
 	<div id="submit"><input type='submit' /></div-->
-</div> 
+</div>
 <div id="questionarea">
-<?php 
+<?php
 
 $question_count = mysql_num_rows($result_questions);
 //$question_count = 19;
@@ -151,20 +153,20 @@ var seconds = <?php echo $_SESSION['sec']; ?>;
 
 quesSelector(<?php echo $_SESSION['ques'];?>);
 
-//setInterval(timer,1000);
-	
+setInterval(timer,1000);
+
 function endExam(){
 	window.location = "end-score.php";
 	}
-	
+
 function del(xhttp){
 	document.getElementById('phpcode').innerHTML = xhttp.responseText;
 	}
-	
-function quesSelector(selection){	
+
+function quesSelector(selection){
 	jstophp('question-show.php?q=' + selection,myFunction);
 	}
-	
+
 function myFunction(xhttp){
 	document.getElementById('displayarea').innerHTML = xhttp.responseText;
 	}
@@ -201,11 +203,11 @@ function timeChanger(xhttp){
 
 /*function nextType(){
 	var typeid = <?php // echo $typeid;?>;
-	<?php 
+	<?php
 	/*$examid = $_SESSION['examid'];
 	$query = "SELECT typeid,pmarks,nmarks,noofquestions FROM exam_type_linked WHERE examid='$examid' ORDER BY typeid";
 	$result = mysql_query($query) or die(mysql_error());
-	
+
 	for($i=1;$row=mysql_fetch_array($result);$i++){
 		$t_id[$i] = $row['typeid'];
 	}
@@ -213,7 +215,7 @@ function timeChanger(xhttp){
 	?>
 	var tmax = <?php //echo $t_id[$i] ; ?>;
 	if(typeid < tmax){
-		
+
 		}
 	}*/
 </script>

@@ -19,6 +19,11 @@ function sign_in(){
 function examSelect(){
 	window.location = "exam-selection.php";
 	}
+
+function student_details(){
+	window.location = "student_details.php";
+}
+
 function companyDetails(){
 	window.location = "company-records.php";
 	}
@@ -27,7 +32,4 @@ function createExam(){
 	}
 function practice(){
 	window.location = "exam-practice.php";
-	}
-function studentDetails(){
-	window.location = "";
 	}
