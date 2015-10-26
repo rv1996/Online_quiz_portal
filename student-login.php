@@ -65,7 +65,7 @@
 			<input class="form-input" type="password" name="password" placeHolder="Password"> <br> 
 			
             <button  class="form-input" type="submit" name="submit">Sign In</button><br><br>
-			<label class="form-input">Not a member, <a href="Student.php">Register</a> Here</label>
+			<label class="form-input">Not a member, <a href="student-register.php">Register</a> Here</label>
 	
 	</form>
 </nav>

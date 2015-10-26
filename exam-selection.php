@@ -1,5 +1,10 @@
-<?php include 'core.php'; 
-login_redirect_student();
+
+<?php
+include 'core.php';
+
+if(!is_user_loggedin_student()){
+	header("Location: page1.php");
+	}
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -8,28 +13,22 @@ login_redirect_student();
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
-<script src="javascript.js"></script>
+
+<script type="text/javascript" src="javascript.js"></script>
+
 <style>
-#section{
-	position:relative;
-	float:right;
-	width:75%;
-	border-left:solid 2px #B6B6B6;
-	background:#B2DFDB;
-	height:75.7vh;
-	/*border-bottom:solid 4px #B6B6B6;*/
-	}
+
 #companies,#exams{
 	position:relative;
 	display:inline-block;
 	width:49.7%;
-	color:#727272;	
+	color:#727272;
 	padding:2%;
 	}
 #exams{
 	float:right;
 	}
-	
+
 .list-names{
 	text-align:center;
 	font-size:5vmin;
@@ -45,18 +44,18 @@ login_redirect_student();
 	}
 #companies-list:hover,#exams-list:hover{
 	overflow:scroll;
-	}	
+	}
 #companies-list ul,#exams-list ul{
 	text-align:center;
-	padding:2%;	
+	padding:2%;
 	}
 #companies-list li,#exams-list li{
 	margin:1%;
 	}
-#companies-list li:hover,#exams-list li:hover{
+#companies-list li b:hover,#exams-list li label:hover{
 	cursor:pointer;
 	}
-	
+
 #about-company li,#about-exam li{
 	margin:4%;
 	margin-bottom:6%;
@@ -69,16 +68,13 @@ login_redirect_student();
 </head>
 
 <body>
-<?php 
+<?php
 require 'connect.php';
 include 'Page-heading.php';
 include 'bottom-label.php';
 include 'navigation.php';
-include 'profile.php';
 
-if(!is_user_loggedin_student()){
-	header("Location: page1.php");
-}
+include 'student-profile.php';
 
 ?>
 	<div id="section">
@@ -103,7 +99,7 @@ if(!is_user_loggedin_student()){
             	<ul>
             		<li>This is the list of exams available</li>
                     <li>Click on any exam to start the exam</li>
-                    <li>You will be redirected to the page containing the relevant instructions</li>  
+                    <li>You will be redirected to the page containing the relevant instructions</li>
             	</ul>
             </div>
 		</div>

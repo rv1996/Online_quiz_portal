@@ -3,6 +3,14 @@ include 'page-heading.php';
 include 'bottom-label.php';
 include 'core.php';
 require 'connect.php';
+
+/*if(!is_user_loggedin_company()){
+	header("Location: page2.php");
+	}
+
+if(!is_user_loggedin_student()){
+	header("Location: page1.php");
+	}*/
 	
 	// variable to be be taken from the dom....
 	//data variable

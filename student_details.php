@@ -127,6 +127,7 @@ login_redirect_student();
 		</nav>
 
 
+
 		<section id="details_data_display" style="float:left;width:70%;height:80%;overflow:scroll;" >
 				<div id="exam_given"><?php include_once "exam_given.php"; ?>
 						<center>
@@ -157,6 +158,7 @@ login_redirect_student();
 				<div id="graph" style="height:90%;" > <?php include_once "Student_graph.php"; ?></div>
 
 		</section>
+
 
 
 	</body>

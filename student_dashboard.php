@@ -17,23 +17,20 @@ login_redirect_student();
 		<link href='https://fonts.googleapis.com/css?family=Exo:400,300' rel='stylesheet' type='text/css'>
 		<link href="dashboard.css" type="text/css" rel="stylesheet">
 	</head>
-	
-	<body>
-	
-			
-		<?php 
-		
-		//----naviagtion bar of all the pages..
-		include 'navigation.php';
-		
-		//---contain the information of the user  who hadd been logged in..
-		include 'profile.php';
-		?>	
-		
-		<div id="student-exam" onClick="return exam();">Exam</div> 
-		<div id="student-practice" onClick="return practice();">Practice</div>
-		<div id="student-details" onClick="return student_details()">Details</div>
 
-		
+	<body>
+
+
+
+	<?php
+	include 'navigation.php';
+	include 'student-profile.php';
+	?>
+	<div id="section">
+        <div id="card1" onClick="return examSelect()">Exam</div>
+        <div id="card2" onClick="return practice()">Practice</div>
+        <div id="card3" onClick="return student_details()">Details</div>
+	</div>
+
 	</body>
 </html>

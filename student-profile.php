@@ -1,4 +1,4 @@
-<head><link rel="stylesheet" type="text/css" href="dashboard.css"></head>	
+<head><link rel="stylesheet" type="text/css" href="profile.css"></head>	
     
 <nav class="display">
     
