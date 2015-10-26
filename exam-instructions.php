@@ -14,16 +14,6 @@ include 'exam-starter.php';
 <link rel="stylesheet" href="style.css" />
 <script type="text/javascript" src="javascript.js"></script>
 <style>
-#exam-start{
-	position:relative;
-	width:75%;
-	float:right;
-	height:75.7vh;
-	font-family:"Times New Roman", Times, serif;
-	padding:1%;
-	border-left: solid 2px #B6B6B6;
-	background:#B2DFDB;
-	}
 	
 #instructions{
 	position:relative;
@@ -87,13 +77,12 @@ require 'connect.php';
 include 'exam-info.php';
 
 $_SESSION['ques'] = 1;
-$_SESSION['typeid'] = $typeid[1];
 
 $query_temp_table = "INSERT INTO temp_table (questionid) SELECT questionid FROM questionbank_company" ;
 mysql_query($query_temp_table);
 
 ?>
-<div id="exam-start">
+<div id="section">
     <h2>Exam Instructions</h2>
     <div id="instructions"> 
     	<ol>

@@ -23,7 +23,7 @@ if(!is_user_loggedin_student()){
 	height:81vh;
 	float:right;
 	right:0;	
-	background-color:rgba(195, 205, 50,.37);
+	background-color:#DBE1E2;
 	border:1px solid #009688;
 	border-top:solid 4px #B6B6B6;
 	
@@ -37,14 +37,14 @@ if(!is_user_loggedin_student()){
 	padding:5%;
 	width:auto;
 	overflow:hidden;
-	background-color:rgba(195, 205, 50, 0.37);
+	background-color:#DBE1E2;
 	height:81vh;
 	border:1px solid #009688;
 	border-top:solid 4px #B6B6B6;
 	
 	}
 #questionarea:hover{
-	overflow:scroll;
+	overflow:auto;
 	}
 	
 .questionnav {
@@ -66,8 +66,8 @@ if(!is_user_loggedin_student()){
 #end{
 	position:absolute;
 	margin:1%;
-	bottom:11.5%;
-	right:4%;
+	bottom:1%;
+	right:50%;
 	z-index:2;
 	
 	}
@@ -102,6 +102,7 @@ if(!is_user_loggedin_student()){
 	font-size:5vmin;
 	right:5%;
 	top:14.5%;
+	z-index:3;
 	}
 </style>
 <script src="ajax.js" type="text/javascript"></script>
@@ -150,7 +151,7 @@ var seconds = <?php echo $_SESSION['sec']; ?>;
 
 quesSelector(<?php echo $_SESSION['ques'];?>);
 
-setInterval(timer,1000);
+//setInterval(timer,1000);
 	
 function endExam(){
 	window.location = "end-score.php";

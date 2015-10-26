@@ -10,8 +10,8 @@ if(!is_user_loggedin_company()){
 <head >
 <meta charset="utf-8">
 <title>Untitled Document</title>
- <link rel="stylesheet" href="style.css" type="text/css">
- 
+<link rel="stylesheet" href="style.css" type="text/css">
+<script type="text/javascript" src="javascript.js"></script> 
 <script type="text/javascript">
 //visible();
 function showdiv(d1,d2)

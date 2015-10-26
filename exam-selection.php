@@ -13,15 +13,7 @@ if(!is_user_loggedin_student()){
 <link rel="stylesheet" type="text/css" href="style.css" />
 <script type="text/javascript" src="javascript.js"></script>
 <style>
-#section{
-	position:relative;
-	float:right;
-	width:75%;
-	border-left:solid 2px #B6B6B6;
-	background:#B2DFDB;
-	height:75.7vh;
-	/*border-bottom:solid 4px #B6B6B6;*/
-	}
+
 #companies,#exams{
 	position:relative;
 	display:inline-block;

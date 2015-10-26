@@ -4,6 +4,9 @@ include 'bottom-label.php';
 require 'connect.php';
 require 'core.php';
 
+if(is_user_loggedin_company()){
+	header("Location: page2.php");
+	}
 
 if(is_user_loggedin_student()){
 	//echo "Your are logged in....";

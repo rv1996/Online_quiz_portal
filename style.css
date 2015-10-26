@@ -7,6 +7,9 @@
 * button:hover{
 	cursor:pointer;
 	}
+#check-box{
+	cursor:pointer;
+	}
 
 #form_header{
 	border-bottom:solid 3px #4DC700;

@@ -21,6 +21,10 @@ if(!is_user_loggedin_student()){
 p{
 	padding:7%;
 	}
+ol{
+	position:relative;
+	right:2%
+	}
 label:hover{
 	cursor:pointer;
 	}

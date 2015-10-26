@@ -2,14 +2,16 @@
 require 'connect.php';
 include 'core.php';
 $examid = $_SESSION['examid'];
-$typeid = $_SESSION['typeid'];
-$query_questions = "SELECT questions,questionid FROM questionbank_company WHERE examid='$examid' AND typeid='$typeid' ORDER BY questionid";
+
+$query_questions = "SELECT questions,questionid,typeid FROM questionbank_company WHERE examid='$examid' ORDER BY questionid";
 
 $result_questions = mysql_query($query_questions) or die(mysql_error());
+$nofquestions = mysql_num_rows($result_questions);
 
 for($i=1;$row = mysql_fetch_array($result_questions);$i++){
 	$question[$i] = $row['questions'];
 	$questionid[$i] = $row['questionid'];
+	$typeid[$i] = $row['typeid'];
 	$query_ans = "SELECT options FROM answers_company WHERE questionid='$questionid[$i]' ORDER BY optionid";
 	$result_ans = mysql_query($query_ans) or die(mysql_error());
 	for($j=1;$row2 = mysql_fetch_array($result_ans);$j++){
@@ -20,6 +22,9 @@ for($i=1;$row = mysql_fetch_array($result_questions);$i++){
 ?>
 <?php
 $q = $_REQUEST['q'];
+if($q > $nofquestions){
+	$q = 1;
+	}
 
 $_SESSION['ques'] = $q;
 
@@ -65,7 +70,13 @@ $_SESSION['ques'] = $q;
 
 <div id="question" onClick="ne()">
 <?php 
-echo $q.") ".htmlentities($question[$q]);
+if($typeid[$q]==2){
+	$v = $q.'*';
+	}
+else{
+	$v = $q;
+	}
+echo $v.") ".htmlentities($question[$q]);
 ?>
 </div>
 <form method="post" action="<?php echo 'exam-area.php?qid='.$q; ?>" >
@@ -73,7 +84,7 @@ echo $q.") ".htmlentities($question[$q]);
 <ol type="A">
 	<?php
 	for($j=1;$j<=$nofoptions[$q];$j++){
-		echo "<li><input type='checkbox' value=1 name=$j>".htmlentities($ans[$q][$j])."</li>";
+		echo "<li><input id='check-box' type='checkbox' value=1 name=$j>".htmlentities($ans[$q][$j])."</li>";
 	}
 	?>
 </ol>

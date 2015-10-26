@@ -4,8 +4,11 @@ include 'core.php';
  
 $_SESSION['page_name'] ='';
 if(is_user_loggedin_student()){
-		  header("Location: page1.php");
+	header("Location: page1.php");
 	  }
+if(is_user_loggedin_company()){
+	header("Location: page2.php");
+	}	  
 ?>
 
 <html>

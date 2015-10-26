@@ -11,6 +11,7 @@ if(!is_user_loggedin_company()){
 <meta charset="utf-8">
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="javascript.js"></script>
 <style>
 #d1{ 
 	position:relative;
