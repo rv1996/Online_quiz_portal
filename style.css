@@ -1,0 +1,90 @@
+/* styling of all the  pages are done here....*/
+*{
+		box-sizing:border-box;
+		font-family: 'Exo', sans-serif;
+		
+	}
+* button:hover{
+	cursor:pointer;
+	}
+#check-box{
+	cursor:pointer;
+	}
+
+#form_header{
+	border-bottom:solid 3px #4DC700;
+}
+
+#rupanshu label,#satvik label,#sagarika label{
+	font-size:12px;
+	position:relative;
+	top:70%;
+	text-align:center;
+}
+.developer{
+	top:25%;
+	position:absolute;
+	height:32%;
+	width:22%;
+	padding:2%;
+	background:#FBFBFB;
+	text-align:center;
+	box-shadow: 2px 2px 5px grey;
+	border-bottom:solid 5px #4DC700;
+	-webkit-transition: -webkit-transform 1s,background 1s;
+}
+.developer:hover{
+	box-shadow: 6px 6px 8px grey;
+	-webkit-transform: scale(1.01,1.01);
+	background:#F5F1DE
+}
+#rupanshu,#rupanshu-slide{
+	left:8%;
+}
+#rupanshu-slide,#satvik-slide,#sagarika-slide{
+	display:none;
+	top:58%;
+}
+#satvik,#satvik-slide{
+	left:38%;
+}
+#sagarika,#sagarika-slide{
+	left:68%;
+}
+
+/* styling of cover page */
+body{
+	font-size:2.5vmin;
+	width:90%;
+	margin:auto;
+	/*background:#00CCFF;*/
+	-webkit-background-size:cover;
+	background-repeat: no-repeat;
+}
+	
+	
+/* styling of about and developers box*/
+
+#home-box ,#about-box,#developer-box{
+	left:4em;
+	padding:3%;
+	top:4em;
+	background:#F5F1DE;
+	border-bottom:solid 8px #4DC700;
+	
+	position:relative;
+	min-width:40%;
+	min-height:40%;
+	
+	max-width:50%;
+	font-size:2vw;
+}
+#section{
+	position:relative;
+	float:right;
+	width:75%;
+	border-left:solid 2px #B6B6B6;
+	background:#DBE1E2;
+	height:75.7vh;
+	/*border-bottom:solid 4px #B6B6B6;*/
+	}

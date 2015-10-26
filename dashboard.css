@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+/*styling for student_dasdboard page*/
+
+#card1, #card2{
+	position:absolute;
+	background:#FBFBFB;
+	border-bottom:solid 8px #4DC700;
+	color:#5A5A5A;
+	font-size:7vmin;
+	width:auto;
+	-webkit-transition: -webkit-transform 1s,background 1s;
+	transition:-webkit-transform 1s,background 1s,box-shadow 1s;
+	display:inline;	
+	top:25%;
+	text-align:center;
+	padding:1.6%;
+}
+
+#card1:hover,#card2:hover,#card3:hover{
+	-webkit-transform: scale(1.1,1.1);
+	transform: scale(1.1,1.1);
+	background:#F5E6E1;
+	box-shadow: 6px 6px 6px grey;
+	cursor:pointer;
+	
+	border-radius:5px;
+}
+
+#card1{
+	left:10vw;
+	
+}
+#card2{
+	left:40vw;
+	
+}
+#card3{
+		
+	left:37%;
+	position:absolute;
+	background:#FBFBFB;
+	border-bottom:solid 8px #4DC700;
+	color:#5A5A5A;
+	font-size:7vmin;
+	width:auto;
+	text-align:center;
+	-webkit-transition: -webkit-transform 1s,background 1s;
+	transition:-webkit-transform 1s,background 1s,box-shadow 1s;
+	display:inline;	
+	top:60%;
+	padding:1%;
+}
+
+
+
+	

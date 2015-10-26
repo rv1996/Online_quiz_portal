@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*styling for login form*/
+
+
+#login_main_box{
+	float:left;
+	width:31%;
+	min-width:400px;
+	background:#DFE0D3;
+	height:79%;
+	
+	
+}
+
+#login_main_box h2{
+	
+	background:#373232;
+	color:white;
+	margin-top:0px;
+	padding:4%;
+	text-align:center;
+	font-family: 'Exo', sans-serif;
+}
+
+.form-input{
+	width:300px;
+	border:none;
+	outline:none;
+	height:7%;
+	margin-left:13%;
+	margin-bottom:10px;
+	
+}
+#login_main_box button{
+	background:#373232;
+	color:white;
+	font-size:large;
+}
