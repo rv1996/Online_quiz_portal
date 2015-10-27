@@ -45,9 +45,9 @@ include 'company-profile.php';
 <div id="section">
 	<div id="d1">
     	<h3><b>Questions Added Successfully!</b></h3>
-        <h4>No. Of Questions added to the Quiz: <?php echo $_SESSION['number'];?></h4>
+        <h4>No. Of Questions added to the Quiz: <?php echo ($_SESSION['number']-1);?></h4>
                          
-     	<form method="post" action="input.php">
+     	<form method="post" action="exampage3-input.php">
     		  
             	<ul style="list-style-type:none" class="items">
                 	<li><b>EXAM NAME:</b></li>

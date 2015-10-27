@@ -85,7 +85,7 @@ include 'company-profile.php';
 
     <div class="Content" id="single" >
      	<h4>Add Single correct</h4><?php  $message="";?>
-        <form action="singledb.php" method="post">
+        <form action="exampage2-singledb.php" method="post">
             <h5><?php echo "<b>Question no.".$_SESSION['number']."</b>";?></h5>
             <textarea name="question" id="q" rows = "4" cols="50" placeholder="Enter your question here" required='required'></textarea>
              <?php
@@ -115,7 +115,7 @@ include 'company-profile.php';
             
     <div class="Content" id="multi" >
     	<h4>Add Multi Correct</h4> 
-    	<form action="multidb.php" method="post">
+    	<form action="exampage2-multidb.php" method="post">
                <h5><?php echo "<b>Question no.".$_SESSION['number']."</b>";?></h5>
                <textarea name="question" rows = "4" cols="50" placeholder="Enter your question here" required></textarea>
                <?php for($i=1;$i<=4;$i++)

@@ -37,7 +37,7 @@ $_SESSION['number']=1;
     <div id="instructions">
         <h2>INSTRUCTIONS:</h2>
         <pre>
-            <strong>There are 4 types of questions:</strong><br>
+            <strong>There are 2 types of questions:</strong><br>
             1. Single-Correct
             2. Multi-Correct
             
