@@ -13,7 +13,8 @@ $username="root";
 $password="";
 $db_name="oqp";
 session_start();
-$examid = $_SESSION['examid'];
+$number=$_SESSION['number'];
+$examid=$_SESSION['examid'];
 $con=new MySQLi("$host","$username","$password","$db_name");
 	echo "p";	// Check connection
   if ($con->connect_error)
@@ -29,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
 	$question=$_POST["question"];
 	
 	$sql="INSERT INTO questionbank_company(ExamId,Questions,typeid)
-	VALUES ('$examid','$question',1)";
+	VALUES ('$examid','$question',2)";
 	 if($con->query($sql) ===TRUE)
 	{
 		 echo "New record created successfully<br>";
@@ -57,7 +58,7 @@ if(!empty($_POST["option".$i]) )
 	$check=0;
 	
 	$res="INSERT INTO answers_company(QuestionId,Options,CheckAns)
-	VALUES ($q_id,'$option','$check')";
+	VALUES ('$q_id','$option','$check')";
 	 if($con->query($res) ===TRUE)
 	{
 		 echo "New res record created successfully<br>";

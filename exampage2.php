@@ -71,6 +71,7 @@ include 'navigation.php';
 include 'company-profile.php';
 
 @session_start();
+//echo $_SESSION['examid'];
 ?>
 
 <div id="section">

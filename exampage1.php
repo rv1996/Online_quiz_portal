@@ -45,7 +45,7 @@ $_SESSION['number']=1;
             <strong>Single-correct:</strong>add more than one options.choose the buttons next to mark it as correct answer.<br>
             <strong>Multi-correct:</strong>add more than one options.choose the buttons next to mark it as correct answer.<br>
         </pre>
-    <center><button type="button" onClick="location.href='exampage2.php';">CONTINUE</button></center></div>
+    <center><button type="button" onClick="location.href='examnew.php';">CONTINUE</button></center></div>
 </div>
 </body>
 </html>
