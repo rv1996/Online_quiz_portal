@@ -6,9 +6,10 @@
         $username="root";
         $password="";
         $db_name="oqp";
-        session_start();
+        @session_start();
+		
 		$companyid = @$_SESSION['company_data']['CompanyId'];
-		$examid = @$_SESSION['examid'];
+		$examid = $_SESSION['examid'];
         $con=new MySQLi("$host","$username","$password","$db_name");
       if ($con->connect_error)
    {
@@ -34,26 +35,26 @@
 	     $mpmarks=$_POST['mpmarks'];
 	     $mnmarks=$_POST['mnmarks'];
 	     $number=$_SESSION['number'];
-	     $sql="UPDATE company_exams(examname,Time,noofquestions)
-	                 VALUES ('$examname','$time','$number') where ExamId=$examid";
+
+	     $sql="UPDATE company_exams SET examname='$examname',Time='$time',noofquestions='$number' WHERE ExamId=$examid";
 	     if($con->query($sql) ===TRUE)
                echo "New record created successfully<br>";
-          else
-			   echo "Error:" . $sql. "<br>" .$con->error;
-	     $res="UPDATE exam_type_linked(typeid,pmarks,nmarks)
-	            VALUES (1,'$spmarks','$snmarks') where ExamId=$examid";
+ 
+			$res="INSERT INTO exam_type_linked(ExamId,typeid,pmarks,nmarks)
+	            VALUES ('$examid',1,'$spmarks','$snmarks')";
 		 if($con->query($res) ===TRUE)
                echo "New record created successfully<br>";
            else
 			   echo "Error:" . $res. "<br>" .$con->error;
-		$new="INSERT INTO exam_type_linked(typeid,pmarks,nmarks)
-	           VALUES (2,'$mpmarks','$mnmarks')";
+		$new =" INSERT INTO exam_type_linked(ExamId,typeid,pmarks,nmarks)
+	           VALUES ('$examid',2,'$mpmarks','$mnmarks')";
 		 if($con->query($new) ===TRUE)
                 echo "New record created successfully<br>";
           else
 				 echo "Error:" . $new. "<br>" .$con->error;
     }
 }
+header('Location:createdsuccessfully.php');
 ?>
 </body>
 </html>

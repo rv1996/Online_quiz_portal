@@ -28,7 +28,7 @@ $result = mysql_query($query) or die(mysql_error());
 $row = mysql_fetch_array($result);
 $_SESSION['time'] = $row['Time'];
 $companyid = $row['CompanyId'];
-$_SESSION['n_of_questions'] = $row['noofquestions'];
+@$_SESSION['n_of_questions'] = $row['noofquestions'];
 
 $result = mysql_query("SELECT name FROM company_info WHERE companyid=$companyid") or die(mysql_error());
 $row = mysql_fetch_array($result);

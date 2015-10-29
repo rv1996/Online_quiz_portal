@@ -15,7 +15,8 @@
         session_start();
         $con=new MySQLi("$host","$username","$password","$db_name");
         $c=0;
-		$examid = @$_SESSION['examid'];
+		$examid=$_SESSION['examid'];
+		$number=$_SESSION['number'];
       if ($con->connect_error)
     {
        die( "Connection failed: " .$con->connect_error);
@@ -27,8 +28,8 @@
     {
 	
 	           $question=$_POST["question"];
-	           $sql="INSERT INTO questionbank_company(ExamId,Questions,typeid)
-	                 VALUES ('$examid','$question',1)";
+$sql="INSERT INTO questionbank_company(ExamId,QuestionS,typeid)
+			            VALUES ('$examid','$question',1)";
 	            if($con->query($sql) ===TRUE)
                    echo "New record created successfully<br>";
                 else
@@ -59,9 +60,10 @@
 	                 }
 	                    else
 	                       $radio=0;
-	                       $res="INSERT INTO answers_company(QuestionId,Options,CheckAns)
+	                      
+					    $res="INSERT INTO answers_company(QuestionId,Options,CheckAns)
 	                              VALUES ('$q_id','$option','$radio')";
-	                  if($con->query($res) ===TRUE)
+	                  if($con->query($res) === TRUE)
 		                 echo "New res record created successfully<br>";
 		              else
 					     echo "Error:" . $res. "<br>" .$con->error;

@@ -11,8 +11,8 @@ while($row = mysql_fetch_array($result_questions)){
 	$typeid[$i]=$row['typeid'];
 	$i++;
 	}
-	
-check_ans($questionid,$typeid,$examid);	
+
+check_ans($questionid,$typeid,$examid);
 ?>
 <?php
 function check_ans($questionid,$typeid,$examid){
@@ -27,13 +27,23 @@ function check_ans($questionid,$typeid,$examid){
 		$i++;
 		}
 	$nofoptions = $i;
-	
+
 	$query = "SELECT pmarks,nmarks FROM exam_type_linked WHERE examid=$examid AND typeid=$typeid[$q] ORDER BY typeid";
 	$result = mysql_query($query) or die(mysql_error());
-	
+
 	$row=mysql_fetch_array($result);
 	$pmarks = $row['pmarks'];
 	$nmarks = $row['nmarks'];
+	
+	for($j = 1;$j < $nofoptions;$j++){
+		if(empty($_POST[$j])){
+			$check = 0;
+			}
+		else{
+			$check = 1;
+			break;
+			}
+		}
 
 	for($j = 1;$j < $nofoptions;$j++){
 		if(!empty($_POST[$j])){
@@ -42,17 +52,18 @@ function check_ans($questionid,$typeid,$examid){
 		else{
 			$options[$j]=0;
 			}
-			
-		if($qcheckans[$j] == $options[$j]){
-			$check = $pmarks;
-			}
-		else{
-			$check = -$nmarks;
-			break;
+		if($check != 0){
+			if($qcheckans[$j] == $options[$j]){
+				$check = $pmarks;
+				}
+			else{
+				$check = -$nmarks;
+				break;
+				}
 			}
 		}
 	marks_changer($check,$q,$questionid);
-	
+
 	/*if($check == 1){
 		echo 'Correct';
 		}

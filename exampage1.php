@@ -37,7 +37,7 @@ $_SESSION['number']=1;
     <div id="instructions">
         <h2>INSTRUCTIONS:</h2>
         <pre>
-            <strong>There are 4 types of questions:</strong><br>
+            <strong>There are 2 types of questions:</strong><br>
             1. Single-Correct
             2. Multi-Correct
             
@@ -45,7 +45,7 @@ $_SESSION['number']=1;
             <strong>Single-correct:</strong>add more than one options.choose the buttons next to mark it as correct answer.<br>
             <strong>Multi-correct:</strong>add more than one options.choose the buttons next to mark it as correct answer.<br>
         </pre>
-    <center><button type="button" onClick="location.href='exampage2.php';">CONTINUE</button></center></div>
+    <center><button type="button" onClick="location.href='examnew.php';">CONTINUE</button></center></div>
 </div>
 </body>
 </html>

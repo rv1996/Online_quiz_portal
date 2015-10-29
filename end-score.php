@@ -11,7 +11,9 @@ if(!is_user_loggedin_student()){
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
+
 <script type="text/javascript" src="javascript.js"></script>
+
 <style>
 #section{
 	position:relative;
@@ -35,13 +37,13 @@ if(!is_user_loggedin_student()){
 
 #dash{
 	position:relative;
-	top:4vh;	
+	top:4vh;
 	}
 </style>
 </head>
 
 <body>
-<?php 
+<?php
 include 'Page-heading.php';
 include 'bottom-label.php';
 require 'connect.php';
@@ -49,6 +51,10 @@ include 'navigation.php';
 include 'student-profile.php';
 include 'score-calculator.php';
 include 'student-records-editor.php';
+
+
+login_redirect_student();
+
 ?>
 
 	<div id="section">

@@ -16,18 +16,18 @@ $n_of_companies = $i - 1;
 ?>
 
 <ul>
-	<li id="company0" onclick='examsLoader(0)'><b>All</b></li>
+	<li id="company1" onclick='examsLoader(0,1)'><b>All</b></li>
     <?php
         for($i=2;$i<=$n_of_companies;$i++){
-            echo "<li id='company".$i."'><b onclick='examsLoader($company_id[$i])'>".$company_name[$i]."</b></li>";
+            echo "<li id='company".$i."'><b onclick='examsLoader($company_id[$i],$i)'>".$company_name[$i]."</b></li>";
 			}
     ?>
 </ul>
 
 <script>
-function examsLoader(s){
+function examsLoader(s,cl){
 	jstophp("exams-list.php?cId=" + s,ex);
-	colorReset(s);
+	colorReset(cl);
 	}
 
 function ex(xhttp){
@@ -36,7 +36,7 @@ function ex(xhttp){
 	
 function colorReset(s){
 	var n = <?php echo $n_of_companies; ?>;
-	for(var i=0;i<=n;i++){
+	for(var i=1;i<=n;i++){
 		var c = document.getElementById('company'+i);
 		if(i==s){
 			c.style.color = "white";
